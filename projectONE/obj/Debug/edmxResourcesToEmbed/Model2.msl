@@ -1,0 +1,1258 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="GestionComercialeModel2StoreContainer" CdmEntityContainer="GestionComercialeEntities2">
+    <EntitySetMapping Name="ArchiveStock">
+      <EntityTypeMapping TypeName="GestionComercialeModel2.ArchiveStock">
+        <MappingFragment StoreEntitySet="ArchiveStock">
+          <ScalarProperty Name="NumArch" ColumnName="NumArch" />
+          <ScalarProperty Name="DateArch" ColumnName="DateArch" />
+          <ScalarProperty Name="NumArt" ColumnName="NumArt" />
+          <ScalarProperty Name="Stock" ColumnName="Stock" />
+          <ScalarProperty Name="QteS" ColumnName="QteS" />
+          <ScalarProperty Name="MontantS" ColumnName="MontantS" />
+          <ScalarProperty Name="QteE" ColumnName="QteE" />
+          <ScalarProperty Name="MontantE" ColumnName="MontantE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Article">
+      <EntityTypeMapping TypeName="GestionComercialeModel2.Article">
+        <MappingFragment StoreEntitySet="Article">
+          <ScalarProperty Name="Num_At" ColumnName="Num_At" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="PU" ColumnName="PU" />
+          <ScalarProperty Name="QteS" ColumnName="QteS" />
+          <ScalarProperty Name="TVA" ColumnName="TVA" />
+          <ScalarProperty Name="num_fardeau" ColumnName="num_fardeau" />
+          <ScalarProperty Name="Num_Fa" ColumnName="Num_Fa" />
+          <ScalarProperty Name="unite" ColumnName="unite" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Banque">
+      <EntityTypeMapping TypeName="GestionComercialeModel2.Banque">
+        <MappingFragment StoreEntitySet="Banque">
+          <ScalarProperty Name="Num_Bq" ColumnName="Num_Bq" />
+          <ScalarProperty Name="NomB" ColumnName="NomB" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Chantier">
+      <EntityTypeMapping TypeName="GestionComercialeModel2.Chantier">
+        <MappingFragment StoreEntitySet="Chantier">
+          <ScalarProperty Name="Num" ColumnName="Num" />
+          <ScalarProperty Name="Cin" ColumnName="Cin" />
+          <ScalarProperty Name="Adresse" ColumnName="Adresse" />
+          <ScalarProperty Name="Budget" ColumnName="Budget" />
+          <ScalarProperty Name="dateDebut" ColumnName="dateDebut" />
+          <ScalarProperty Name="dateFin" ColumnName="dateFin" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Charge">
+      <EntityTypeMapping TypeName="GestionComercialeModel2.Charge">
+        <MappingFragment StoreEntitySet="Charge">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nom" ColumnName="Nom" />
+          <ScalarProperty Name="DateCharge" ColumnName="DateCharge" />
+          <ScalarProperty Name="Montant" ColumnName="Montant" />
+          <ScalarProperty Name="Numch" ColumnName="Numch" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Client">
+      <EntityTypeMapping TypeName="GestionComercialeModel2.Client">
+        <MappingFragment StoreEntitySet="Client">
+          <ScalarProperty Name="Num_Clt" ColumnName="Num_Clt" />
+          <ScalarProperty Name="NomC" ColumnName="NomC" />
+          <ScalarProperty Name="Ville" ColumnName="Ville" />
+          <ScalarProperty Name="Adresse" ColumnName="Adresse" />
+          <ScalarProperty Name="Tele" ColumnName="Tele" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Solde" ColumnName="Solde" />
+          <ScalarProperty Name="ICE" ColumnName="ICE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Collection">
+      <EntityTypeMapping TypeName="GestionComercialeModel2.Collection">
+        <MappingFragment StoreEntitySet="Collection">
+          <ScalarProperty Name="Prix" ColumnName="Prix" />
+          <ScalarProperty Name="Nb_Collection" ColumnName="Nb_Collection" />
+          <ScalarProperty Name="NumCollection" ColumnName="NumCollection" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Nbcement" ColumnName="Nbcement" />
+          <ScalarProperty Name="NumWeek" ColumnName="NumWeek" />
+          <ScalarProperty Name="typeTobiya" ColumnName="typeTobiya" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CommandeAch">
+      <EntityTypeMapping TypeName="GestionComercialeModel2.CommandeAch">
+        <MappingFragment StoreEntitySet="CommandeAch">
+          <ScalarProperty Name="Num_Cmd" ColumnName="Num_Cmd" />
+          <ScalarProperty Name="DateAch" ColumnName="DateAch" />
+          <ScalarProperty Name="IDFActureA" ColumnName="IDFActureA" />
+          <ScalarProperty Name="Num_Fr" ColumnName="Num_Fr" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CommandeVente">
+      <EntityTypeMapping TypeName="GestionComercialeModel2.CommandeVente">
+        <MappingFragment StoreEntitySet="CommandeVente">
+          <ScalarProperty Name="Num_CmdV" ColumnName="Num_CmdV" />
+          <ScalarProperty Name="DateCmd" ColumnName="DateCmd" />
+          <ScalarProperty Name="IsFacture" ColumnName="IsFacture" />
+          <ScalarProperty Name="Num_Clt" ColumnName="Num_Clt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="config">
+      <EntityTypeMapping TypeName="GestionComercialeModel2.config">
+        <MappingFragment StoreEntitySet="config">
+          <ScalarProperty Name="NonSo" ColumnName="NonSo" />
+          <ScalarProperty Name="Domaine" ColumnName="Domaine" />
+          <ScalarProperty Name="logo" ColumnName="logo" />
+          <ScalarProperty Name="Adresse" ColumnName="Adresse" />
+          <ScalarProperty Name="Tele" ColumnName="Tele" />
+          <ScalarProperty Name="RC" ColumnName="RC" />
+          <ScalarProperty Name="Patente" ColumnName="Patente" />
+          <ScalarProperty Name="IFF" ColumnName="IFF" />
+          <ScalarProperty Name="CNSS" ColumnName="CNSS" />
+          <ScalarProperty Name="ICE" ColumnName="ICE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DetailAchat">
+      <EntityTypeMapping TypeName="GestionComercialeModel2.DetailAchat">
+        <MappingFragment StoreEntitySet="DetailAchat">
+          <ScalarProperty Name="Num_At" ColumnName="Num_At" />
+          <ScalarProperty Name="Num_Cmd" ColumnName="Num_Cmd" />
+          <ScalarProperty Name="Qte" ColumnName="Qte" />
+          <ScalarProperty Name="PrixA" ColumnName="PrixA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DetailFac">
+      <EntityTypeMapping TypeName="GestionComercialeModel2.DetailFac">
+        <MappingFragment StoreEntitySet="DetailFac">
+          <ScalarProperty Name="Num_Fac" ColumnName="Num_Fac" />
+          <ScalarProperty Name="Num_CmdV" ColumnName="Num_CmdV" />
+          <ScalarProperty Name="IDCmdFact" ColumnName="IDCmdFact" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DetailReg">
+      <EntityTypeMapping TypeName="GestionComercialeModel2.DetailReg">
+        <MappingFragment StoreEntitySet="DetailReg">
+          <ScalarProperty Name="IDCmdReg" ColumnName="IDCmdReg" />
+          <ScalarProperty Name="Num_Reg" ColumnName="Num_Reg" />
+          <ScalarProperty Name="Num_CmdV" ColumnName="Num_CmdV" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DetailVente">
+      <EntityTypeMapping TypeName="GestionComercialeModel2.DetailVente">
+        <MappingFragment StoreEntitySet="DetailVente">
+          <ScalarProperty Name="Num_CmdV" ColumnName="Num_CmdV" />
+          <ScalarProperty Name="Num_At" ColumnName="Num_At" />
+          <ScalarProperty Name="Qte" ColumnName="Qte" />
+          <ScalarProperty Name="Remise" ColumnName="Remise" />
+          <ScalarProperty Name="PrixV" ColumnName="PrixV" />
+          <ScalarProperty Name="TVA" ColumnName="TVA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Facture">
+      <EntityTypeMapping TypeName="GestionComercialeModel2.Facture">
+        <MappingFragment StoreEntitySet="Facture">
+          <ScalarProperty Name="Num_Fac" ColumnName="Num_Fac" />
+          <ScalarProperty Name="DateFac" ColumnName="DateFac" />
+          <ScalarProperty Name="Remise" ColumnName="Remise" />
+          <ScalarProperty Name="IsGiven" ColumnName="IsGiven" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Famille">
+      <EntityTypeMapping TypeName="GestionComercialeModel2.Famille">
+        <MappingFragment StoreEntitySet="Famille">
+          <ScalarProperty Name="Num_Fa" ColumnName="Num_Fa" />
+          <ScalarProperty Name="NomFa" ColumnName="NomFa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Fournisseur">
+      <EntityTypeMapping TypeName="GestionComercialeModel2.Fournisseur">
+        <MappingFragment StoreEntitySet="Fournisseur">
+          <ScalarProperty Name="Num_Fr" ColumnName="Num_Fr" />
+          <ScalarProperty Name="NomF" ColumnName="NomF" />
+          <ScalarProperty Name="Ville" ColumnName="Ville" />
+          <ScalarProperty Name="Adresse" ColumnName="Adresse" />
+          <ScalarProperty Name="Tele" ColumnName="Tele" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Location">
+      <EntityTypeMapping TypeName="GestionComercialeModel2.Location">
+        <MappingFragment StoreEntitySet="Location">
+          <ScalarProperty Name="reste" ColumnName="reste" />
+          <ScalarProperty Name="Montant_paye" ColumnName="Montant_paye" />
+          <ScalarProperty Name="Montant" ColumnName="Montant" />
+          <ScalarProperty Name="NumLoc" ColumnName="NumLoc" />
+          <ScalarProperty Name="DateDebut" ColumnName="DateDebut" />
+          <ScalarProperty Name="DateFin" ColumnName="DateFin" />
+          <ScalarProperty Name="Matricule" ColumnName="Matricule" />
+          <ScalarProperty Name="Num_Clt" ColumnName="Num_Clt" />
+          <ScalarProperty Name="Unite" ColumnName="Unite" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ModeRG">
+      <EntityTypeMapping TypeName="GestionComercialeModel2.ModeRG">
+        <MappingFragment StoreEntitySet="ModeRG">
+          <ScalarProperty Name="Num_ModeReg" ColumnName="Num_ModeReg" />
+          <ScalarProperty Name="Modalite" ColumnName="Modalite" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ouvrier">
+      <EntityTypeMapping TypeName="GestionComercialeModel2.Ouvrier">
+        <MappingFragment StoreEntitySet="Ouvrier">
+          <ScalarProperty Name="Cin" ColumnName="Cin" />
+          <ScalarProperty Name="nom" ColumnName="nom" />
+          <ScalarProperty Name="prenom" ColumnName="prenom" />
+          <ScalarProperty Name="tele" ColumnName="tele" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Reglement">
+      <EntityTypeMapping TypeName="GestionComercialeModel2.Reglement">
+        <MappingFragment StoreEntitySet="Reglement">
+          <ScalarProperty Name="Num_Reg" ColumnName="Num_Reg" />
+          <ScalarProperty Name="Montant" ColumnName="Montant" />
+          <ScalarProperty Name="NumChe" ColumnName="NumChe" />
+          <ScalarProperty Name="Num_ModeReg" ColumnName="Num_ModeReg" />
+          <ScalarProperty Name="Num_Bq" ColumnName="Num_Bq" />
+          <ScalarProperty Name="montantDepose" ColumnName="montantDepose" />
+          <ScalarProperty Name="reste" ColumnName="reste" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="GestionComercialeModel2.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Utilisateur">
+      <EntityTypeMapping TypeName="GestionComercialeModel2.Utilisateur">
+        <MappingFragment StoreEntitySet="Utilisateur">
+          <ScalarProperty Name="Id_user" ColumnName="Id_user" />
+          <ScalarProperty Name="User" ColumnName="User" />
+          <ScalarProperty Name="MP" ColumnName="MP" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Voiture">
+      <EntityTypeMapping TypeName="GestionComercialeModel2.Voiture">
+        <MappingFragment StoreEntitySet="Voiture">
+          <ScalarProperty Name="matricule" ColumnName="matricule" />
+          <ScalarProperty Name="model" ColumnName="model" />
+          <ScalarProperty Name="type" ColumnName="type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Week">
+      <EntityTypeMapping TypeName="GestionComercialeModel2.Week">
+        <MappingFragment StoreEntitySet="Week">
+          <ScalarProperty Name="NumWeek" ColumnName="NumWeek" />
+          <ScalarProperty Name="DateDebut" ColumnName="DateDebut" />
+          <ScalarProperty Name="DateFin" ColumnName="DateFin" />
+          <ScalarProperty Name="Prix" ColumnName="Prix" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="Affiche_Article" FunctionName="GestionComercialeModel2.Store.Affiche_Article">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GestionComercialeModel2.Affiche_Article_Result">
+          <ScalarProperty Name="Num_At" ColumnName="Num_At" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="Prix_Unitaire" ColumnName="Prix Unitaire" />
+          <ScalarProperty Name="Totale_Piece" ColumnName="Totale Piece" />
+          <ScalarProperty Name="TVA" ColumnName="TVA" />
+          <ScalarProperty Name="num_fardeau" ColumnName="num_fardeau" />
+          <ScalarProperty Name="Unite" ColumnName="Unite" />
+          <ScalarProperty Name="Famille" ColumnName="Famille" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Affiche_Client" FunctionName="GestionComercialeModel2.Store.Affiche_Client">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GestionComercialeModel2.Affiche_Client_Result">
+          <ScalarProperty Name="Num_Clt" ColumnName="Num_Clt" />
+          <ScalarProperty Name="Nom" ColumnName="Nom" />
+          <ScalarProperty Name="Ville" ColumnName="Ville" />
+          <ScalarProperty Name="Adresse" ColumnName="Adresse" />
+          <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Solde" ColumnName="Solde" />
+          <ScalarProperty Name="ICE" ColumnName="ICE" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Affiche_CmdA" FunctionName="GestionComercialeModel2.Store.Affiche_CmdA">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GestionComercialeModel2.Affiche_CmdA_Result">
+          <ScalarProperty Name="N_Commande" ColumnName="N°Commande" />
+          <ScalarProperty Name="Date_Achat" ColumnName="Date Achat" />
+          <ScalarProperty Name="N_Facture" ColumnName="N°Facture" />
+          <ScalarProperty Name="Nom_Fournisseur" ColumnName="Nom Fournisseur" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Affiche_CmdV" FunctionName="GestionComercialeModel2.Store.Affiche_CmdV">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GestionComercialeModel2.Affiche_CmdV_Result">
+          <ScalarProperty Name="N_Commande" ColumnName="N°Commande" />
+          <ScalarProperty Name="Date_Commande" ColumnName="Date Commande" />
+          <ScalarProperty Name="Facturée" ColumnName="Facturée" />
+          <ScalarProperty Name="Nom_Client" ColumnName="Nom Client" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Affiche_Facture" FunctionName="GestionComercialeModel2.Store.Affiche_Facture">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GestionComercialeModel2.Affiche_Facture_Result">
+          <ScalarProperty Name="N_Facture" ColumnName="N°Facture" />
+          <ScalarProperty Name="Date_Facture" ColumnName="Date Facture" />
+          <ScalarProperty Name="Is_Given" ColumnName="Is Given" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Affiche_Famille" FunctionName="GestionComercialeModel2.Store.Affiche_Famille">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GestionComercialeModel2.Affiche_Famille_Result">
+          <ScalarProperty Name="N_Famille" ColumnName="N°Famille" />
+          <ScalarProperty Name="Famille" ColumnName="Famille" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Affiche_Fournisseur" FunctionName="GestionComercialeModel2.Store.Affiche_Fournisseur">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GestionComercialeModel2.Affiche_Fournisseur_Result">
+          <ScalarProperty Name="Num_Fr" ColumnName="Num_Fr" />
+          <ScalarProperty Name="Nom" ColumnName="Nom" />
+          <ScalarProperty Name="Ville" ColumnName="Ville" />
+          <ScalarProperty Name="Adresse" ColumnName="Adresse" />
+          <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="afficher_Config" FunctionName="GestionComercialeModel2.Store.afficher_Config">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GestionComercialeModel2.afficher_Config_Result">
+          <ScalarProperty Name="NonSo" ColumnName="NonSo" />
+          <ScalarProperty Name="Domaine" ColumnName="Domaine" />
+          <ScalarProperty Name="logo" ColumnName="logo" />
+          <ScalarProperty Name="Adresse" ColumnName="Adresse" />
+          <ScalarProperty Name="Tele" ColumnName="Tele" />
+          <ScalarProperty Name="RC" ColumnName="RC" />
+          <ScalarProperty Name="Patente" ColumnName="Patente" />
+          <ScalarProperty Name="IFF" ColumnName="IFF" />
+          <ScalarProperty Name="CNSS" ColumnName="CNSS" />
+          <ScalarProperty Name="ICE" ColumnName="ICE" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Afficher_DetailCmdAch" FunctionName="GestionComercialeModel2.Store.Afficher_DetailCmdAch">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GestionComercialeModel2.Afficher_DetailCmdAch_Result">
+          <ScalarProperty Name="Num_Cmd" ColumnName="Num_Cmd" />
+          <ScalarProperty Name="Num_At" ColumnName="Num_At" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="Prix_Acheté" ColumnName="Prix Acheté" />
+          <ScalarProperty Name="Qantité_Acheté" ColumnName="Qantité Acheté" />
+          <ScalarProperty Name="TVA" ColumnName="TVA" />
+          <ScalarProperty Name="num_fardeau" ColumnName="num_fardeau" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Afficher_DetailVente" FunctionName="GestionComercialeModel2.Store.Afficher_DetailVente">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GestionComercialeModel2.Afficher_DetailVente_Result">
+          <ScalarProperty Name="N_Commande" ColumnName="N°Commande" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="Qantité" ColumnName="Qantité" />
+          <ScalarProperty Name="Remise" ColumnName="Remise" />
+          <ScalarProperty Name="Prix_Vente" ColumnName="Prix Vente" />
+          <ScalarProperty Name="TVA" ColumnName="TVA" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Afficher_ModeRG" FunctionName="GestionComercialeModel2.Store.Afficher_ModeRG">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GestionComercialeModel2.Afficher_ModeRG_Result">
+          <ScalarProperty Name="N_Reglemet" ColumnName="N°Reglemet" />
+          <ScalarProperty Name="Modalite" ColumnName="Modalite" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Afficher_Reglement" FunctionName="GestionComercialeModel2.Store.Afficher_Reglement">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GestionComercialeModel2.Afficher_Reglement_Result">
+          <ScalarProperty Name="N_Reglement" ColumnName="N°Reglement" />
+          <ScalarProperty Name="Montant" ColumnName="Montant" />
+          <ScalarProperty Name="N_Cheque" ColumnName="N°Cheque" />
+          <ScalarProperty Name="Modalite" ColumnName="Modalite" />
+          <ScalarProperty Name="Banque" ColumnName="Banque" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Ajouter_Article" FunctionName="GestionComercialeModel2.Store.Ajouter_Article" />
+    <FunctionImportMapping FunctionImportName="Ajouter_Banque" FunctionName="GestionComercialeModel2.Store.Ajouter_Banque" />
+    <FunctionImportMapping FunctionImportName="Ajouter_Chantier" FunctionName="GestionComercialeModel2.Store.Ajouter_Chantier" />
+    <FunctionImportMapping FunctionImportName="Ajouter_Charge" FunctionName="GestionComercialeModel2.Store.Ajouter_Charge" />
+    <FunctionImportMapping FunctionImportName="Ajouter_Client" FunctionName="GestionComercialeModel2.Store.Ajouter_Client" />
+    <FunctionImportMapping FunctionImportName="Ajouter_CmdAchat" FunctionName="GestionComercialeModel2.Store.Ajouter_CmdAchat" />
+    <FunctionImportMapping FunctionImportName="Ajouter_Collection" FunctionName="GestionComercialeModel2.Store.Ajouter_Collection" />
+    <FunctionImportMapping FunctionImportName="Ajouter_CommandeVente" FunctionName="GestionComercialeModel2.Store.Ajouter_CommandeVente" />
+    <FunctionImportMapping FunctionImportName="Ajouter_DetailFacture" FunctionName="GestionComercialeModel2.Store.Ajouter_DetailFacture" />
+    <FunctionImportMapping FunctionImportName="Ajouter_DetailReglement" FunctionName="GestionComercialeModel2.Store.Ajouter_DetailReglement" />
+    <FunctionImportMapping FunctionImportName="Ajouter_DetailsCmdAchat" FunctionName="GestionComercialeModel2.Store.Ajouter_DetailsCmdAchat" />
+    <FunctionImportMapping FunctionImportName="Ajouter_Facture" FunctionName="GestionComercialeModel2.Store.Ajouter_Facture" />
+    <FunctionImportMapping FunctionImportName="Ajouter_Famille" FunctionName="GestionComercialeModel2.Store.Ajouter_Famille" />
+    <FunctionImportMapping FunctionImportName="Ajouter_Fournisseur" FunctionName="GestionComercialeModel2.Store.Ajouter_Fournisseur" />
+    <FunctionImportMapping FunctionImportName="Ajouter_Location" FunctionName="GestionComercialeModel2.Store.Ajouter_Location" />
+    <FunctionImportMapping FunctionImportName="Ajouter_ModeRG" FunctionName="GestionComercialeModel2.Store.Ajouter_ModeRG" />
+    <FunctionImportMapping FunctionImportName="Ajouter_Ouvrier" FunctionName="GestionComercialeModel2.Store.Ajouter_Ouvrier" />
+    <FunctionImportMapping FunctionImportName="Ajouter_Pointage" FunctionName="GestionComercialeModel2.Store.Ajouter_Pointage" />
+    <FunctionImportMapping FunctionImportName="Ajouter_Reglement" FunctionName="GestionComercialeModel2.Store.Ajouter_Reglement" />
+    <FunctionImportMapping FunctionImportName="Ajouter_Voiture" FunctionName="GestionComercialeModel2.Store.Ajouter_Voiture" />
+    <FunctionImportMapping FunctionImportName="Ajouter_week" FunctionName="GestionComercialeModel2.Store.Ajouter_week" />
+    <FunctionImportMapping FunctionImportName="Article_Fa" FunctionName="GestionComercialeModel2.Store.Article_Fa">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GestionComercialeModel2.Article_Fa_Result">
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="Prix_Unitaire" ColumnName="Prix Unitaire" />
+          <ScalarProperty Name="TVA" ColumnName="TVA" />
+          <ScalarProperty Name="num_fardeau" ColumnName="num_fardeau" />
+          <ScalarProperty Name="Famille" ColumnName="Famille" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Article_Non_Vendu" FunctionName="GestionComercialeModel2.Store.Article_Non_Vendu">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GestionComercialeModel2.Article_Non_Vendu_Result">
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="Prix_Unitaire" ColumnName="Prix Unitaire" />
+          <ScalarProperty Name="Nom_Famille" ColumnName="Nom Famille" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Article_Null_Qte" FunctionName="GestionComercialeModel2.Store.Article_Null_Qte">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GestionComercialeModel2.Article_Null_Qte_Result">
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="Prix_Unitaire" ColumnName="Prix Unitaire" />
+          <ScalarProperty Name="Nom_Famille" ColumnName="Nom Famille" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Chercher_Banque" FunctionName="GestionComercialeModel2.Store.Chercher_Banque">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GestionComercialeModel2.Chercher_Banque_Result">
+          <ScalarProperty Name="N_Banque" ColumnName="N°Banque" />
+          <ScalarProperty Name="Banque" ColumnName="Banque" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Chercher_Chantier" FunctionName="GestionComercialeModel2.Store.Chercher_Chantier">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GestionComercialeModel2.Chercher_Chantier_Result">
+          <ScalarProperty Name="Num" ColumnName="Num" />
+          <ScalarProperty Name="Cin" ColumnName="Cin" />
+          <ScalarProperty Name="Adresse" ColumnName="Adresse" />
+          <ScalarProperty Name="Budget" ColumnName="Budget" />
+          <ScalarProperty Name="dateDebut" ColumnName="dateDebut" />
+          <ScalarProperty Name="dateFin" ColumnName="dateFin" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Chercher_Charge" FunctionName="GestionComercialeModel2.Store.Chercher_Charge">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GestionComercialeModel2.Chercher_Charge_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nom" ColumnName="Nom" />
+          <ScalarProperty Name="DateCharge" ColumnName="DateCharge" />
+          <ScalarProperty Name="Montant" ColumnName="Montant" />
+          <ScalarProperty Name="Numch" ColumnName="Numch" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Chercher_collection" FunctionName="GestionComercialeModel2.Store.Chercher_collection">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GestionComercialeModel2.Chercher_collection_Result">
+          <ScalarProperty Name="NumCollection" ColumnName="NumCollection" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="TypeCollecion" ColumnName="TypeCollecion" />
+          <ScalarProperty Name="Nbcement" ColumnName="Nbcement" />
+          <ScalarProperty Name="NumWeek" ColumnName="NumWeek" />
+          <ScalarProperty Name="typeTobiya" ColumnName="typeTobiya" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Chercher_Famille" FunctionName="GestionComercialeModel2.Store.Chercher_Famille">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GestionComercialeModel2.Chercher_Famille_Result">
+          <ScalarProperty Name="N_Famille" ColumnName="N°Famille" />
+          <ScalarProperty Name="Nom_Famille" ColumnName="Nom Famille" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Chercher_Location" FunctionName="GestionComercialeModel2.Store.Chercher_Location">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GestionComercialeModel2.Chercher_Location_Result">
+          <ScalarProperty Name="NumLoc" ColumnName="NumLoc" />
+          <ScalarProperty Name="DateDebut" ColumnName="DateDebut" />
+          <ScalarProperty Name="DateFin" ColumnName="DateFin" />
+          <ScalarProperty Name="Matricule" ColumnName="Matricule" />
+          <ScalarProperty Name="Num_Clt" ColumnName="Num_Clt" />
+          <ScalarProperty Name="Unite" ColumnName="Unite" />
+          <ScalarProperty Name="prix" ColumnName="prix" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Chercher_Ouvrier" FunctionName="GestionComercialeModel2.Store.Chercher_Ouvrier">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GestionComercialeModel2.Chercher_Ouvrier_Result">
+          <ScalarProperty Name="Cin" ColumnName="Cin" />
+          <ScalarProperty Name="nom" ColumnName="nom" />
+          <ScalarProperty Name="prenom" ColumnName="prenom" />
+          <ScalarProperty Name="tele" ColumnName="tele" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Chercher_Pointage" FunctionName="GestionComercialeModel2.Store.Chercher_Pointage">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GestionComercialeModel2.Chercher_Pointage_Result">
+          <ScalarProperty Name="Nump" ColumnName="Nump" />
+          <ScalarProperty Name="Cin" ColumnName="Cin" />
+          <ScalarProperty Name="Avence" ColumnName="Avence" />
+          <ScalarProperty Name="NumCollection" ColumnName="NumCollection" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Chercher_Voiture" FunctionName="GestionComercialeModel2.Store.Chercher_Voiture">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GestionComercialeModel2.Chercher_Voiture_Result">
+          <ScalarProperty Name="matricule" ColumnName="matricule" />
+          <ScalarProperty Name="model" ColumnName="model" />
+          <ScalarProperty Name="type" ColumnName="type" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Chercher_week" FunctionName="GestionComercialeModel2.Store.Chercher_week">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GestionComercialeModel2.Chercher_week_Result">
+          <ScalarProperty Name="NumWeek" ColumnName="NumWeek" />
+          <ScalarProperty Name="DateDebut" ColumnName="DateDebut" />
+          <ScalarProperty Name="DateFin" ColumnName="DateFin" />
+          <ScalarProperty Name="Prix" ColumnName="Prix" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Chereher_Article" FunctionName="GestionComercialeModel2.Store.Chereher_Article">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GestionComercialeModel2.Chereher_Article_Result">
+          <ScalarProperty Name="Num_At" ColumnName="Num_At" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="Prix_Unitaire" ColumnName="Prix Unitaire" />
+          <ScalarProperty Name="Quantité_en_Stock" ColumnName="Quantité en Stock" />
+          <ScalarProperty Name="TVA" ColumnName="TVA" />
+          <ScalarProperty Name="num_fardeau" ColumnName="num_fardeau" />
+          <ScalarProperty Name="Famille" ColumnName="Famille" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Chereher_Client" FunctionName="GestionComercialeModel2.Store.Chereher_Client">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GestionComercialeModel2.Chereher_Client_Result">
+          <ScalarProperty Name="Num_Clt" ColumnName="Num_Clt" />
+          <ScalarProperty Name="Nom" ColumnName="Nom" />
+          <ScalarProperty Name="Ville" ColumnName="Ville" />
+          <ScalarProperty Name="Adresse" ColumnName="Adresse" />
+          <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Solde" ColumnName="Solde" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Chereher_CommandeAch" FunctionName="GestionComercialeModel2.Store.Chereher_CommandeAch">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GestionComercialeModel2.Chereher_CommandeAch_Result">
+          <ScalarProperty Name="N_Commande" ColumnName="N°Commande" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="N_Facture" ColumnName="N°Facture" />
+          <ScalarProperty Name="Fournisseure" ColumnName="Fournisseure" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Chereher_CommandeVente" FunctionName="GestionComercialeModel2.Store.Chereher_CommandeVente">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GestionComercialeModel2.Chereher_CommandeVente_Result">
+          <ScalarProperty Name="N_Commande" ColumnName="N°Commande" />
+          <ScalarProperty Name="Date_Vente" ColumnName="Date Vente" />
+          <ScalarProperty Name="Facture" ColumnName="Facture" />
+          <ScalarProperty Name="Client" ColumnName="Client" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Chereher_Facture" FunctionName="GestionComercialeModel2.Store.Chereher_Facture">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GestionComercialeModel2.Chereher_Facture_Result">
+          <ScalarProperty Name="N_Facture" ColumnName="N°Facture" />
+          <ScalarProperty Name="Date_Facture" ColumnName="Date Facture" />
+          <ScalarProperty Name="isGiven" ColumnName="isGiven" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Chereher_Fournisseur" FunctionName="GestionComercialeModel2.Store.Chereher_Fournisseur">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GestionComercialeModel2.Chereher_Fournisseur_Result">
+          <ScalarProperty Name="Num_Fr" ColumnName="Num_Fr" />
+          <ScalarProperty Name="Nom" ColumnName="Nom" />
+          <ScalarProperty Name="Ville" ColumnName="Ville" />
+          <ScalarProperty Name="Adresse" ColumnName="Adresse" />
+          <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Chereher_ModeRG" FunctionName="GestionComercialeModel2.Store.Chereher_ModeRG">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GestionComercialeModel2.Chereher_ModeRG_Result">
+          <ScalarProperty Name="Num_Mode_Reglemet" ColumnName="Num Mode Reglemet" />
+          <ScalarProperty Name="Modalite" ColumnName="Modalite" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Chereher_Reglement" FunctionName="GestionComercialeModel2.Store.Chereher_Reglement">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GestionComercialeModel2.Chereher_Reglement_Result">
+          <ScalarProperty Name="Num_Reglement" ColumnName="Num Reglement" />
+          <ScalarProperty Name="Montant" ColumnName="Montant" />
+          <ScalarProperty Name="Num_Cheque" ColumnName="Num Cheque" />
+          <ScalarProperty Name="Modalite" ColumnName="Modalite" />
+          <ScalarProperty Name="Banque" ColumnName="Banque" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Client_Fa" FunctionName="GestionComercialeModel2.Store.Client_Fa">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GestionComercialeModel2.Client_Fa_Result">
+          <ScalarProperty Name="Nom" ColumnName="Nom" />
+          <ScalarProperty Name="Adresse" ColumnName="Adresse" />
+          <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Client_fidele" FunctionName="GestionComercialeModel2.Store.Client_fidele">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GestionComercialeModel2.Client_fidele_Result">
+          <ScalarProperty Name="Nom" ColumnName="Nom" />
+          <ScalarProperty Name="Adresse" ColumnName="Adresse" />
+          <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ClientNonRegele" FunctionName="GestionComercialeModel2.Store.ClientNonRegele">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GestionComercialeModel2.ClientNonRegele_Result">
+          <ScalarProperty Name="NOM" ColumnName="NOM" />
+          <ScalarProperty Name="VILLE" ColumnName="VILLE" />
+          <ScalarProperty Name="Adresse" ColumnName="Adresse" />
+          <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Solde" ColumnName="Solde" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="CommandeNonFacturee" FunctionName="GestionComercialeModel2.Store.CommandeNonFacturee">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GestionComercialeModel2.CommandeNonFacturee_Result">
+          <ScalarProperty Name="N_Commande" ColumnName="N°Commande" />
+          <ScalarProperty Name="Date_Commande" ColumnName="Date Commande" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Delete_Chantier" FunctionName="GestionComercialeModel2.Store.Delete_Chantier" />
+    <FunctionImportMapping FunctionImportName="Delete_Charge" FunctionName="GestionComercialeModel2.Store.Delete_Charge" />
+    <FunctionImportMapping FunctionImportName="Delete_Collection" FunctionName="GestionComercialeModel2.Store.Delete_Collection" />
+    <FunctionImportMapping FunctionImportName="Delete_Location" FunctionName="GestionComercialeModel2.Store.Delete_Location" />
+    <FunctionImportMapping FunctionImportName="Delete_Ouvrier" FunctionName="GestionComercialeModel2.Store.Delete_Ouvrier" />
+    <FunctionImportMapping FunctionImportName="Delete_Pointage" FunctionName="GestionComercialeModel2.Store.Delete_Pointage" />
+    <FunctionImportMapping FunctionImportName="Delete_Voiture" FunctionName="GestionComercialeModel2.Store.Delete_Voiture" />
+    <FunctionImportMapping FunctionImportName="Delete_week" FunctionName="GestionComercialeModel2.Store.Delete_week" />
+    <FunctionImportMapping FunctionImportName="DetailCmd_Mois" FunctionName="GestionComercialeModel2.Store.DetailCmd_Mois">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GestionComercialeModel2.DetailCmd_Mois_Result">
+          <ScalarProperty Name="DATE" ColumnName="DATE" />
+          <ScalarProperty Name="FACT" ColumnName="FACT" />
+          <ScalarProperty Name="NOM_CLIENT" ColumnName="NOM CLIENT" />
+          <ScalarProperty Name="QTEE" ColumnName="QTEE" />
+          <ScalarProperty Name="num_fardeau" ColumnName="num_fardeau" />
+          <ScalarProperty Name="DESIGNATION" ColumnName="DESIGNATION" />
+          <ScalarProperty Name="PXU" ColumnName="PXU" />
+          <ScalarProperty Name="PX_T" ColumnName="PX T" />
+          <ScalarProperty Name="MODALITE" ColumnName="MODALITE" />
+          <ScalarProperty Name="BQ" ColumnName="BQ" />
+          <ScalarProperty Name="N_CHQ" ColumnName="N°CHQ" />
+          <ScalarProperty Name="TTC" ColumnName="TTC" />
+          <ScalarProperty Name="HT" ColumnName="HT" />
+          <ScalarProperty Name="TVA" ColumnName="TVA" />
+          <ScalarProperty Name="Remise" ColumnName="Remise" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Facture1" FunctionName="GestionComercialeModel2.Store.Facture1">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GestionComercialeModel2.Facture1_Result">
+          <ScalarProperty Name="QTE_Fardeau" ColumnName="QTE Fardeau" />
+          <ScalarProperty Name="DESIGNATION" ColumnName="DESIGNATION" />
+          <ScalarProperty Name="PRIX_U" ColumnName="PRIX U" />
+          <ScalarProperty Name="TOTAL" ColumnName="TOTAL" />
+          <ScalarProperty Name="Num_Facture" ColumnName="Num Facture" />
+          <ScalarProperty Name="Date_Facture" ColumnName="Date Facture" />
+          <ScalarProperty Name="Nom_Client" ColumnName="Nom Client" />
+          <ScalarProperty Name="Modalite" ColumnName="Modalite" />
+          <ScalarProperty Name="NomB" ColumnName="NomB" />
+          <ScalarProperty Name="NumChe" ColumnName="NumChe" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Facture2" FunctionName="GestionComercialeModel2.Store.Facture2">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GestionComercialeModel2.Facture2_Result">
+          <ScalarProperty Name="Qte" ColumnName="Qte" />
+          <ScalarProperty Name="C_Fardeau" ColumnName=" Fardeau" />
+          <ScalarProperty Name="DESIGNATION" ColumnName="DESIGNATION" />
+          <ScalarProperty Name="PRIX_U" ColumnName="PRIX U" />
+          <ScalarProperty Name="TOTAL" ColumnName="TOTAL" />
+          <ScalarProperty Name="Num_Facture" ColumnName="Num Facture" />
+          <ScalarProperty Name="Date_Facture" ColumnName="Date Facture" />
+          <ScalarProperty Name="Nom_Client" ColumnName="Nom Client" />
+          <ScalarProperty Name="Modalite" ColumnName="Modalite" />
+          <ScalarProperty Name="NomB" ColumnName="NomB" />
+          <ScalarProperty Name="NumChe" ColumnName="NumChe" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Facture3" FunctionName="GestionComercialeModel2.Store.Facture3">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GestionComercialeModel2.Facture3_Result">
+          <ScalarProperty Name="Qte" ColumnName="Qte" />
+          <ScalarProperty Name="Num_At" ColumnName="Num_At" />
+          <ScalarProperty Name="TVA" ColumnName="TVA" />
+          <ScalarProperty Name="num_fardeau" ColumnName="num_fardeau" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="unite" ColumnName="unite" />
+          <ScalarProperty Name="PrixV" ColumnName="PrixV" />
+          <ScalarProperty Name="Num_Fac" ColumnName="Num_Fac" />
+          <ScalarProperty Name="DateFac" ColumnName="DateFac" />
+          <ScalarProperty Name="NomC" ColumnName="NomC" />
+          <ScalarProperty Name="Modalite" ColumnName="Modalite" />
+          <ScalarProperty Name="NomB" ColumnName="NomB" />
+          <ScalarProperty Name="NumChe" ColumnName="NumChe" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="FactureAvecRemise" FunctionName="GestionComercialeModel2.Store.FactureAvecRemise">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GestionComercialeModel2.FactureAvecRemise_Result">
+          <ScalarProperty Name="QTE" ColumnName="QTE" />
+          <ScalarProperty Name="DESIGNATION" ColumnName="DESIGNATION" />
+          <ScalarProperty Name="PRIX_U" ColumnName="PRIX U" />
+          <ScalarProperty Name="TOTAL" ColumnName="TOTAL" />
+          <ScalarProperty Name="Num_Facture" ColumnName="Num Facture" />
+          <ScalarProperty Name="Date_Facture" ColumnName="Date Facture" />
+          <ScalarProperty Name="Nom_Client" ColumnName="Nom Client" />
+          <ScalarProperty Name="Modalite" ColumnName="Modalite" />
+          <ScalarProperty Name="NomB" ColumnName="NomB" />
+          <ScalarProperty Name="NumChe" ColumnName="NumChe" />
+          <ScalarProperty Name="Remise" ColumnName="Remise" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="FactureBDate" FunctionName="GestionComercialeModel2.Store.FactureBDate">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GestionComercialeModel2.FactureBDate_Result">
+          <ScalarProperty Name="Qte" ColumnName="Qte" />
+          <ScalarProperty Name="C_Fardeau" ColumnName=" Fardeau" />
+          <ScalarProperty Name="DESIGNATION" ColumnName="DESIGNATION" />
+          <ScalarProperty Name="PRIX_U" ColumnName="PRIX U" />
+          <ScalarProperty Name="TOTAL" ColumnName="TOTAL" />
+          <ScalarProperty Name="Num_Facture" ColumnName="Num Facture" />
+          <ScalarProperty Name="Date_Facture" ColumnName="Date Facture" />
+          <ScalarProperty Name="Nom_Client" ColumnName="Nom Client" />
+          <ScalarProperty Name="Modalite" ColumnName="Modalite" />
+          <ScalarProperty Name="NomB" ColumnName="NomB" />
+          <ScalarProperty Name="NumChe" ColumnName="NumChe" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="FactureClient" FunctionName="GestionComercialeModel2.Store.FactureClient">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GestionComercialeModel2.FactureClient_Result">
+          <ScalarProperty Name="num_fardeau" ColumnName="num_fardeau" />
+          <ScalarProperty Name="DESIGNATION" ColumnName="DESIGNATION" />
+          <ScalarProperty Name="PrixV" ColumnName="PrixV" />
+          <ScalarProperty Name="Qte" ColumnName="Qte" />
+          <ScalarProperty Name="Num_Fac" ColumnName="Num_Fac" />
+          <ScalarProperty Name="DateFac" ColumnName="DateFac" />
+          <ScalarProperty Name="NomC" ColumnName="NomC" />
+          <ScalarProperty Name="Modalite" ColumnName="Modalite" />
+          <ScalarProperty Name="NomB" ColumnName="NomB" />
+          <ScalarProperty Name="NumChe" ColumnName="NumChe" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="FacturesDetails" FunctionName="GestionComercialeModel2.Store.FacturesDetails">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GestionComercialeModel2.FacturesDetails_Result">
+          <ScalarProperty Name="DATE" ColumnName="DATE" />
+          <ScalarProperty Name="FACT" ColumnName="FACT" />
+          <ScalarProperty Name="NOM_CLIENT" ColumnName="NOM CLIENT" />
+          <ScalarProperty Name="QTEE" ColumnName="QTEE" />
+          <ScalarProperty Name="U" ColumnName="U" />
+          <ScalarProperty Name="DESIGNATION" ColumnName="DESIGNATION" />
+          <ScalarProperty Name="PXU" ColumnName="PXU" />
+          <ScalarProperty Name="PX_T" ColumnName="PX T" />
+          <ScalarProperty Name="MODALITE" ColumnName="MODALITE" />
+          <ScalarProperty Name="BQ" ColumnName="BQ" />
+          <ScalarProperty Name="N_CHQ" ColumnName="N°CHQ" />
+          <ScalarProperty Name="TTC" ColumnName="TTC" />
+          <ScalarProperty Name="HT" ColumnName="HT" />
+          <ScalarProperty Name="TVA" ColumnName="TVA" />
+          <ScalarProperty Name="Remise" ColumnName="Remise" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Famille_Fa" FunctionName="GestionComercialeModel2.Store.Famille_Fa" />
+    <FunctionImportMapping FunctionImportName="Fournisseur_Fa" FunctionName="GestionComercialeModel2.Store.Fournisseur_Fa">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GestionComercialeModel2.Fournisseur_Fa_Result">
+          <ScalarProperty Name="Nom" ColumnName="Nom" />
+          <ScalarProperty Name="Adresse" ColumnName="Adresse" />
+          <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Get_CmdV" FunctionName="GestionComercialeModel2.Store.Get_CmdV">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GestionComercialeModel2.Get_CmdV_Result">
+          <ScalarProperty Name="Num_CmdV" ColumnName="Num_CmdV" />
+          <ScalarProperty Name="Date_Commande" ColumnName="Date Commande" />
+          <ScalarProperty Name="Facturée" ColumnName="Facturée" />
+          <ScalarProperty Name="Nom_Client" ColumnName="Nom Client" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Get_CommandeAch" FunctionName="GestionComercialeModel2.Store.Get_CommandeAch">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GestionComercialeModel2.Get_CommandeAch_Result">
+          <ScalarProperty Name="Num_Cmd" ColumnName="Num_Cmd" />
+          <ScalarProperty Name="Date_Achat" ColumnName="Date Achat" />
+          <ScalarProperty Name="N_Facture_Achat" ColumnName="N°Facture Achat" />
+          <ScalarProperty Name="N_Fournisseure" ColumnName="N°Fournisseure" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Get_Fournisseur" FunctionName="GestionComercialeModel2.Store.Get_Fournisseur">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GestionComercialeModel2.Get_Fournisseur_Result">
+          <ScalarProperty Name="Num_Fr" ColumnName="Num_Fr" />
+          <ScalarProperty Name="NomF" ColumnName="NomF" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="get_NumCmdVente" FunctionName="GestionComercialeModel2.Store.get_NumCmdVente" />
+    <FunctionImportMapping FunctionImportName="GetArticle" FunctionName="GestionComercialeModel2.Store.GetArticle">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GestionComercialeModel2.GetArticle_Result">
+          <ScalarProperty Name="PU" ColumnName="PU" />
+          <ScalarProperty Name="num_fardeau" ColumnName="num_fardeau" />
+          <ScalarProperty Name="tva" ColumnName="tva" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetArticles" FunctionName="GestionComercialeModel2.Store.GetArticles">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GestionComercialeModel2.GetArticles_Result">
+          <ScalarProperty Name="Num_At" ColumnName="Num_At" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="TVA" ColumnName="TVA" />
+          <ScalarProperty Name="num_fardeau" ColumnName="num_fardeau" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetArticlesByCategory" FunctionName="GestionComercialeModel2.Store.GetArticlesByCategory">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GestionComercialeModel2.GetArticlesByCategory_Result">
+          <ScalarProperty Name="Num_At" ColumnName="Num_At" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetArticleStock" FunctionName="GestionComercialeModel2.Store.GetArticleStock">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GestionComercialeModel2.GetArticleStock_Result">
+          <ScalarProperty Name="DATE" ColumnName="DATE" />
+          <ScalarProperty Name="STOCK" ColumnName="STOCK" />
+          <ScalarProperty Name="QUANTITE_SORTI" ColumnName="QUANTITE SORTI" />
+          <ScalarProperty Name="MONTANT_SORTI" ColumnName="MONTANT SORTI" />
+          <ScalarProperty Name="QUANTITE_ENTRE" ColumnName="QUANTITE ENTRE" />
+          <ScalarProperty Name="MONTANT_ENTRE" ColumnName="MONTANT ENTRE" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetClientIDByCmd" FunctionName="GestionComercialeModel2.Store.GetClientIDByCmd" />
+    <FunctionImportMapping FunctionImportName="GetClientIDByReg" FunctionName="GestionComercialeModel2.Store.GetClientIDByReg" />
+    <FunctionImportMapping FunctionImportName="GetFactureByPk" FunctionName="GestionComercialeModel2.Store.GetFactureByPk">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GestionComercialeModel2.GetFactureByPk_Result">
+          <ScalarProperty Name="DateFac" ColumnName="DateFac" />
+          <ScalarProperty Name="Remise" ColumnName="Remise" />
+          <ScalarProperty Name="IsGiven" ColumnName="IsGiven" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetLastCmdID" FunctionName="GestionComercialeModel2.Store.GetLastCmdID" />
+    <FunctionImportMapping FunctionImportName="GetLastFacture" FunctionName="GestionComercialeModel2.Store.GetLastFacture" />
+    <FunctionImportMapping FunctionImportName="GetLastReglement" FunctionName="GestionComercialeModel2.Store.GetLastReglement" />
+    <FunctionImportMapping FunctionImportName="GetMontantByCommande" FunctionName="GestionComercialeModel2.Store.GetMontantByCommande" />
+    <FunctionImportMapping FunctionImportName="GetMontantByReg" FunctionName="GestionComercialeModel2.Store.GetMontantByReg" />
+    <FunctionImportMapping FunctionImportName="GetRegelementByPk" FunctionName="GestionComercialeModel2.Store.GetRegelementByPk">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GestionComercialeModel2.GetRegelementByPk_Result">
+          <ScalarProperty Name="Num_Reg" ColumnName="Num_Reg" />
+          <ScalarProperty Name="Montant" ColumnName="Montant" />
+          <ScalarProperty Name="NumChe" ColumnName="NumChe" />
+          <ScalarProperty Name="Modalite" ColumnName="Modalite" />
+          <ScalarProperty Name="NomB" ColumnName="NomB" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="IsFacturee" FunctionName="GestionComercialeModel2.Store.IsFacturee" />
+    <FunctionImportMapping FunctionImportName="login_user" FunctionName="GestionComercialeModel2.Store.login_user">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GestionComercialeModel2.login_user_Result">
+          <ScalarProperty Name="Id_user" ColumnName="Id_user" />
+          <ScalarProperty Name="User" ColumnName="User" />
+          <ScalarProperty Name="MP" ColumnName="MP" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Modifier_Article" FunctionName="GestionComercialeModel2.Store.Modifier_Article" />
+    <FunctionImportMapping FunctionImportName="Modifier_Banque" FunctionName="GestionComercialeModel2.Store.Modifier_Banque" />
+    <FunctionImportMapping FunctionImportName="Modifier_Client" FunctionName="GestionComercialeModel2.Store.Modifier_Client" />
+    <FunctionImportMapping FunctionImportName="Modifier_CommandeAch" FunctionName="GestionComercialeModel2.Store.Modifier_CommandeAch" />
+    <FunctionImportMapping FunctionImportName="Modifier_CommandeVente" FunctionName="GestionComercialeModel2.Store.Modifier_CommandeVente" />
+    <FunctionImportMapping FunctionImportName="Modifier_Facture" FunctionName="GestionComercialeModel2.Store.Modifier_Facture" />
+    <FunctionImportMapping FunctionImportName="Modifier_Famille" FunctionName="GestionComercialeModel2.Store.Modifier_Famille" />
+    <FunctionImportMapping FunctionImportName="Modifier_Fournisseur" FunctionName="GestionComercialeModel2.Store.Modifier_Fournisseur" />
+    <FunctionImportMapping FunctionImportName="Modifier_ModeRG" FunctionName="GestionComercialeModel2.Store.Modifier_ModeRG" />
+    <FunctionImportMapping FunctionImportName="Modifier_Reglement" FunctionName="GestionComercialeModel2.Store.Modifier_Reglement" />
+    <FunctionImportMapping FunctionImportName="SetCommandeFacturee" FunctionName="GestionComercialeModel2.Store.SetCommandeFacturee" />
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="GestionComercialeModel2.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="GestionComercialeModel2.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="GestionComercialeModel2.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="GestionComercialeModel2.Store.sp_helpdiagramdefinition" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="GestionComercialeModel2.Store.sp_helpdiagrams" />
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="GestionComercialeModel2.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="GestionComercialeModel2.Store.sp_upgraddiagrams" />
+    <FunctionImportMapping FunctionImportName="stock" FunctionName="GestionComercialeModel2.Store.stock">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GestionComercialeModel2.stock_Result">
+          <ScalarProperty Name="DateAch" ColumnName="DateAch" />
+          <ScalarProperty Name="QteS" ColumnName="QteS" />
+          <ScalarProperty Name="Column1" ColumnName="Column1" />
+          <ScalarProperty Name="PrixA" ColumnName="PrixA" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Supprimer_Article" FunctionName="GestionComercialeModel2.Store.Supprimer_Article" />
+    <FunctionImportMapping FunctionImportName="Supprimer_Banque" FunctionName="GestionComercialeModel2.Store.Supprimer_Banque" />
+    <FunctionImportMapping FunctionImportName="Supprimer_Client" FunctionName="GestionComercialeModel2.Store.Supprimer_Client" />
+    <FunctionImportMapping FunctionImportName="Supprimer_CmdA" FunctionName="GestionComercialeModel2.Store.Supprimer_CmdA" />
+    <FunctionImportMapping FunctionImportName="Supprimer_CmdV" FunctionName="GestionComercialeModel2.Store.Supprimer_CmdV" />
+    <FunctionImportMapping FunctionImportName="Supprimer_DetailAchat" FunctionName="GestionComercialeModel2.Store.Supprimer_DetailAchat" />
+    <FunctionImportMapping FunctionImportName="Supprimer_DetailVente" FunctionName="GestionComercialeModel2.Store.Supprimer_DetailVente" />
+    <FunctionImportMapping FunctionImportName="Supprimer_Facture" FunctionName="GestionComercialeModel2.Store.Supprimer_Facture" />
+    <FunctionImportMapping FunctionImportName="Supprimer_Famille" FunctionName="GestionComercialeModel2.Store.Supprimer_Famille" />
+    <FunctionImportMapping FunctionImportName="Supprimer_Fournisseur" FunctionName="GestionComercialeModel2.Store.Supprimer_Fournisseur" />
+    <FunctionImportMapping FunctionImportName="Supprimer_ModReg" FunctionName="GestionComercialeModel2.Store.Supprimer_ModReg" />
+    <FunctionImportMapping FunctionImportName="Supprimer_Reglement" FunctionName="GestionComercialeModel2.Store.Supprimer_Reglement" />
+    <FunctionImportMapping FunctionImportName="Update_Chantier" FunctionName="GestionComercialeModel2.Store.Update_Chantier" />
+    <FunctionImportMapping FunctionImportName="Update_Charge" FunctionName="GestionComercialeModel2.Store.Update_Charge" />
+    <FunctionImportMapping FunctionImportName="Update_Collection" FunctionName="GestionComercialeModel2.Store.Update_Collection" />
+    <FunctionImportMapping FunctionImportName="Update_DetailsCmdAchat" FunctionName="GestionComercialeModel2.Store.Update_DetailsCmdAchat" />
+    <FunctionImportMapping FunctionImportName="Update_DetailsCmdAchatV2" FunctionName="GestionComercialeModel2.Store.Update_DetailsCmdAchatV2" />
+    <FunctionImportMapping FunctionImportName="Update_DetailsCmdVente" FunctionName="GestionComercialeModel2.Store.Update_DetailsCmdVente" />
+    <FunctionImportMapping FunctionImportName="Update_DetailsCmdVenteV2" FunctionName="GestionComercialeModel2.Store.Update_DetailsCmdVenteV2" />
+    <FunctionImportMapping FunctionImportName="Update_Ouvrier" FunctionName="GestionComercialeModel2.Store.Update_Ouvrier" />
+    <FunctionImportMapping FunctionImportName="Update_Pointage" FunctionName="GestionComercialeModel2.Store.Update_Pointage" />
+    <FunctionImportMapping FunctionImportName="Update_Voiture" FunctionName="GestionComercialeModel2.Store.Update_Voiture" />
+    <FunctionImportMapping FunctionImportName="Update_week" FunctionName="GestionComercialeModel2.Store.Update_week" />
+    <FunctionImportMapping FunctionImportName="UpdateIsFacturee" FunctionName="GestionComercialeModel2.Store.UpdateIsFacturee" />
+    <FunctionImportMapping FunctionImportName="UpdateMontantByReg" FunctionName="GestionComercialeModel2.Store.UpdateMontantByReg" />
+    <FunctionImportMapping FunctionImportName="Vent_Fa" FunctionName="GestionComercialeModel2.Store.Vent_Fa">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GestionComercialeModel2.Vent_Fa_Result">
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="Qantité" ColumnName="Qantité" />
+          <ScalarProperty Name="Prix_Vente" ColumnName="Prix Vente" />
+          <ScalarProperty Name="num_fardeau" ColumnName="num_fardeau" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Update_Location" FunctionName="GestionComercialeModel2.Store.Update_Location" />
+    <FunctionImportMapping FunctionImportName="GetCmdVById" FunctionName="GestionComercialeModel2.Store.GetCmdVById">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GestionComercialeModel2.GetCmdVById_Result">
+          <ScalarProperty Name="Num_CmdV" ColumnName="Num_CmdV" />
+          <ScalarProperty Name="DateCmd" ColumnName="DateCmd" />
+          <ScalarProperty Name="IsFacture" ColumnName="IsFacture" />
+          <ScalarProperty Name="Num_Clt" ColumnName="Num_Clt" />
+          <ScalarProperty Name="Num_CmdV1" ColumnName="Num_CmdV1" />
+          <ScalarProperty Name="Num_At" ColumnName="Num_At" />
+          <ScalarProperty Name="Qte" ColumnName="Qte" />
+          <ScalarProperty Name="Remise" ColumnName="Remise" />
+          <ScalarProperty Name="PrixV" ColumnName="PrixV" />
+          <ScalarProperty Name="TVA" ColumnName="TVA" />
+          <ScalarProperty Name="Num_Clt1" ColumnName="Num_Clt1" />
+          <ScalarProperty Name="NomC" ColumnName="NomC" />
+          <ScalarProperty Name="Ville" ColumnName="Ville" />
+          <ScalarProperty Name="Adresse" ColumnName="Adresse" />
+          <ScalarProperty Name="Tele" ColumnName="Tele" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Solde" ColumnName="Solde" />
+          <ScalarProperty Name="ICE" ColumnName="ICE" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetCmdVById2" FunctionName="GestionComercialeModel2.Store.GetCmdVById2">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GestionComercialeModel2.GetCmdVById2_Result">
+          <ScalarProperty Name="Num_CmdV" ColumnName="Num_CmdV" />
+          <ScalarProperty Name="Num_At" ColumnName="Num_At" />
+          <ScalarProperty Name="Qte" ColumnName="Qte" />
+          <ScalarProperty Name="Remise" ColumnName="Remise" />
+          <ScalarProperty Name="PrixV" ColumnName="PrixV" />
+          <ScalarProperty Name="TVA" ColumnName="TVA" />
+          <ScalarProperty Name="Num_Clt" ColumnName="Num_Clt" />
+          <ScalarProperty Name="DateCmd" ColumnName="DateCmd" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="NomC" ColumnName="NomC" />
+          <ScalarProperty Name="unite" ColumnName="unite" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="aff_ouvrier" FunctionName="GestionComercialeModel2.Store.aff_ouvrier">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GestionComercialeModel2.aff_ouvrier_Result">
+          <ScalarProperty Name="Cin" ColumnName="Cin" />
+          <ScalarProperty Name="nom" ColumnName="nom" />
+          <ScalarProperty Name="prenom" ColumnName="prenom" />
+          <ScalarProperty Name="tele" ColumnName="tele" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="aff_Chantier" FunctionName="GestionComercialeModel2.Store.aff_Chantier">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GestionComercialeModel2.aff_Chantier_Result">
+          <ScalarProperty Name="Num" ColumnName="Num" />
+          <ScalarProperty Name="Cin" ColumnName="Cin" />
+          <ScalarProperty Name="Adresse" ColumnName="Adresse" />
+          <ScalarProperty Name="Budget" ColumnName="Budget" />
+          <ScalarProperty Name="dateDebut" ColumnName="dateDebut" />
+          <ScalarProperty Name="dateFin" ColumnName="dateFin" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="aff_Location" FunctionName="GestionComercialeModel2.Store.aff_Location">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GestionComercialeModel2.aff_Location_Result">
+          <ScalarProperty Name="NumLoc" ColumnName="NumLoc" />
+          <ScalarProperty Name="DateDebut" ColumnName="DateDebut" />
+          <ScalarProperty Name="DateFin" ColumnName="DateFin" />
+          <ScalarProperty Name="Matricule" ColumnName="Matricule" />
+          <ScalarProperty Name="Num_Clt" ColumnName="Num_Clt" />
+          <ScalarProperty Name="Unite" ColumnName="Unite" />
+          <ScalarProperty Name="Montant" ColumnName="Montant" />
+          <ScalarProperty Name="Montant_paye" ColumnName="Montant_paye" />
+          <ScalarProperty Name="reste" ColumnName="reste" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="aff_Pointage" FunctionName="GestionComercialeModel2.Store.aff_Pointage">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GestionComercialeModel2.aff_Pointage_Result">
+          <ScalarProperty Name="Nump" ColumnName="Nump" />
+          <ScalarProperty Name="Cin" ColumnName="Cin" />
+          <ScalarProperty Name="Avence" ColumnName="Avence" />
+          <ScalarProperty Name="NumCollection" ColumnName="NumCollection" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="aff_Vehicule" FunctionName="GestionComercialeModel2.Store.aff_Vehicule">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GestionComercialeModel2.aff_Vehicule_Result">
+          <ScalarProperty Name="matricule" ColumnName="matricule" />
+          <ScalarProperty Name="model" ColumnName="model" />
+          <ScalarProperty Name="type" ColumnName="type" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="aff_Week" FunctionName="GestionComercialeModel2.Store.aff_Week">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GestionComercialeModel2.aff_Week_Result">
+          <ScalarProperty Name="NumWeek" ColumnName="NumWeek" />
+          <ScalarProperty Name="DateDebut" ColumnName="DateDebut" />
+          <ScalarProperty Name="DateFin" ColumnName="DateFin" />
+          <ScalarProperty Name="Prix" ColumnName="Prix" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="aff_Charge" FunctionName="GestionComercialeModel2.Store.aff_Charge">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GestionComercialeModel2.aff_Charge_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nom" ColumnName="Nom" />
+          <ScalarProperty Name="DateCharge" ColumnName="DateCharge" />
+          <ScalarProperty Name="Montant" ColumnName="Montant" />
+          <ScalarProperty Name="Numch" ColumnName="Numch" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Chercher_Locatione" FunctionName="GestionComercialeModel2.Store.Chercher_Locatione">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GestionComercialeModel2.Chercher_Locatione_Result">
+          <ScalarProperty Name="NumLoc" ColumnName="NumLoc" />
+          <ScalarProperty Name="DateDebut" ColumnName="DateDebut" />
+          <ScalarProperty Name="DateFin" ColumnName="DateFin" />
+          <ScalarProperty Name="Matricule" ColumnName="Matricule" />
+          <ScalarProperty Name="Num_Clt" ColumnName="Num_Clt" />
+          <ScalarProperty Name="Unite" ColumnName="Unite" />
+          <ScalarProperty Name="Montant" ColumnName="Montant" />
+          <ScalarProperty Name="Montant_paye" ColumnName="Montant_paye" />
+          <ScalarProperty Name="reste" ColumnName="reste" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Ajouter_Config" FunctionName="GestionComercialeModel2.Store.Ajouter_Config" />
+    <FunctionImportMapping FunctionImportName="Delete_Config" FunctionName="GestionComercialeModel2.Store.Delete_Config" />
+    <FunctionImportMapping FunctionImportName="Upadate_Config" FunctionName="GestionComercialeModel2.Store.Upadate_Config" />
+    <FunctionImportMapping FunctionImportName="print_Fac" FunctionName="GestionComercialeModel2.Store.print_Fac">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GestionComercialeModel2.print_Fac_Result">
+          <ScalarProperty Name="Qte" ColumnName="Qte" />
+          <ScalarProperty Name="Num_At" ColumnName="Num_At" />
+          <ScalarProperty Name="TVA" ColumnName="TVA" />
+          <ScalarProperty Name="num_fardeau" ColumnName="num_fardeau" />
+          <ScalarProperty Name="Client_ICE" ColumnName="Client_ICE" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="unite" ColumnName="unite" />
+          <ScalarProperty Name="PrixV" ColumnName="PrixV" />
+          <ScalarProperty Name="Num_Fac" ColumnName="Num_Fac" />
+          <ScalarProperty Name="DateFac" ColumnName="DateFac" />
+          <ScalarProperty Name="NomC" ColumnName="NomC" />
+          <ScalarProperty Name="Modalite" ColumnName="Modalite" />
+          <ScalarProperty Name="NomB" ColumnName="NomB" />
+          <ScalarProperty Name="NumChe" ColumnName="NumChe" />
+          <ScalarProperty Name="NonSo" ColumnName="NonSo" />
+          <ScalarProperty Name="Domaine" ColumnName="Domaine" />
+          <ScalarProperty Name="logo" ColumnName="logo" />
+          <ScalarProperty Name="Adresse" ColumnName="Adresse" />
+          <ScalarProperty Name="Tele" ColumnName="Tele" />
+          <ScalarProperty Name="RC" ColumnName="RC" />
+          <ScalarProperty Name="Patente" ColumnName="Patente" />
+          <ScalarProperty Name="IFF" ColumnName="IFF" />
+          <ScalarProperty Name="CNSS" ColumnName="CNSS" />
+          <ScalarProperty Name="ICE" ColumnName="ICE" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="Fichier">
+      <EntityTypeMapping TypeName="GestionComercialeModel2.Fichier">
+        <MappingFragment StoreEntitySet="Fichier">
+          <ScalarProperty Name="num_CommandeAch" ColumnName="num_CommandeAch" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="idFichier" ColumnName="idFichier" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="Ajouter_Fichier" FunctionName="GestionComercialeModel2.Store.Ajouter_Fichier" />
+    <FunctionImportMapping FunctionImportName="Delete_Fichier" FunctionName="GestionComercialeModel2.Store.Delete_Fichier" />
+    <FunctionImportMapping FunctionImportName="Update_Fichier" FunctionName="GestionComercialeModel2.Store.Update_Fichier" />
+    <FunctionImportMapping FunctionImportName="Afficher_Fichier" FunctionName="GestionComercialeModel2.Store.Afficher_Fichier">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GestionComercialeModel2.Afficher_Fichier_Result">
+          <ScalarProperty Name="idFichier" ColumnName="idFichier" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="num_CommandeAch" ColumnName="num_CommandeAch" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="chercher_Fichier" FunctionName="GestionComercialeModel2.Store.chercher_Fichier">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GestionComercialeModel2.chercher_Fichier_Result">
+          <ScalarProperty Name="idFichier" ColumnName="idFichier" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="num_CommandeAch" ColumnName="num_CommandeAch" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="afficher_Collection" FunctionName="GestionComercialeModel2.Store.afficher_Collection">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GestionComercialeModel2.afficher_Collection_Result">
+          <ScalarProperty Name="NumCollection" ColumnName="NumCollection" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="TypeCollecion" ColumnName="TypeCollecion" />
+          <ScalarProperty Name="Nbcement" ColumnName="Nbcement" />
+          <ScalarProperty Name="NumWeek" ColumnName="NumWeek" />
+          <ScalarProperty Name="typeTobiya" ColumnName="typeTobiya" />
+          <ScalarProperty Name="Nb_Collection" ColumnName="Nb_Collection" />
+          <ScalarProperty Name="Prix" ColumnName="Prix" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="poitage">
+      <EntityTypeMapping TypeName="GestionComercialeModel2.poitage">
+        <MappingFragment StoreEntitySet="poitage">
+          <ScalarProperty Name="NumCollection" ColumnName="NumCollection" />
+          <ScalarProperty Name="Avence" ColumnName="Avence" />
+          <ScalarProperty Name="Cin" ColumnName="Cin" />
+          <ScalarProperty Name="Nump" ColumnName="Nump" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

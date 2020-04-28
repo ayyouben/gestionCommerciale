@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="4e16f07b40764b449384e1527aa3114c" Name="Diagram1">
+        <EntityTypeShape EntityType="GestionComercialeModel.ArchiveStock" Width="1.5" PointX="8.25" PointY="17.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionComercialeModel.Article" Width="1.5" PointX="6" PointY="17.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionComercialeModel.Banque" Width="1.5" PointX="0.75" PointY="20.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionComercialeModel.Chantier" Width="1.5" PointX="3" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionComercialeModel.Charge" Width="1.5" PointX="5.25" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionComercialeModel.Client" Width="1.5" PointX="0.75" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionComercialeModel.Collection" Width="1.5" PointX="13" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionComercialeModel.CommandeAch" Width="1.5" PointX="10" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionComercialeModel.CommandeVente" Width="1.5" PointX="3" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionComercialeModel.config" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionComercialeModel.DetailAchat" Width="1.5" PointX="12.25" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionComercialeModel.DetailFac" Width="1.5" PointX="5.25" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionComercialeModel.DetailReg" Width="1.5" PointX="5.25" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionComercialeModel.DetailVente" Width="1.5" PointX="8.25" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionComercialeModel.Facture" Width="1.5" PointX="3" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionComercialeModel.Famille" Width="1.5" PointX="3.75" PointY="18" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionComercialeModel.Fichier" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionComercialeModel.Fournisseur" Width="1.5" PointX="7.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionComercialeModel.Location" Width="1.5" PointX="8" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionComercialeModel.ModeRG" Width="1.5" PointX="0.75" PointY="23.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionComercialeModel.Ouvrier" Width="1.5" PointX="12.75" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionComercialeModel.poitage" Width="1.5" PointX="15" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionComercialeModel.Reglement" Width="1.5" PointX="3" PointY="21.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionComercialeModel.sysdiagrams" Width="1.5" PointX="10.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionComercialeModel.Utilisateur" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionComercialeModel.Voiture" Width="1.5" PointX="5.75" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionComercialeModel.Week" Width="1.5" PointX="10.75" PointY="5.375" IsExpanded="true" />
+        <AssociationConnector Association="GestionComercialeModel.FK__ArchiveSt__NumAr__182C9B23" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionComercialeModel.FK__Article__Num_Fa__15502E78" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionComercialeModel.FK__DetailAch__Num_A__239E4DCF" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionComercialeModel.FK__DetailVen__Num_A__2B3F6F97" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionComercialeModel.FK__Reglement__Num_B__38996AB5" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionComercialeModel.FK__Chantier__Num_Cl__1D9B5BB6" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionComercialeModel.FK__Charge__Numch__24E777C3" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionComercialeModel.FK__CommandeV__Num_C__276EDEB3" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionComercialeModel.FK__Location__Num_Cl__15A53433" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionComercialeModel.FK__Collectio__NumWe__73DA2C14" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionComercialeModel.FK__CommandeA__Num_F__20C1E124" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionComercialeModel.FK__DetailAch__Num_C__24927208" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionComercialeModel.FK__DetailFac__Num_C__32E0915F" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionComercialeModel.FK__DetailReg__Num_C__756D6ECB" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionComercialeModel.FK__DetailVen__Num_C__2A4B4B5E" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionComercialeModel.FK__DetailFac__Num_F__31EC6D26" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionComercialeModel.FK__DetailReg__Num_R__74794A92" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionComercialeModel.FK__Location__Matric__14B10FFA" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionComercialeModel.FK__Reglement__Num_M__37A5467C" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionComercialeModel.FK__poitage__Cin__76B698BF" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

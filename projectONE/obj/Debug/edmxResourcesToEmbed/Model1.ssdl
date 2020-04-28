@@ -1,0 +1,1310 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="GestionComercialeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ArchiveStock">
+    <Key>
+      <PropertyRef Name="NumArch" />
+    </Key>
+    <Property Name="NumArch" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DateArch" Type="date" Nullable="false" />
+    <Property Name="NumArt" Type="nvarchar" MaxLength="200" />
+    <Property Name="Stock" Type="decimal" Precision="12" Scale="2" />
+    <Property Name="QteS" Type="decimal" Precision="12" Scale="2" />
+    <Property Name="MontantS" Type="decimal" Precision="12" Scale="2" />
+    <Property Name="QteE" Type="decimal" Precision="12" Scale="2" />
+    <Property Name="MontantE" Type="decimal" Precision="12" Scale="2" />
+  </EntityType>
+  <EntityType Name="Article">
+    <Key>
+      <PropertyRef Name="Num_At" />
+    </Key>
+    <Property Name="Num_At" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="Designation" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="PU" Type="float" Nullable="false" />
+    <Property Name="QteS" Type="float" Nullable="false" />
+    <Property Name="TVA" Type="int" Nullable="false" />
+    <Property Name="num_fardeau" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Num_Fa" Type="int" />
+    <Property Name="unite" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Banque">
+    <Key>
+      <PropertyRef Name="Num_Bq" />
+    </Key>
+    <Property Name="Num_Bq" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NomB" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Chantier">
+    <Key>
+      <PropertyRef Name="Num" />
+    </Key>
+    <Property Name="Num" Type="int" Nullable="false" />
+    <Property Name="Adresse" Type="nvarchar" MaxLength="50" />
+    <Property Name="Budget" Type="float" />
+    <Property Name="dateDebut" Type="date" />
+    <Property Name="dateFin" Type="date" />
+    <Property Name="Num_Clt" Type="int" />
+  </EntityType>
+  <EntityType Name="Charge">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Nom" Type="nvarchar" MaxLength="20" />
+    <Property Name="DateCharge" Type="nvarchar" MaxLength="20" />
+    <Property Name="Montant" Type="float" />
+    <Property Name="Numch" Type="int" />
+  </EntityType>
+  <EntityType Name="Client">
+    <Key>
+      <PropertyRef Name="Num_Clt" />
+    </Key>
+    <Property Name="Num_Clt" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NomC" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Ville" Type="varchar" MaxLength="50" />
+    <Property Name="Adresse" Type="varchar" MaxLength="50" />
+    <Property Name="Tele" Type="varchar" MaxLength="15" />
+    <Property Name="Email" Type="varchar" MaxLength="50" />
+    <Property Name="Solde" Type="float" />
+    <Property Name="ICE" Type="varchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="Collection">
+    <Key>
+      <PropertyRef Name="NumCollection" />
+    </Key>
+    <Property Name="NumCollection" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Date" Type="date" />
+    <Property Name="Nombre" Type="int" />
+    <Property Name="Nbcement" Type="int" />
+    <Property Name="NumWeek" Type="int" />
+    <Property Name="typeTobiya" Type="nvarchar" MaxLength="50" />
+    <Property Name="Nb_Collection" Type="int" />
+    <Property Name="Prix" Type="float" />
+  </EntityType>
+  <EntityType Name="CommandeAch">
+    <Key>
+      <PropertyRef Name="Num_Cmd" />
+    </Key>
+    <Property Name="Num_Cmd" Type="int" Nullable="false" />
+    <Property Name="DateAch" Type="datetime" Nullable="false" />
+    <Property Name="IDFActureA" Type="varchar" MaxLength="20" />
+    <Property Name="Num_Fr" Type="int" />
+  </EntityType>
+  <EntityType Name="CommandeVente">
+    <Key>
+      <PropertyRef Name="Num_CmdV" />
+    </Key>
+    <Property Name="Num_CmdV" Type="int" Nullable="false" />
+    <Property Name="DateCmd" Type="date" Nullable="false" />
+    <Property Name="IsFacture" Type="bit" Nullable="false" />
+    <Property Name="Num_Clt" Type="int" />
+  </EntityType>
+  <EntityType Name="config">
+    <Key>
+      <PropertyRef Name="NonSo" />
+    </Key>
+    <Property Name="NonSo" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="Domaine" Type="varchar" MaxLength="200" />
+    <Property Name="logo" Type="image" />
+    <Property Name="Adresse" Type="varchar" MaxLength="250" />
+    <Property Name="Tele" Type="varchar" MaxLength="20" />
+    <Property Name="RC" Type="varchar" MaxLength="10" />
+    <Property Name="Patente" Type="varchar" MaxLength="20" />
+    <Property Name="IFF" Type="varchar" MaxLength="20" />
+    <Property Name="CNSS" Type="varchar" MaxLength="20" />
+    <Property Name="ICE" Type="varchar" MaxLength="40" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="Fax" Type="nvarchar" MaxLength="20" />
+    <Property Name="Site" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="DetailAchat">
+    <Key>
+      <PropertyRef Name="Num_At" />
+      <PropertyRef Name="Num_Cmd" />
+    </Key>
+    <Property Name="Num_At" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="Num_Cmd" Type="int" Nullable="false" />
+    <Property Name="Qte" Type="float" Nullable="false" />
+    <Property Name="PrixA" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DetailFac">
+    <Key>
+      <PropertyRef Name="IDCmdFact" />
+    </Key>
+    <Property Name="Num_Fac" Type="int" />
+    <Property Name="Num_CmdV" Type="int" />
+    <Property Name="IDCmdFact" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DetailReg">
+    <Key>
+      <PropertyRef Name="IDCmdReg" />
+    </Key>
+    <Property Name="IDCmdReg" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Num_Reg" Type="int" />
+    <Property Name="Num_CmdV" Type="int" />
+  </EntityType>
+  <EntityType Name="DetailVente">
+    <Key>
+      <PropertyRef Name="Num_CmdV" />
+      <PropertyRef Name="Num_At" />
+    </Key>
+    <Property Name="Num_CmdV" Type="int" Nullable="false" />
+    <Property Name="Num_At" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="Qte" Type="float" Nullable="false" />
+    <Property Name="Remise" Type="float" Nullable="false" />
+    <Property Name="PrixV" Type="float" Nullable="false" />
+    <Property Name="TVA" Type="int" />
+  </EntityType>
+  <EntityType Name="Facture">
+    <Key>
+      <PropertyRef Name="Num_Fac" />
+    </Key>
+    <Property Name="Num_Fac" Type="int" Nullable="false" />
+    <Property Name="DateFac" Type="date" Nullable="false" />
+    <Property Name="Remise" Type="float" />
+    <Property Name="IsGiven" Type="bit" />
+    <Property Name="TVA" Type="float" />
+  </EntityType>
+  <EntityType Name="Famille">
+    <Key>
+      <PropertyRef Name="Num_Fa" />
+    </Key>
+    <Property Name="Num_Fa" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NomFa" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Fichier">
+    <Key>
+      <PropertyRef Name="idFichier" />
+    </Key>
+    <Property Name="idFichier" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="250" />
+    <Property Name="FileName" Type="nvarchar" MaxLength="500" />
+    <Property Name="num_CommandeAch" Type="int" />
+  </EntityType>
+  <EntityType Name="Fournisseur">
+    <Key>
+      <PropertyRef Name="Num_Fr" />
+    </Key>
+    <Property Name="Num_Fr" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NomF" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Ville" Type="varchar" MaxLength="50" />
+    <Property Name="Adresse" Type="varchar" MaxLength="50" />
+    <Property Name="Tele" Type="varchar" MaxLength="15" />
+    <Property Name="Email" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Location">
+    <Key>
+      <PropertyRef Name="NumLoc" />
+    </Key>
+    <Property Name="NumLoc" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DateDebut" Type="date" />
+    <Property Name="DateFin" Type="date" />
+    <Property Name="Matricule" Type="nvarchar" MaxLength="20" />
+    <Property Name="Num_Clt" Type="int" />
+    <Property Name="Unite" Type="nvarchar" MaxLength="10" />
+    <Property Name="Montant" Type="float" />
+    <Property Name="Montant_paye" Type="float" />
+    <Property Name="reste" Type="float" />
+  </EntityType>
+  <EntityType Name="ModeRG">
+    <Key>
+      <PropertyRef Name="Num_ModeReg" />
+    </Key>
+    <Property Name="Num_ModeReg" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Modalite" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Ouvrier">
+    <Key>
+      <PropertyRef Name="Cin" />
+    </Key>
+    <Property Name="Cin" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="nom" Type="nvarchar" MaxLength="20" />
+    <Property Name="prenom" Type="nvarchar" MaxLength="20" />
+    <Property Name="tele" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="poitage">
+    <Key>
+      <PropertyRef Name="Nump" />
+    </Key>
+    <Property Name="Nump" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Cin" Type="nvarchar" MaxLength="20" />
+    <Property Name="Avence" Type="float" />
+    <Property Name="NumCollection" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Reglement">
+    <Key>
+      <PropertyRef Name="Num_Reg" />
+    </Key>
+    <Property Name="Num_Reg" Type="int" Nullable="false" />
+    <Property Name="Montant" Type="float" Nullable="false" />
+    <Property Name="NumChe" Type="varchar" MaxLength="50" />
+    <Property Name="Num_ModeReg" Type="int" />
+    <Property Name="Num_Bq" Type="int" />
+    <Property Name="montantDepose" Type="float" />
+    <Property Name="reste" Type="float" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Utilisateur">
+    <Key>
+      <PropertyRef Name="Id_user" />
+    </Key>
+    <Property Name="Id_user" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="User" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="MP" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Voiture">
+    <Key>
+      <PropertyRef Name="matricule" />
+    </Key>
+    <Property Name="matricule" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="model" Type="nvarchar" MaxLength="20" />
+    <Property Name="type" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Week">
+    <Key>
+      <PropertyRef Name="NumWeek" />
+    </Key>
+    <Property Name="NumWeek" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DateDebut" Type="date" />
+    <Property Name="DateFin" Type="date" />
+    <Property Name="Prix" Type="float" />
+  </EntityType>
+  <Association Name="FK__ArchiveSt__NumAr__182C9B23">
+    <End Role="Article" Type="Self.Article" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ArchiveStock" Type="Self.ArchiveStock" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Article">
+        <PropertyRef Name="Num_At" />
+      </Principal>
+      <Dependent Role="ArchiveStock">
+        <PropertyRef Name="NumArt" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Article__Num_Fa__15502E78">
+    <End Role="Famille" Type="Self.Famille" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Article" Type="Self.Article" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Famille">
+        <PropertyRef Name="Num_Fa" />
+      </Principal>
+      <Dependent Role="Article">
+        <PropertyRef Name="Num_Fa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Chantier__Num_Cl__1D9B5BB6">
+    <End Role="Client" Type="Self.Client" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Chantier" Type="Self.Chantier" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Client">
+        <PropertyRef Name="Num_Clt" />
+      </Principal>
+      <Dependent Role="Chantier">
+        <PropertyRef Name="Num_Clt" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Charge__Numch__24E777C3">
+    <End Role="Chantier" Type="Self.Chantier" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Charge" Type="Self.Charge" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Chantier">
+        <PropertyRef Name="Num" />
+      </Principal>
+      <Dependent Role="Charge">
+        <PropertyRef Name="Numch" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Collectio__NumWe__73DA2C14">
+    <End Role="Week" Type="Self.Week" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Collection" Type="Self.Collection" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Week">
+        <PropertyRef Name="NumWeek" />
+      </Principal>
+      <Dependent Role="Collection">
+        <PropertyRef Name="NumWeek" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__CommandeA__Num_F__20C1E124">
+    <End Role="Fournisseur" Type="Self.Fournisseur" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="CommandeAch" Type="Self.CommandeAch" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Fournisseur">
+        <PropertyRef Name="Num_Fr" />
+      </Principal>
+      <Dependent Role="CommandeAch">
+        <PropertyRef Name="Num_Fr" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__CommandeV__Num_C__276EDEB3">
+    <End Role="Client" Type="Self.Client" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="CommandeVente" Type="Self.CommandeVente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Client">
+        <PropertyRef Name="Num_Clt" />
+      </Principal>
+      <Dependent Role="CommandeVente">
+        <PropertyRef Name="Num_Clt" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__DetailAch__Num_A__239E4DCF">
+    <End Role="Article" Type="Self.Article" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="DetailAchat" Type="Self.DetailAchat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Article">
+        <PropertyRef Name="Num_At" />
+      </Principal>
+      <Dependent Role="DetailAchat">
+        <PropertyRef Name="Num_At" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__DetailAch__Num_C__24927208">
+    <End Role="CommandeAch" Type="Self.CommandeAch" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="DetailAchat" Type="Self.DetailAchat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CommandeAch">
+        <PropertyRef Name="Num_Cmd" />
+      </Principal>
+      <Dependent Role="DetailAchat">
+        <PropertyRef Name="Num_Cmd" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__DetailFac__Num_C__32E0915F">
+    <End Role="CommandeVente" Type="Self.CommandeVente" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="DetailFac" Type="Self.DetailFac" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CommandeVente">
+        <PropertyRef Name="Num_CmdV" />
+      </Principal>
+      <Dependent Role="DetailFac">
+        <PropertyRef Name="Num_CmdV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__DetailFac__Num_F__31EC6D26">
+    <End Role="Facture" Type="Self.Facture" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="DetailFac" Type="Self.DetailFac" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Facture">
+        <PropertyRef Name="Num_Fac" />
+      </Principal>
+      <Dependent Role="DetailFac">
+        <PropertyRef Name="Num_Fac" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__DetailReg__Num_C__756D6ECB">
+    <End Role="CommandeVente" Type="Self.CommandeVente" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="DetailReg" Type="Self.DetailReg" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CommandeVente">
+        <PropertyRef Name="Num_CmdV" />
+      </Principal>
+      <Dependent Role="DetailReg">
+        <PropertyRef Name="Num_CmdV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__DetailReg__Num_R__74794A92">
+    <End Role="Reglement" Type="Self.Reglement" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="DetailReg" Type="Self.DetailReg" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Reglement">
+        <PropertyRef Name="Num_Reg" />
+      </Principal>
+      <Dependent Role="DetailReg">
+        <PropertyRef Name="Num_Reg" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__DetailVen__Num_A__2B3F6F97">
+    <End Role="Article" Type="Self.Article" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="DetailVente" Type="Self.DetailVente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Article">
+        <PropertyRef Name="Num_At" />
+      </Principal>
+      <Dependent Role="DetailVente">
+        <PropertyRef Name="Num_At" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__DetailVen__Num_C__2A4B4B5E">
+    <End Role="CommandeVente" Type="Self.CommandeVente" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="DetailVente" Type="Self.DetailVente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CommandeVente">
+        <PropertyRef Name="Num_CmdV" />
+      </Principal>
+      <Dependent Role="DetailVente">
+        <PropertyRef Name="Num_CmdV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Location__Matric__14B10FFA">
+    <End Role="Voiture" Type="Self.Voiture" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Location" Type="Self.Location" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Voiture">
+        <PropertyRef Name="matricule" />
+      </Principal>
+      <Dependent Role="Location">
+        <PropertyRef Name="Matricule" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Location__Num_Cl__15A53433">
+    <End Role="Client" Type="Self.Client" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Location" Type="Self.Location" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Client">
+        <PropertyRef Name="Num_Clt" />
+      </Principal>
+      <Dependent Role="Location">
+        <PropertyRef Name="Num_Clt" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__poitage__Cin__76B698BF">
+    <End Role="Ouvrier" Type="Self.Ouvrier" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="poitage" Type="Self.poitage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ouvrier">
+        <PropertyRef Name="Cin" />
+      </Principal>
+      <Dependent Role="poitage">
+        <PropertyRef Name="Cin" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Reglement__Num_B__38996AB5">
+    <End Role="Banque" Type="Self.Banque" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Reglement" Type="Self.Reglement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Banque">
+        <PropertyRef Name="Num_Bq" />
+      </Principal>
+      <Dependent Role="Reglement">
+        <PropertyRef Name="Num_Bq" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Reglement__Num_M__37A5467C">
+    <End Role="ModeRG" Type="Self.ModeRG" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Reglement" Type="Self.Reglement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ModeRG">
+        <PropertyRef Name="Num_ModeReg" />
+      </Principal>
+      <Dependent Role="Reglement">
+        <PropertyRef Name="Num_ModeReg" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="aff_Chantier" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="aff_Charge" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="aff_Location" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="aff_ouvrier" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="aff_Pointage" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="aff_Vehicule" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="aff_Week" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="Affiche_Article" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="Affiche_Client" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="Affiche_CmdA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="Affiche_CmdV" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="Affiche_Facture" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="Affiche_FActuree" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="Affiche_Famille" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="Affiche_Fournisseur" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="afficher_Collection" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="afficher_Config" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="Afficher_DetailCmdAch" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Var" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Afficher_DetailVente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="Afficher_Fichier" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="Afficher_ModeRG" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="Afficher_Reglement" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="Ajouter_Article" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ref" Type="nvarchar" Mode="In" />
+    <Parameter Name="Designation" Type="varchar" Mode="In" />
+    <Parameter Name="PU" Type="float" Mode="In" />
+    <Parameter Name="QteS" Type="float" Mode="In" />
+    <Parameter Name="TVA" Type="int" Mode="In" />
+    <Parameter Name="fardeau" Type="nvarchar" Mode="In" />
+    <Parameter Name="Unite" Type="varchar" Mode="In" />
+    <Parameter Name="Num_Fa" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Ajouter_Banque" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="NomB" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="Ajouter_Chantier" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+    <Parameter Name="client" Type="int" Mode="In" />
+    <Parameter Name="adress" Type="nvarchar" Mode="In" />
+    <Parameter Name="budget" Type="float" Mode="In" />
+    <Parameter Name="datedebut" Type="date" Mode="In" />
+    <Parameter Name="datefin" Type="date" Mode="In" />
+  </Function>
+  <Function Name="Ajouter_Charge" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="num" Type="int" Mode="In" />
+    <Parameter Name="nom" Type="nvarchar" Mode="In" />
+    <Parameter Name="date" Type="date" Mode="In" />
+    <Parameter Name="montant" Type="float" Mode="In" />
+    <Parameter Name="numch" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Ajouter_Client" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="NomC" Type="varchar" Mode="In" />
+    <Parameter Name="Ville" Type="varchar" Mode="In" />
+    <Parameter Name="Adresse" Type="varchar" Mode="In" />
+    <Parameter Name="Tele" Type="varchar" Mode="In" />
+    <Parameter Name="Email" Type="varchar" Mode="In" />
+    <Parameter Name="Solde" Type="float" Mode="In" />
+    <Parameter Name="Ice" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="Ajouter_CmdAchat" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+    <Parameter Name="datefact" Type="date" Mode="In" />
+    <Parameter Name="idfact" Type="varchar" Mode="In" />
+    <Parameter Name="numfrs" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Ajouter_Collection" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="numColl" Type="int" Mode="In" />
+    <Parameter Name="date" Type="date" Mode="In" />
+    <Parameter Name="nb" Type="int" Mode="In" />
+    <Parameter Name="nbcement" Type="int" Mode="In" />
+    <Parameter Name="week" Type="int" Mode="In" />
+    <Parameter Name="typeTobia" Type="nvarchar" Mode="In" />
+    <Parameter Name="nbColl" Type="int" Mode="In" />
+    <Parameter Name="prix" Type="float" Mode="In" />
+  </Function>
+  <Function Name="Ajouter_CommandeVente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Num_Cmd" Type="int" Mode="In" />
+    <Parameter Name="DateCmd" Type="datetime" Mode="In" />
+    <Parameter Name="IsFacture" Type="bit" Mode="In" />
+    <Parameter Name="Num_Clt" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Ajouter_Config" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Nomste" Type="nvarchar" Mode="In" />
+    <Parameter Name="Domaine" Type="nvarchar" Mode="In" />
+    <Parameter Name="logo" Type="image" Mode="In" />
+    <Parameter Name="adress" Type="nvarchar" Mode="In" />
+    <Parameter Name="tele" Type="nvarchar" Mode="In" />
+    <Parameter Name="Rc" Type="nvarchar" Mode="In" />
+    <Parameter Name="Patente" Type="nvarchar" Mode="In" />
+    <Parameter Name="Iff" Type="nvarchar" Mode="In" />
+    <Parameter Name="CNSS" Type="nvarchar" Mode="In" />
+    <Parameter Name="ICE" Type="nvarchar" Mode="In" />
+    <Parameter Name="email" Type="nvarchar" Mode="In" />
+    <Parameter Name="fax" Type="nvarchar" Mode="In" />
+    <Parameter Name="site" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Ajouter_DetailFacture" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdFact" Type="int" Mode="In" />
+    <Parameter Name="IdCmdV" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Ajouter_DetaillCmdv" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="numCmd" Type="int" Mode="In" />
+    <Parameter Name="numAt" Type="nvarchar" Mode="In" />
+    <Parameter Name="Qte" Type="float" Mode="In" />
+    <Parameter Name="Remise" Type="float" Mode="In" />
+    <Parameter Name="prixV" Type="float" Mode="In" />
+    <Parameter Name="TVA" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Ajouter_DetailReglement" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdReg" Type="int" Mode="In" />
+    <Parameter Name="IdCmdV" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Ajouter_DetailsCmdAchat" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="numcmd" Type="int" Mode="In" />
+    <Parameter Name="numart" Type="nvarchar" Mode="In" />
+    <Parameter Name="prix" Type="float" Mode="In" />
+    <Parameter Name="qte" Type="float" Mode="In" />
+  </Function>
+  <Function Name="Ajouter_Facture" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+    <Parameter Name="DateFac" Type="datetime" Mode="In" />
+    <Parameter Name="Remise" Type="float" Mode="In" />
+    <Parameter Name="tva" Type="float" Mode="In" />
+  </Function>
+  <Function Name="Ajouter_Famille" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="NomFamille" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="Ajouter_Fichier" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="desc" Type="nvarchar" Mode="In" />
+    <Parameter Name="fileName" Type="nvarchar" Mode="In" />
+    <Parameter Name="idCmdAch" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Ajouter_Fournisseur" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="NomF" Type="varchar" Mode="In" />
+    <Parameter Name="Ville" Type="varchar" Mode="In" />
+    <Parameter Name="Adresse" Type="varchar" Mode="In" />
+    <Parameter Name="Tele" Type="varchar" Mode="In" />
+    <Parameter Name="Email" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="Ajouter_Location" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="dateDebut" Type="date" Mode="In" />
+    <Parameter Name="dateFin" Type="date" Mode="In" />
+    <Parameter Name="matr" Type="nvarchar" Mode="In" />
+    <Parameter Name="client" Type="int" Mode="In" />
+    <Parameter Name="unite" Type="nvarchar" Mode="In" />
+    <Parameter Name="montant" Type="float" Mode="In" />
+    <Parameter Name="montant_paye" Type="float" Mode="In" />
+  </Function>
+  <Function Name="Ajouter_ModeRG" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Modalite" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="Ajouter_Ouvrier" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="cin" Type="nvarchar" Mode="In" />
+    <Parameter Name="nom" Type="nvarchar" Mode="In" />
+    <Parameter Name="prenom" Type="nvarchar" Mode="In" />
+    <Parameter Name="tele" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Ajouter_Pointage" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="cin" Type="nvarchar" Mode="In" />
+    <Parameter Name="avence" Type="float" Mode="In" />
+    <Parameter Name="collection" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Ajouter_Reglement" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Montant" Type="float" Mode="In" />
+    <Parameter Name="NumChe" Type="varchar" Mode="In" />
+    <Parameter Name="Num_ModeReg" Type="int" Mode="In" />
+    <Parameter Name="Num_Bq" Type="int" Mode="In" />
+    <Parameter Name="numreg" Type="int" Mode="In" />
+    <Parameter Name="MontantDep" Type="float" Mode="In" />
+  </Function>
+  <Function Name="Ajouter_Voiture" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="matricule" Type="nvarchar" Mode="In" />
+    <Parameter Name="model" Type="nvarchar" Mode="In" />
+    <Parameter Name="type" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Ajouter_week" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="dateDebut" Type="date" Mode="In" />
+    <Parameter Name="dateFin" Type="date" Mode="In" />
+    <Parameter Name="prix" Type="float" Mode="In" />
+  </Function>
+  <Function Name="Article_Fa" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="Article_Non_Vendu" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="Article_Null_Qte" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="Chercher_Banque" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Var" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="Chercher_Chantier" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="var" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Chercher_Charge" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="var" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Chercher_collection" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="var" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Chercher_FActuree" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="var" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Chercher_Famille" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Var" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="chercher_Fichier" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="var" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Chercher_Location" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="var" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Chercher_Locatione" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="var" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Chercher_Ouvrier" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="var" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Chercher_Pointage" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="var" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Chercher_Voiture" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="var" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Chercher_week" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="var" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Chereher_Article" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Var" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="Chereher_Client" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Var" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="Chereher_CommandeAch" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Var" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="Chereher_CommandeVente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Var" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="Chereher_Facture" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Var" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="Chereher_Fournisseur" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Var" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="Chereher_ModeRG" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Var" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="Chereher_Reglement" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Var" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="Client_Fa" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="Client_fidele" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="ClientNonRegele" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="CommandeNonFacturee" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdClt" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Delete_Chantier" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Num" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Delete_Charge" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Delete_Collection" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="num" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Delete_Config" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="NomSte" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Delete_Fichier" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Delete_Location" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="num" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Delete_Ouvrier" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="cin" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Delete_Pointage" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="nump" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Delete_Voiture" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="matricule" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Delete_week" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Num" Type="int" Mode="In" />
+  </Function>
+  <Function Name="DetailCmd_Mois" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DateDebut" Type="date" Mode="In" />
+    <Parameter Name="DateFin" Type="date" Mode="In" />
+  </Function>
+  <Function Name="Dvente_Cmd" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="num" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Facture1" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="NumFact" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Facture2" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="numfac" Type="int" Mode="In" />
+    <Parameter Name="nom" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Facture3" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="numfac" Type="int" Mode="In" />
+  </Function>
+  <Function Name="FactureAvecRemise" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="NumFact" Type="int" Mode="In" />
+  </Function>
+  <Function Name="FactureBDate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="numfac" Type="int" Mode="In" />
+    <Parameter Name="date1" Type="date" Mode="In" />
+    <Parameter Name="date2" Type="date" Mode="In" />
+  </Function>
+  <Function Name="FactureClient" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="numclient" Type="int" Mode="In" />
+    <Parameter Name="numerocCheque" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="FacturesDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="Famille_Fa" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+  <Function Name="Fournisseur_Fa" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="Get_CmdV" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Get_CommandeAch" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="var" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Get_Fournisseur" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="var" Type="int" Mode="In" />
+  </Function>
+  <Function Name="get_NumCmdVente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="GetArticle" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="NumArt" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetArticles" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="GetArticlesByCategory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Var" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetArticleStock" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="NumArt" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetClientIDByCmd" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdCmd" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetClientIDByReg" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdReg" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetCmdVById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetCmdVById2" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetFactureByPk" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdFact" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetLastCmdID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="GetLastFacture" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="GetLastReglement" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="GetMontantByCommande" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="NumCmd" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetMontantByFacture" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="numFac" Type="float" Mode="In" />
+  </Function>
+  <Function Name="GetMontantByReg" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="NumCmd" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetRegelementByPk" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdReg" Type="int" Mode="In" />
+  </Function>
+  <Function Name="IsFacturee" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdCmd" Type="int" Mode="In" />
+  </Function>
+  <Function Name="login_user" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserName" Type="varchar" Mode="In" />
+    <Parameter Name="Password" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="Modifier_Article" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Num_At" Type="int" Mode="In" />
+    <Parameter Name="Designation" Type="varchar" Mode="In" />
+    <Parameter Name="PU" Type="float" Mode="In" />
+    <Parameter Name="QteS" Type="float" Mode="In" />
+    <Parameter Name="TVA" Type="int" Mode="In" />
+    <Parameter Name="Unite" Type="varchar" Mode="In" />
+    <Parameter Name="Num_Fa" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Modifier_Banque" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Num_Bq" Type="int" Mode="In" />
+    <Parameter Name="NomB" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="Modifier_Client" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Num_Clt" Type="int" Mode="In" />
+    <Parameter Name="NomC" Type="varchar" Mode="In" />
+    <Parameter Name="Ville" Type="varchar" Mode="In" />
+    <Parameter Name="Adresse" Type="varchar" Mode="In" />
+    <Parameter Name="Tele" Type="varchar" Mode="In" />
+    <Parameter Name="Email" Type="varchar" Mode="In" />
+    <Parameter Name="Ice" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="Modifier_CommandeAch" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Num_CmdA" Type="int" Mode="In" />
+    <Parameter Name="DateAch" Type="date" Mode="In" />
+    <Parameter Name="IDFActureA" Type="varchar" Mode="In" />
+    <Parameter Name="Num_Fr" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Modifier_CommandeVente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Num_CmdV" Type="int" Mode="In" />
+    <Parameter Name="DateCmd" Type="datetime" Mode="In" />
+    <Parameter Name="Num_Clt" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Modifier_Facture" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Num_Fac" Type="int" Mode="In" />
+    <Parameter Name="DateFac" Type="datetime" Mode="In" />
+    <Parameter Name="Remise" Type="float" Mode="In" />
+    <Parameter Name="IsGiven" Type="bit" Mode="In" />
+    <Parameter Name="tva" Type="float" Mode="In" />
+  </Function>
+  <Function Name="Modifier_Famille" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+    <Parameter Name="NomFamille" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="Modifier_Fournisseur" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Num_Fr" Type="int" Mode="In" />
+    <Parameter Name="NomF" Type="varchar" Mode="In" />
+    <Parameter Name="Ville" Type="varchar" Mode="In" />
+    <Parameter Name="Adresse" Type="varchar" Mode="In" />
+    <Parameter Name="Tele" Type="varchar" Mode="In" />
+    <Parameter Name="Email" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="Modifier_ModeRG" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Num_ModeReg" Type="int" Mode="In" />
+    <Parameter Name="Modalite" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="Modifier_Reglement" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Num_Reg" Type="int" Mode="In" />
+    <Parameter Name="Montant" Type="float" Mode="In" />
+    <Parameter Name="NumChe" Type="varchar" Mode="In" />
+    <Parameter Name="Num_ModeReg" Type="int" Mode="In" />
+    <Parameter Name="Num_Bq" Type="int" Mode="In" />
+    <Parameter Name="Montantdep" Type="float" Mode="In" />
+  </Function>
+  <Function Name="print_Fac" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="numfac" Type="int" Mode="In" />
+    <Parameter Name="nomSte" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="print_PV" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SetCommandeFacturee" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdCmd" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="stock" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="codeArt" Type="int" Mode="In" />
+    <Parameter Name="DateDebut" Type="date" Mode="In" />
+    <Parameter Name="Datefin" Type="date" Mode="In" />
+  </Function>
+  <Function Name="Supprimer_Article" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="NumAr" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Supprimer_Banque" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Num_Bq" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Supprimer_Client" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="NumCl" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Supprimer_CmdA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="NumCmdA" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Supprimer_CmdV" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="NumCmdV" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Supprimer_DetailAchat" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Num_Cmd" Type="int" Mode="In" />
+    <Parameter Name="NumArt" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Supprimer_DetailVente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Num_Cmd" Type="int" Mode="In" />
+    <Parameter Name="NumArt" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Supprimer_Facture" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="NumFac" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Supprimer_Famille" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="NumFa" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Supprimer_Fournisseur" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="NumFr" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Supprimer_ModReg" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Num_ModReg" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Supprimer_Reglement" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Num_Reg" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Upadate_Config" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Nomste" Type="nvarchar" Mode="In" />
+    <Parameter Name="Domaine" Type="nvarchar" Mode="In" />
+    <Parameter Name="logo" Type="image" Mode="In" />
+    <Parameter Name="adress" Type="nvarchar" Mode="In" />
+    <Parameter Name="tele" Type="nvarchar" Mode="In" />
+    <Parameter Name="Rc" Type="nvarchar" Mode="In" />
+    <Parameter Name="Patente" Type="nvarchar" Mode="In" />
+    <Parameter Name="Iff" Type="nvarchar" Mode="In" />
+    <Parameter Name="CNSS" Type="nvarchar" Mode="In" />
+    <Parameter Name="ICE" Type="nvarchar" Mode="In" />
+    <Parameter Name="email" Type="nvarchar" Mode="In" />
+    <Parameter Name="fax" Type="nvarchar" Mode="In" />
+    <Parameter Name="site" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Update_Chantier" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="num" Type="int" Mode="In" />
+    <Parameter Name="client" Type="int" Mode="In" />
+    <Parameter Name="adress" Type="nvarchar" Mode="In" />
+    <Parameter Name="budget" Type="float" Mode="In" />
+    <Parameter Name="datedebut" Type="date" Mode="In" />
+    <Parameter Name="datefin" Type="date" Mode="In" />
+  </Function>
+  <Function Name="Update_Charge" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+    <Parameter Name="nom" Type="nvarchar" Mode="In" />
+    <Parameter Name="date" Type="date" Mode="In" />
+    <Parameter Name="montant" Type="float" Mode="In" />
+    <Parameter Name="numch" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Update_Collection" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="num" Type="nvarchar" Mode="In" />
+    <Parameter Name="date" Type="date" Mode="In" />
+    <Parameter Name="nb" Type="int" Mode="In" />
+    <Parameter Name="nbcement" Type="int" Mode="In" />
+    <Parameter Name="week" Type="int" Mode="In" />
+    <Parameter Name="typeTobia" Type="nvarchar" Mode="In" />
+    <Parameter Name="nbColl" Type="int" Mode="In" />
+    <Parameter Name="prix" Type="float" Mode="In" />
+  </Function>
+  <Function Name="Update_DetailsCmdAchat" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="numcmd" Type="int" Mode="In" />
+    <Parameter Name="numart" Type="nvarchar" Mode="In" />
+    <Parameter Name="prix" Type="float" Mode="In" />
+    <Parameter Name="qte" Type="float" Mode="In" />
+  </Function>
+  <Function Name="Update_DetailsCmdAchatV2" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="numcmd" Type="int" Mode="In" />
+    <Parameter Name="numart" Type="int" Mode="In" />
+    <Parameter Name="Newart" Type="int" Mode="In" />
+    <Parameter Name="prix" Type="float" Mode="In" />
+    <Parameter Name="qte" Type="float" Mode="In" />
+  </Function>
+  <Function Name="Update_DetailsCmdVente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="numcmd" Type="int" Mode="In" />
+    <Parameter Name="numart" Type="int" Mode="In" />
+    <Parameter Name="prix" Type="float" Mode="In" />
+    <Parameter Name="qte" Type="float" Mode="In" />
+    <Parameter Name="tva" Type="int" Mode="In" />
+    <Parameter Name="remise" Type="float" Mode="In" />
+  </Function>
+  <Function Name="Update_DetailsCmdVenteV2" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="numcmd" Type="int" Mode="In" />
+    <Parameter Name="numart" Type="int" Mode="In" />
+    <Parameter Name="Newart" Type="int" Mode="In" />
+    <Parameter Name="prix" Type="float" Mode="In" />
+    <Parameter Name="qte" Type="float" Mode="In" />
+    <Parameter Name="tva" Type="int" Mode="In" />
+    <Parameter Name="remise" Type="float" Mode="In" />
+  </Function>
+  <Function Name="Update_Fichier" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="idfichier" Type="int" Mode="In" />
+    <Parameter Name="desc" Type="nvarchar" Mode="In" />
+    <Parameter Name="fileName" Type="nvarchar" Mode="In" />
+    <Parameter Name="idCmdAch" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Update_Location" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Numloc" Type="int" Mode="In" />
+    <Parameter Name="dateDebut" Type="date" Mode="In" />
+    <Parameter Name="dateFin" Type="date" Mode="In" />
+    <Parameter Name="matr" Type="nvarchar" Mode="In" />
+    <Parameter Name="client" Type="int" Mode="In" />
+    <Parameter Name="unite" Type="nvarchar" Mode="In" />
+    <Parameter Name="montant" Type="float" Mode="In" />
+    <Parameter Name="montant_paye" Type="float" Mode="In" />
+  </Function>
+  <Function Name="Update_Ouvrier" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="cin" Type="nvarchar" Mode="In" />
+    <Parameter Name="nom" Type="nvarchar" Mode="In" />
+    <Parameter Name="prenom" Type="nvarchar" Mode="In" />
+    <Parameter Name="tele" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Update_Pointage" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="nump" Type="int" Mode="In" />
+    <Parameter Name="cin" Type="nvarchar" Mode="In" />
+    <Parameter Name="avence" Type="float" Mode="In" />
+    <Parameter Name="collection" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Update_Voiture" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="matricule" Type="nvarchar" Mode="In" />
+    <Parameter Name="model" Type="nvarchar" Mode="In" />
+    <Parameter Name="type" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Update_week" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="dateDebut" Type="date" Mode="In" />
+    <Parameter Name="dateFin" Type="date" Mode="In" />
+    <Parameter Name="prix" Type="float" Mode="In" />
+    <Parameter Name="Num" Type="int" Mode="In" />
+  </Function>
+  <Function Name="UpdateIsFacturee" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="var" Type="bit" Mode="In" />
+    <Parameter Name="NumCmd" Type="int" Mode="In" />
+  </Function>
+  <Function Name="UpdateMontantByReg" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="NumCmd" Type="int" Mode="In" />
+    <Parameter Name="NumReg" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Vent_Fa" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Var" Type="date" Mode="In" />
+  </Function>
+  <EntityContainer Name="GestionComercialeModelStoreContainer">
+    <EntitySet Name="ArchiveStock" EntityType="Self.ArchiveStock" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Article" EntityType="Self.Article" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Banque" EntityType="Self.Banque" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Chantier" EntityType="Self.Chantier" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Charge" EntityType="Self.Charge" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Client" EntityType="Self.Client" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Collection" EntityType="Self.Collection" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CommandeAch" EntityType="Self.CommandeAch" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CommandeVente" EntityType="Self.CommandeVente" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="config" EntityType="Self.config" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DetailAchat" EntityType="Self.DetailAchat" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DetailFac" EntityType="Self.DetailFac" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DetailReg" EntityType="Self.DetailReg" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DetailVente" EntityType="Self.DetailVente" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Facture" EntityType="Self.Facture" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Famille" EntityType="Self.Famille" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Fichier" EntityType="Self.Fichier" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Fournisseur" EntityType="Self.Fournisseur" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Location" EntityType="Self.Location" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ModeRG" EntityType="Self.ModeRG" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Ouvrier" EntityType="Self.Ouvrier" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="poitage" EntityType="Self.poitage" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Reglement" EntityType="Self.Reglement" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Utilisateur" EntityType="Self.Utilisateur" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Voiture" EntityType="Self.Voiture" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Week" EntityType="Self.Week" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__ArchiveSt__NumAr__182C9B23" Association="Self.FK__ArchiveSt__NumAr__182C9B23">
+      <End Role="Article" EntitySet="Article" />
+      <End Role="ArchiveStock" EntitySet="ArchiveStock" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Article__Num_Fa__15502E78" Association="Self.FK__Article__Num_Fa__15502E78">
+      <End Role="Famille" EntitySet="Famille" />
+      <End Role="Article" EntitySet="Article" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Chantier__Num_Cl__1D9B5BB6" Association="Self.FK__Chantier__Num_Cl__1D9B5BB6">
+      <End Role="Client" EntitySet="Client" />
+      <End Role="Chantier" EntitySet="Chantier" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Charge__Numch__24E777C3" Association="Self.FK__Charge__Numch__24E777C3">
+      <End Role="Chantier" EntitySet="Chantier" />
+      <End Role="Charge" EntitySet="Charge" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Collectio__NumWe__73DA2C14" Association="Self.FK__Collectio__NumWe__73DA2C14">
+      <End Role="Week" EntitySet="Week" />
+      <End Role="Collection" EntitySet="Collection" />
+    </AssociationSet>
+    <AssociationSet Name="FK__CommandeA__Num_F__20C1E124" Association="Self.FK__CommandeA__Num_F__20C1E124">
+      <End Role="Fournisseur" EntitySet="Fournisseur" />
+      <End Role="CommandeAch" EntitySet="CommandeAch" />
+    </AssociationSet>
+    <AssociationSet Name="FK__CommandeV__Num_C__276EDEB3" Association="Self.FK__CommandeV__Num_C__276EDEB3">
+      <End Role="Client" EntitySet="Client" />
+      <End Role="CommandeVente" EntitySet="CommandeVente" />
+    </AssociationSet>
+    <AssociationSet Name="FK__DetailAch__Num_A__239E4DCF" Association="Self.FK__DetailAch__Num_A__239E4DCF">
+      <End Role="Article" EntitySet="Article" />
+      <End Role="DetailAchat" EntitySet="DetailAchat" />
+    </AssociationSet>
+    <AssociationSet Name="FK__DetailAch__Num_C__24927208" Association="Self.FK__DetailAch__Num_C__24927208">
+      <End Role="CommandeAch" EntitySet="CommandeAch" />
+      <End Role="DetailAchat" EntitySet="DetailAchat" />
+    </AssociationSet>
+    <AssociationSet Name="FK__DetailFac__Num_C__32E0915F" Association="Self.FK__DetailFac__Num_C__32E0915F">
+      <End Role="CommandeVente" EntitySet="CommandeVente" />
+      <End Role="DetailFac" EntitySet="DetailFac" />
+    </AssociationSet>
+    <AssociationSet Name="FK__DetailFac__Num_F__31EC6D26" Association="Self.FK__DetailFac__Num_F__31EC6D26">
+      <End Role="Facture" EntitySet="Facture" />
+      <End Role="DetailFac" EntitySet="DetailFac" />
+    </AssociationSet>
+    <AssociationSet Name="FK__DetailReg__Num_C__756D6ECB" Association="Self.FK__DetailReg__Num_C__756D6ECB">
+      <End Role="CommandeVente" EntitySet="CommandeVente" />
+      <End Role="DetailReg" EntitySet="DetailReg" />
+    </AssociationSet>
+    <AssociationSet Name="FK__DetailReg__Num_R__74794A92" Association="Self.FK__DetailReg__Num_R__74794A92">
+      <End Role="Reglement" EntitySet="Reglement" />
+      <End Role="DetailReg" EntitySet="DetailReg" />
+    </AssociationSet>
+    <AssociationSet Name="FK__DetailVen__Num_A__2B3F6F97" Association="Self.FK__DetailVen__Num_A__2B3F6F97">
+      <End Role="Article" EntitySet="Article" />
+      <End Role="DetailVente" EntitySet="DetailVente" />
+    </AssociationSet>
+    <AssociationSet Name="FK__DetailVen__Num_C__2A4B4B5E" Association="Self.FK__DetailVen__Num_C__2A4B4B5E">
+      <End Role="CommandeVente" EntitySet="CommandeVente" />
+      <End Role="DetailVente" EntitySet="DetailVente" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Location__Matric__14B10FFA" Association="Self.FK__Location__Matric__14B10FFA">
+      <End Role="Voiture" EntitySet="Voiture" />
+      <End Role="Location" EntitySet="Location" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Location__Num_Cl__15A53433" Association="Self.FK__Location__Num_Cl__15A53433">
+      <End Role="Client" EntitySet="Client" />
+      <End Role="Location" EntitySet="Location" />
+    </AssociationSet>
+    <AssociationSet Name="FK__poitage__Cin__76B698BF" Association="Self.FK__poitage__Cin__76B698BF">
+      <End Role="Ouvrier" EntitySet="Ouvrier" />
+      <End Role="poitage" EntitySet="poitage" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Reglement__Num_B__38996AB5" Association="Self.FK__Reglement__Num_B__38996AB5">
+      <End Role="Banque" EntitySet="Banque" />
+      <End Role="Reglement" EntitySet="Reglement" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Reglement__Num_M__37A5467C" Association="Self.FK__Reglement__Num_M__37A5467C">
+      <End Role="ModeRG" EntitySet="ModeRG" />
+      <End Role="Reglement" EntitySet="Reglement" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

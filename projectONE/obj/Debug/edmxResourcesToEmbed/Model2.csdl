@@ -1,0 +1,1928 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="GestionComercialeModel2" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="ArchiveStock">
+    <Key>
+      <PropertyRef Name="NumArch" />
+    </Key>
+    <Property Name="NumArch" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DateArch" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="NumArt" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Stock" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="QteS" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="MontantS" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="QteE" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="MontantE" Type="Decimal" Precision="12" Scale="2" />
+  </EntityType>
+  <EntityType Name="Article">
+    <Key>
+      <PropertyRef Name="Num_At" />
+    </Key>
+    <Property Name="Num_At" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Designation" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PU" Type="Double" Nullable="false" />
+    <Property Name="QteS" Type="Double" Nullable="false" />
+    <Property Name="TVA" Type="Int32" Nullable="false" />
+    <Property Name="num_fardeau" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Num_Fa" Type="Int32" />
+    <Property Name="unite" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Banque">
+    <Key>
+      <PropertyRef Name="Num_Bq" />
+    </Key>
+    <Property Name="Num_Bq" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NomB" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Reglement" Relationship="Self.FK__Reglement__Num_B__38996AB5" FromRole="Banque" ToRole="Reglement" />
+  </EntityType>
+  <EntityType Name="Chantier">
+    <Key>
+      <PropertyRef Name="Num" />
+    </Key>
+    <Property Name="Num" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Cin" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Adresse" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Budget" Type="Double" />
+    <Property Name="dateDebut" Type="DateTime" Precision="0" />
+    <Property Name="dateFin" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="Charge">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nom" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="DateCharge" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Montant" Type="Double" />
+    <Property Name="Numch" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Client">
+    <Key>
+      <PropertyRef Name="Num_Clt" />
+    </Key>
+    <Property Name="Num_Clt" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NomC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Ville" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Adresse" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Tele" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Solde" Type="Double" />
+    <Property Name="ICE" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Collection">
+    <Key>
+      <PropertyRef Name="NumCollection" />
+    </Key>
+    <Property Name="NumCollection" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Date" Type="DateTime" Precision="0" />
+    <Property Name="Nombre" Type="Int32" />
+    <Property Name="TypeCollecion" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Nbcement" Type="Int32" />
+    <Property Name="NumWeek" Type="Int32" />
+    <Property Name="typeTobiya" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Nb_Collection" Type="Int32" />
+    <Property Name="Prix" Type="Double" />
+    <NavigationProperty Name="poitage" Relationship="GestionComercialeModel2.FK__poitage__NumColl__77AABCF8" FromRole="Collection" ToRole="poitage" />
+  </EntityType>
+  <EntityType Name="CommandeAch">
+    <Key>
+      <PropertyRef Name="Num_Cmd" />
+    </Key>
+    <Property Name="Num_Cmd" Type="Int32" Nullable="false" />
+    <Property Name="DateAch" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="IDFActureA" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Num_Fr" Type="Int32" />
+  </EntityType>
+  <EntityType Name="CommandeVente">
+    <Key>
+      <PropertyRef Name="Num_CmdV" />
+    </Key>
+    <Property Name="Num_CmdV" Type="Int32" Nullable="false" />
+    <Property Name="DateCmd" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="IsFacture" Type="Boolean" Nullable="false" />
+    <Property Name="Num_Clt" Type="Int32" />
+  </EntityType>
+  <EntityType Name="config">
+    <Key>
+      <PropertyRef Name="NonSo" />
+    </Key>
+    <Property Name="NonSo" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Domaine" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="logo" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="Adresse" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Tele" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="RC" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Patente" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="IFF" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CNSS" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ICE" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="DetailAchat">
+    <Key>
+      <PropertyRef Name="Num_At" />
+      <PropertyRef Name="Num_Cmd" />
+    </Key>
+    <Property Name="Num_At" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Num_Cmd" Type="Int32" Nullable="false" />
+    <Property Name="Qte" Type="Double" Nullable="false" />
+    <Property Name="PrixA" Type="Double" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DetailFac">
+    <Key>
+      <PropertyRef Name="IDCmdFact" />
+    </Key>
+    <Property Name="Num_Fac" Type="Int32" />
+    <Property Name="Num_CmdV" Type="Int32" />
+    <Property Name="IDCmdFact" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="DetailReg">
+    <Key>
+      <PropertyRef Name="IDCmdReg" />
+    </Key>
+    <Property Name="IDCmdReg" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Num_Reg" Type="Int32" />
+    <Property Name="Num_CmdV" Type="Int32" />
+  </EntityType>
+  <EntityType Name="DetailVente">
+    <Key>
+      <PropertyRef Name="Num_CmdV" />
+      <PropertyRef Name="Num_At" />
+    </Key>
+    <Property Name="Num_CmdV" Type="Int32" Nullable="false" />
+    <Property Name="Num_At" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Qte" Type="Double" Nullable="false" />
+    <Property Name="Remise" Type="Double" Nullable="false" />
+    <Property Name="PrixV" Type="Double" Nullable="false" />
+    <Property Name="TVA" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Facture">
+    <Key>
+      <PropertyRef Name="Num_Fac" />
+    </Key>
+    <Property Name="Num_Fac" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DateFac" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Remise" Type="Double" />
+    <Property Name="IsGiven" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Famille">
+    <Key>
+      <PropertyRef Name="Num_Fa" />
+    </Key>
+    <Property Name="Num_Fa" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NomFa" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Fournisseur">
+    <Key>
+      <PropertyRef Name="Num_Fr" />
+    </Key>
+    <Property Name="Num_Fr" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NomF" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Ville" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Adresse" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Tele" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Location">
+    <Key>
+      <PropertyRef Name="NumLoc" />
+    </Key>
+    <Property Name="NumLoc" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DateDebut" Type="DateTime" Precision="0" />
+    <Property Name="DateFin" Type="DateTime" Precision="0" />
+    <Property Name="Matricule" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Num_Clt" Type="Int32" />
+    <Property Name="Unite" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Montant" Type="Double" />
+    <Property Name="Montant_paye" Type="Double" />
+    <Property Name="reste" Type="Double" />
+  </EntityType>
+  <EntityType Name="ModeRG">
+    <Key>
+      <PropertyRef Name="Num_ModeReg" />
+    </Key>
+    <Property Name="Num_ModeReg" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Modalite" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Ouvrier">
+    <Key>
+      <PropertyRef Name="Cin" />
+    </Key>
+    <Property Name="Cin" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="nom" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="prenom" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="tele" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="poitage" Relationship="GestionComercialeModel2.FK__poitage__Cin__76B698BF" FromRole="Ouvrier" ToRole="poitage" />
+  </EntityType>
+  <EntityType Name="pointage">
+    <Key>
+      <PropertyRef Name="Nump" />
+    </Key>
+    <Property Name="Nump" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Cin" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Avence" Type="Double" />
+    <Property Name="NumCollection" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Reglement">
+    <Key>
+      <PropertyRef Name="Num_Reg" />
+    </Key>
+    <Property Name="Num_Reg" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Montant" Type="Double" Nullable="false" />
+    <Property Name="NumChe" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Num_ModeReg" Type="Int32" />
+    <Property Name="Num_Bq" Type="Int32" />
+    <Property Name="montantDepose" Type="Double" />
+    <Property Name="reste" Type="Double" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Utilisateur">
+    <Key>
+      <PropertyRef Name="Id_user" />
+    </Key>
+    <Property Name="Id_user" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="User" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MP" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Voiture">
+    <Key>
+      <PropertyRef Name="matricule" />
+    </Key>
+    <Property Name="matricule" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="model" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="type" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Week">
+    <Key>
+      <PropertyRef Name="NumWeek" />
+    </Key>
+    <Property Name="NumWeek" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DateDebut" Type="DateTime" Precision="0" />
+    <Property Name="DateFin" Type="DateTime" Precision="0" />
+    <Property Name="Prix" Type="Double" />
+  </EntityType>
+  <Association Name="FK__ArchiveSt__NumAr__182C9B23">
+    <End Role="Article" Type="Self.Article" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ArchiveStock" Type="Self.ArchiveStock" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Article">
+        <PropertyRef Name="Num_At" />
+      </Principal>
+      <Dependent Role="ArchiveStock">
+        <PropertyRef Name="NumArt" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Article__Num_Fa__15502E78">
+    <End Role="Famille" Type="Self.Famille" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Article" Type="Self.Article" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Famille">
+        <PropertyRef Name="Num_Fa" />
+      </Principal>
+      <Dependent Role="Article">
+        <PropertyRef Name="Num_Fa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__DetailAch__Num_A__239E4DCF">
+    <End Role="Article" Type="Self.Article" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="DetailAchat" Type="Self.DetailAchat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Article">
+        <PropertyRef Name="Num_At" />
+      </Principal>
+      <Dependent Role="DetailAchat">
+        <PropertyRef Name="Num_At" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__DetailVen__Num_A__2B3F6F97">
+    <End Role="Article" Type="Self.Article" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="DetailVente" Type="Self.DetailVente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Article">
+        <PropertyRef Name="Num_At" />
+      </Principal>
+      <Dependent Role="DetailVente">
+        <PropertyRef Name="Num_At" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Reglement__Num_B__38996AB5">
+    <End Role="Banque" Type="Self.Banque" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Reglement" Type="Self.Reglement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Banque">
+        <PropertyRef Name="Num_Bq" />
+      </Principal>
+      <Dependent Role="Reglement">
+        <PropertyRef Name="Num_Bq" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Chantier__Cin__603D47BB">
+    <End Role="Ouvrier" Type="Self.Ouvrier" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Chantier" Type="Self.Chantier" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ouvrier">
+        <PropertyRef Name="Cin" />
+      </Principal>
+      <Dependent Role="Chantier">
+        <PropertyRef Name="Cin" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Charge__Numch__24E777C3">
+    <End Role="Chantier" Type="Self.Chantier" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Charge" Type="Self.Charge" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Chantier">
+        <PropertyRef Name="Num" />
+      </Principal>
+      <Dependent Role="Charge">
+        <PropertyRef Name="Numch" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__CommandeV__Num_C__276EDEB3">
+    <End Role="Client" Type="Self.Client" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="CommandeVente" Type="Self.CommandeVente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Client">
+        <PropertyRef Name="Num_Clt" />
+      </Principal>
+      <Dependent Role="CommandeVente">
+        <PropertyRef Name="Num_Clt" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Location__Num_Cl__15A53433">
+    <End Role="Client" Type="Self.Client" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Location" Type="Self.Location" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Client">
+        <PropertyRef Name="Num_Clt" />
+      </Principal>
+      <Dependent Role="Location">
+        <PropertyRef Name="Num_Clt" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Collectio__NumWe__5A846E65">
+    <End Role="Week" Type="Self.Week" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Collection" Type="Self.Collection" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Week">
+        <PropertyRef Name="NumWeek" />
+      </Principal>
+      <Dependent Role="Collection">
+        <PropertyRef Name="NumWeek" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__pointage__NumCol__6E8B6712">
+    <End Role="Collection" Type="Self.Collection" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="pointage" Type="Self.pointage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Collection">
+        <PropertyRef Name="NumCollection" />
+      </Principal>
+      <Dependent Role="pointage">
+        <PropertyRef Name="NumCollection" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__CommandeA__Num_F__20C1E124">
+    <End Role="Fournisseur" Type="Self.Fournisseur" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="CommandeAch" Type="Self.CommandeAch" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Fournisseur">
+        <PropertyRef Name="Num_Fr" />
+      </Principal>
+      <Dependent Role="CommandeAch">
+        <PropertyRef Name="Num_Fr" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__DetailAch__Num_C__24927208">
+    <End Role="CommandeAch" Type="Self.CommandeAch" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="DetailAchat" Type="Self.DetailAchat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CommandeAch">
+        <PropertyRef Name="Num_Cmd" />
+      </Principal>
+      <Dependent Role="DetailAchat">
+        <PropertyRef Name="Num_Cmd" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__DetailFac__Num_C__32E0915F">
+    <End Role="CommandeVente" Type="Self.CommandeVente" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="DetailFac" Type="Self.DetailFac" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CommandeVente">
+        <PropertyRef Name="Num_CmdV" />
+      </Principal>
+      <Dependent Role="DetailFac">
+        <PropertyRef Name="Num_CmdV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__DetailReg__Num_C__756D6ECB">
+    <End Role="CommandeVente" Type="Self.CommandeVente" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="DetailReg" Type="Self.DetailReg" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CommandeVente">
+        <PropertyRef Name="Num_CmdV" />
+      </Principal>
+      <Dependent Role="DetailReg">
+        <PropertyRef Name="Num_CmdV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__DetailVen__Num_C__2A4B4B5E">
+    <End Role="CommandeVente" Type="Self.CommandeVente" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="DetailVente" Type="Self.DetailVente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CommandeVente">
+        <PropertyRef Name="Num_CmdV" />
+      </Principal>
+      <Dependent Role="DetailVente">
+        <PropertyRef Name="Num_CmdV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__DetailFac__Num_F__31EC6D26">
+    <End Role="Facture" Type="Self.Facture" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="DetailFac" Type="Self.DetailFac" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Facture">
+        <PropertyRef Name="Num_Fac" />
+      </Principal>
+      <Dependent Role="DetailFac">
+        <PropertyRef Name="Num_Fac" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__DetailReg__Num_R__74794A92">
+    <End Role="Reglement" Type="Self.Reglement" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="DetailReg" Type="Self.DetailReg" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Reglement">
+        <PropertyRef Name="Num_Reg" />
+      </Principal>
+      <Dependent Role="DetailReg">
+        <PropertyRef Name="Num_Reg" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Location__Matric__14B10FFA">
+    <End Role="Voiture" Type="Self.Voiture" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Location" Type="Self.Location" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Voiture">
+        <PropertyRef Name="matricule" />
+      </Principal>
+      <Dependent Role="Location">
+        <PropertyRef Name="Matricule" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Reglement__Num_M__37A5467C">
+    <End Role="ModeRG" Type="Self.ModeRG" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Reglement" Type="Self.Reglement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ModeRG">
+        <PropertyRef Name="Num_ModeReg" />
+      </Principal>
+      <Dependent Role="Reglement">
+        <PropertyRef Name="Num_ModeReg" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__pointage__Cin__6D9742D9">
+    <End Role="Ouvrier" Type="Self.Ouvrier" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="pointage" Type="Self.pointage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ouvrier">
+        <PropertyRef Name="Cin" />
+      </Principal>
+      <Dependent Role="pointage">
+        <PropertyRef Name="Cin" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="GestionComercialeEntities2" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ArchiveStock" EntityType="Self.ArchiveStock" />
+    <EntitySet Name="Article" EntityType="Self.Article" />
+    <EntitySet Name="Banque" EntityType="Self.Banque" />
+    <EntitySet Name="Chantier" EntityType="Self.Chantier" />
+    <EntitySet Name="Charge" EntityType="Self.Charge" />
+    <EntitySet Name="Client" EntityType="Self.Client" />
+    <EntitySet Name="Collection" EntityType="Self.Collection" />
+    <EntitySet Name="CommandeAch" EntityType="Self.CommandeAch" />
+    <EntitySet Name="CommandeVente" EntityType="Self.CommandeVente" />
+    <EntitySet Name="config" EntityType="Self.config" />
+    <EntitySet Name="DetailAchat" EntityType="Self.DetailAchat" />
+    <EntitySet Name="DetailFac" EntityType="Self.DetailFac" />
+    <EntitySet Name="DetailReg" EntityType="Self.DetailReg" />
+    <EntitySet Name="DetailVente" EntityType="Self.DetailVente" />
+    <EntitySet Name="Facture" EntityType="Self.Facture" />
+    <EntitySet Name="Famille" EntityType="Self.Famille" />
+    <EntitySet Name="Fournisseur" EntityType="Self.Fournisseur" />
+    <EntitySet Name="Location" EntityType="Self.Location" />
+    <EntitySet Name="ModeRG" EntityType="Self.ModeRG" />
+    <EntitySet Name="Ouvrier" EntityType="Self.Ouvrier" />
+    <EntitySet Name="pointage" EntityType="Self.pointage" />
+    <EntitySet Name="Reglement" EntityType="Self.Reglement" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="Utilisateur" EntityType="Self.Utilisateur" />
+    <EntitySet Name="Voiture" EntityType="Self.Voiture" />
+    <EntitySet Name="Week" EntityType="Self.Week" />
+    <AssociationSet Name="FK__ArchiveSt__NumAr__182C9B23" Association="Self.FK__ArchiveSt__NumAr__182C9B23">
+      <End Role="Article" EntitySet="Article" />
+      <End Role="ArchiveStock" EntitySet="ArchiveStock" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Article__Num_Fa__15502E78" Association="Self.FK__Article__Num_Fa__15502E78">
+      <End Role="Famille" EntitySet="Famille" />
+      <End Role="Article" EntitySet="Article" />
+    </AssociationSet>
+    <AssociationSet Name="FK__DetailAch__Num_A__239E4DCF" Association="Self.FK__DetailAch__Num_A__239E4DCF">
+      <End Role="Article" EntitySet="Article" />
+      <End Role="DetailAchat" EntitySet="DetailAchat" />
+    </AssociationSet>
+    <AssociationSet Name="FK__DetailVen__Num_A__2B3F6F97" Association="Self.FK__DetailVen__Num_A__2B3F6F97">
+      <End Role="Article" EntitySet="Article" />
+      <End Role="DetailVente" EntitySet="DetailVente" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Reglement__Num_B__38996AB5" Association="Self.FK__Reglement__Num_B__38996AB5">
+      <End Role="Banque" EntitySet="Banque" />
+      <End Role="Reglement" EntitySet="Reglement" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Chantier__Cin__603D47BB" Association="Self.FK__Chantier__Cin__603D47BB">
+      <End Role="Ouvrier" EntitySet="Ouvrier" />
+      <End Role="Chantier" EntitySet="Chantier" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Charge__Numch__24E777C3" Association="Self.FK__Charge__Numch__24E777C3">
+      <End Role="Chantier" EntitySet="Chantier" />
+      <End Role="Charge" EntitySet="Charge" />
+    </AssociationSet>
+    <AssociationSet Name="FK__CommandeV__Num_C__276EDEB3" Association="Self.FK__CommandeV__Num_C__276EDEB3">
+      <End Role="Client" EntitySet="Client" />
+      <End Role="CommandeVente" EntitySet="CommandeVente" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Location__Num_Cl__15A53433" Association="Self.FK__Location__Num_Cl__15A53433">
+      <End Role="Client" EntitySet="Client" />
+      <End Role="Location" EntitySet="Location" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Collectio__NumWe__5A846E65" Association="Self.FK__Collectio__NumWe__5A846E65">
+      <End Role="Week" EntitySet="Week" />
+      <End Role="Collection" EntitySet="Collection" />
+    </AssociationSet>
+    <AssociationSet Name="FK__pointage__NumCol__6E8B6712" Association="Self.FK__pointage__NumCol__6E8B6712">
+      <End Role="Collection" EntitySet="Collection" />
+      <End Role="pointage" EntitySet="pointage" />
+    </AssociationSet>
+    <AssociationSet Name="FK__CommandeA__Num_F__20C1E124" Association="Self.FK__CommandeA__Num_F__20C1E124">
+      <End Role="Fournisseur" EntitySet="Fournisseur" />
+      <End Role="CommandeAch" EntitySet="CommandeAch" />
+    </AssociationSet>
+    <AssociationSet Name="FK__DetailAch__Num_C__24927208" Association="Self.FK__DetailAch__Num_C__24927208">
+      <End Role="CommandeAch" EntitySet="CommandeAch" />
+      <End Role="DetailAchat" EntitySet="DetailAchat" />
+    </AssociationSet>
+    <AssociationSet Name="FK__DetailFac__Num_C__32E0915F" Association="Self.FK__DetailFac__Num_C__32E0915F">
+      <End Role="CommandeVente" EntitySet="CommandeVente" />
+      <End Role="DetailFac" EntitySet="DetailFac" />
+    </AssociationSet>
+    <AssociationSet Name="FK__DetailReg__Num_C__756D6ECB" Association="Self.FK__DetailReg__Num_C__756D6ECB">
+      <End Role="CommandeVente" EntitySet="CommandeVente" />
+      <End Role="DetailReg" EntitySet="DetailReg" />
+    </AssociationSet>
+    <AssociationSet Name="FK__DetailVen__Num_C__2A4B4B5E" Association="Self.FK__DetailVen__Num_C__2A4B4B5E">
+      <End Role="CommandeVente" EntitySet="CommandeVente" />
+      <End Role="DetailVente" EntitySet="DetailVente" />
+    </AssociationSet>
+    <AssociationSet Name="FK__DetailFac__Num_F__31EC6D26" Association="Self.FK__DetailFac__Num_F__31EC6D26">
+      <End Role="Facture" EntitySet="Facture" />
+      <End Role="DetailFac" EntitySet="DetailFac" />
+    </AssociationSet>
+    <AssociationSet Name="FK__DetailReg__Num_R__74794A92" Association="Self.FK__DetailReg__Num_R__74794A92">
+      <End Role="Reglement" EntitySet="Reglement" />
+      <End Role="DetailReg" EntitySet="DetailReg" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Location__Matric__14B10FFA" Association="Self.FK__Location__Matric__14B10FFA">
+      <End Role="Voiture" EntitySet="Voiture" />
+      <End Role="Location" EntitySet="Location" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Reglement__Num_M__37A5467C" Association="Self.FK__Reglement__Num_M__37A5467C">
+      <End Role="ModeRG" EntitySet="ModeRG" />
+      <End Role="Reglement" EntitySet="Reglement" />
+    </AssociationSet>
+    <AssociationSet Name="FK__pointage__Cin__6D9742D9" Association="Self.FK__pointage__Cin__6D9742D9">
+      <End Role="Ouvrier" EntitySet="Ouvrier" />
+      <End Role="pointage" EntitySet="pointage" />
+    </AssociationSet>
+    <FunctionImport Name="Affiche_Article" ReturnType="Collection(GestionComercialeModel2.Affiche_Article_Result)" />
+    <FunctionImport Name="Affiche_Client" ReturnType="Collection(GestionComercialeModel2.Affiche_Client_Result)" />
+    <FunctionImport Name="Affiche_CmdA" ReturnType="Collection(GestionComercialeModel2.Affiche_CmdA_Result)" />
+    <FunctionImport Name="Affiche_CmdV" ReturnType="Collection(GestionComercialeModel2.Affiche_CmdV_Result)" />
+    <FunctionImport Name="Affiche_Facture" ReturnType="Collection(GestionComercialeModel2.Affiche_Facture_Result)" />
+    <FunctionImport Name="Affiche_Famille" ReturnType="Collection(GestionComercialeModel2.Affiche_Famille_Result)" />
+    <FunctionImport Name="Affiche_Fournisseur" ReturnType="Collection(GestionComercialeModel2.Affiche_Fournisseur_Result)" />
+    <FunctionImport Name="afficher_Config" ReturnType="Collection(GestionComercialeModel2.afficher_Config_Result)" />
+    <FunctionImport Name="Afficher_DetailCmdAch" ReturnType="Collection(GestionComercialeModel2.Afficher_DetailCmdAch_Result)">
+      <Parameter Name="Var" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Afficher_DetailVente" ReturnType="Collection(GestionComercialeModel2.Afficher_DetailVente_Result)" />
+    <FunctionImport Name="Afficher_ModeRG" ReturnType="Collection(GestionComercialeModel2.Afficher_ModeRG_Result)" />
+    <FunctionImport Name="Afficher_Reglement" ReturnType="Collection(GestionComercialeModel2.Afficher_Reglement_Result)" />
+    <FunctionImport Name="Ajouter_Article">
+      <Parameter Name="ref" Mode="In" Type="String" />
+      <Parameter Name="Designation" Mode="In" Type="String" />
+      <Parameter Name="PU" Mode="In" Type="Double" />
+      <Parameter Name="QteS" Mode="In" Type="Double" />
+      <Parameter Name="TVA" Mode="In" Type="Int32" />
+      <Parameter Name="fardeau" Mode="In" Type="String" />
+      <Parameter Name="Unite" Mode="In" Type="String" />
+      <Parameter Name="Num_Fa" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Ajouter_Banque">
+      <Parameter Name="NomB" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Ajouter_Chantier">
+      <Parameter Name="cin" Mode="In" Type="String" />
+      <Parameter Name="adress" Mode="In" Type="String" />
+      <Parameter Name="budget" Mode="In" Type="Double" />
+      <Parameter Name="datedebut" Mode="In" Type="DateTime" />
+      <Parameter Name="datefin" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="Ajouter_Charge">
+      <Parameter Name="nom" Mode="In" Type="String" />
+      <Parameter Name="date" Mode="In" Type="DateTime" />
+      <Parameter Name="montant" Mode="In" Type="Double" />
+      <Parameter Name="numch" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Ajouter_Client">
+      <Parameter Name="NomC" Mode="In" Type="String" />
+      <Parameter Name="Ville" Mode="In" Type="String" />
+      <Parameter Name="Adresse" Mode="In" Type="String" />
+      <Parameter Name="Tele" Mode="In" Type="String" />
+      <Parameter Name="Email" Mode="In" Type="String" />
+      <Parameter Name="Solde" Mode="In" Type="Double" />
+      <Parameter Name="Ice" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Ajouter_CmdAchat">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="datefact" Mode="In" Type="DateTime" />
+      <Parameter Name="idfact" Mode="In" Type="String" />
+      <Parameter Name="numfrs" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Ajouter_Collection">
+      <Parameter Name="date" Mode="In" Type="DateTime" />
+      <Parameter Name="nb" Mode="In" Type="Int32" />
+      <Parameter Name="nbcement" Mode="In" Type="Int32" />
+      <Parameter Name="week" Mode="In" Type="Int32" />
+      <Parameter Name="typeTobia" Mode="In" Type="String" />
+      <Parameter Name="nbColl" Mode="In" Type="Int32" />
+      <Parameter Name="prix" Mode="In" Type="Double" />
+    </FunctionImport>
+    <FunctionImport Name="Ajouter_CommandeVente">
+      <Parameter Name="Num_Cmd" Mode="In" Type="Int32" />
+      <Parameter Name="DateCmd" Mode="In" Type="DateTime" />
+      <Parameter Name="IsFacture" Mode="In" Type="Boolean" />
+      <Parameter Name="Num_Clt" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Ajouter_DetailFacture">
+      <Parameter Name="IdFact" Mode="In" Type="Int32" />
+      <Parameter Name="IdCmdV" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Ajouter_DetailReglement">
+      <Parameter Name="IdReg" Mode="In" Type="Int32" />
+      <Parameter Name="IdCmdV" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Ajouter_DetailsCmdAchat">
+      <Parameter Name="numcmd" Mode="In" Type="Int32" />
+      <Parameter Name="numart" Mode="In" Type="String" />
+      <Parameter Name="prix" Mode="In" Type="Double" />
+      <Parameter Name="qte" Mode="In" Type="Double" />
+    </FunctionImport>
+    <FunctionImport Name="Ajouter_Facture">
+      <Parameter Name="DateFac" Mode="In" Type="DateTime" />
+      <Parameter Name="Remise" Mode="In" Type="Double" />
+    </FunctionImport>
+    <FunctionImport Name="Ajouter_Famille">
+      <Parameter Name="NomFamille" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Ajouter_Fournisseur">
+      <Parameter Name="NomF" Mode="In" Type="String" />
+      <Parameter Name="Ville" Mode="In" Type="String" />
+      <Parameter Name="Adresse" Mode="In" Type="String" />
+      <Parameter Name="Tele" Mode="In" Type="String" />
+      <Parameter Name="Email" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Ajouter_Location">
+      <Parameter Name="dateDebut" Mode="In" Type="DateTime" />
+      <Parameter Name="dateFin" Mode="In" Type="DateTime" />
+      <Parameter Name="matr" Mode="In" Type="String" />
+      <Parameter Name="client" Mode="In" Type="Int32" />
+      <Parameter Name="unite" Mode="In" Type="String" />
+      <Parameter Name="montant" Mode="In" Type="Double" />
+      <Parameter Name="montant_paye" Mode="In" Type="Double" />
+    </FunctionImport>
+    <FunctionImport Name="Ajouter_ModeRG">
+      <Parameter Name="Modalite" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Ajouter_Ouvrier">
+      <Parameter Name="cin" Mode="In" Type="String" />
+      <Parameter Name="nom" Mode="In" Type="String" />
+      <Parameter Name="prenom" Mode="In" Type="String" />
+      <Parameter Name="tele" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Ajouter_Pointage">
+      <Parameter Name="cin" Mode="In" Type="String" />
+      <Parameter Name="avence" Mode="In" Type="Double" />
+      <Parameter Name="collection" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Ajouter_Reglement">
+      <Parameter Name="Montant" Mode="In" Type="Double" />
+      <Parameter Name="NumChe" Mode="In" Type="String" />
+      <Parameter Name="Num_ModeReg" Mode="In" Type="Int32" />
+      <Parameter Name="Num_Bq" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Ajouter_Voiture">
+      <Parameter Name="matricule" Mode="In" Type="String" />
+      <Parameter Name="model" Mode="In" Type="String" />
+      <Parameter Name="type" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Ajouter_week">
+      <Parameter Name="dateDebut" Mode="In" Type="DateTime" />
+      <Parameter Name="dateFin" Mode="In" Type="DateTime" />
+      <Parameter Name="prix" Mode="In" Type="Double" />
+    </FunctionImport>
+    <FunctionImport Name="Article_Fa" ReturnType="Collection(GestionComercialeModel2.Article_Fa_Result)" />
+    <FunctionImport Name="Article_Non_Vendu" ReturnType="Collection(GestionComercialeModel2.Article_Non_Vendu_Result)" />
+    <FunctionImport Name="Article_Null_Qte" ReturnType="Collection(GestionComercialeModel2.Article_Null_Qte_Result)" />
+    <FunctionImport Name="Chercher_Banque" ReturnType="Collection(GestionComercialeModel2.Chercher_Banque_Result)">
+      <Parameter Name="Var" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Chercher_Chantier" ReturnType="Collection(GestionComercialeModel2.Chercher_Chantier_Result)">
+      <Parameter Name="var" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Chercher_Charge" ReturnType="Collection(GestionComercialeModel2.Chercher_Charge_Result)">
+      <Parameter Name="var" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Chercher_collection" ReturnType="Collection(GestionComercialeModel2.Chercher_collection_Result)">
+      <Parameter Name="var" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Chercher_Famille" ReturnType="Collection(GestionComercialeModel2.Chercher_Famille_Result)">
+      <Parameter Name="Var" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Chercher_Location" ReturnType="Collection(GestionComercialeModel2.Chercher_Location_Result)">
+      <Parameter Name="var" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Chercher_Ouvrier" ReturnType="Collection(GestionComercialeModel2.Chercher_Ouvrier_Result)">
+      <Parameter Name="var" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Chercher_Pointage" ReturnType="Collection(GestionComercialeModel2.Chercher_Pointage_Result)">
+      <Parameter Name="var" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Chercher_Voiture" ReturnType="Collection(GestionComercialeModel2.Chercher_Voiture_Result)">
+      <Parameter Name="var" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Chercher_week" ReturnType="Collection(GestionComercialeModel2.Chercher_week_Result)">
+      <Parameter Name="var" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Chereher_Article" ReturnType="Collection(GestionComercialeModel2.Chereher_Article_Result)">
+      <Parameter Name="Var" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Chereher_Client" ReturnType="Collection(GestionComercialeModel2.Chereher_Client_Result)">
+      <Parameter Name="Var" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Chereher_CommandeAch" ReturnType="Collection(GestionComercialeModel2.Chereher_CommandeAch_Result)">
+      <Parameter Name="Var" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Chereher_CommandeVente" ReturnType="Collection(GestionComercialeModel2.Chereher_CommandeVente_Result)">
+      <Parameter Name="Var" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Chereher_Facture" ReturnType="Collection(GestionComercialeModel2.Chereher_Facture_Result)">
+      <Parameter Name="Var" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Chereher_Fournisseur" ReturnType="Collection(GestionComercialeModel2.Chereher_Fournisseur_Result)">
+      <Parameter Name="Var" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Chereher_ModeRG" ReturnType="Collection(GestionComercialeModel2.Chereher_ModeRG_Result)">
+      <Parameter Name="Var" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Chereher_Reglement" ReturnType="Collection(GestionComercialeModel2.Chereher_Reglement_Result)">
+      <Parameter Name="Var" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Client_Fa" ReturnType="Collection(GestionComercialeModel2.Client_Fa_Result)" />
+    <FunctionImport Name="Client_fidele" ReturnType="Collection(GestionComercialeModel2.Client_fidele_Result)" />
+    <FunctionImport Name="ClientNonRegele" ReturnType="Collection(GestionComercialeModel2.ClientNonRegele_Result)" />
+    <FunctionImport Name="CommandeNonFacturee" ReturnType="Collection(GestionComercialeModel2.CommandeNonFacturee_Result)">
+      <Parameter Name="IdClt" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Delete_Chantier">
+      <Parameter Name="Num" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Delete_Charge">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Delete_Collection">
+      <Parameter Name="num" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Delete_Location">
+      <Parameter Name="num" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Delete_Ouvrier">
+      <Parameter Name="cin" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Delete_Pointage">
+      <Parameter Name="nump" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Delete_Voiture">
+      <Parameter Name="matricule" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Delete_week">
+      <Parameter Name="Num" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="DetailCmd_Mois" ReturnType="Collection(GestionComercialeModel2.DetailCmd_Mois_Result)">
+      <Parameter Name="DateDebut" Mode="In" Type="DateTime" />
+      <Parameter Name="DateFin" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="Facture1" ReturnType="Collection(GestionComercialeModel2.Facture1_Result)">
+      <Parameter Name="NumFact" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Facture2" ReturnType="Collection(GestionComercialeModel2.Facture2_Result)">
+      <Parameter Name="numfac" Mode="In" Type="Int32" />
+      <Parameter Name="nom" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Facture3" ReturnType="Collection(GestionComercialeModel2.Facture3_Result)">
+      <Parameter Name="numfac" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="FactureAvecRemise" ReturnType="Collection(GestionComercialeModel2.FactureAvecRemise_Result)">
+      <Parameter Name="NumFact" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="FactureBDate" ReturnType="Collection(GestionComercialeModel2.FactureBDate_Result)">
+      <Parameter Name="numfac" Mode="In" Type="Int32" />
+      <Parameter Name="date1" Mode="In" Type="DateTime" />
+      <Parameter Name="date2" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="FactureClient" ReturnType="Collection(GestionComercialeModel2.FactureClient_Result)">
+      <Parameter Name="numclient" Mode="In" Type="Int32" />
+      <Parameter Name="numerocCheque" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="FacturesDetails" ReturnType="Collection(GestionComercialeModel2.FacturesDetails_Result)" />
+    <FunctionImport Name="Famille_Fa" ReturnType="Collection(String)" />
+    <FunctionImport Name="Fournisseur_Fa" ReturnType="Collection(GestionComercialeModel2.Fournisseur_Fa_Result)" />
+    <FunctionImport Name="Get_CmdV" ReturnType="Collection(GestionComercialeModel2.Get_CmdV_Result)">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Get_CommandeAch" ReturnType="Collection(GestionComercialeModel2.Get_CommandeAch_Result)">
+      <Parameter Name="var" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Get_Fournisseur" ReturnType="Collection(GestionComercialeModel2.Get_Fournisseur_Result)">
+      <Parameter Name="var" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="get_NumCmdVente" ReturnType="Collection(Int32)" />
+    <FunctionImport Name="GetArticle" ReturnType="Collection(GestionComercialeModel2.GetArticle_Result)">
+      <Parameter Name="NumArt" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetArticles" ReturnType="Collection(GestionComercialeModel2.GetArticles_Result)" />
+    <FunctionImport Name="GetArticlesByCategory" ReturnType="Collection(GestionComercialeModel2.GetArticlesByCategory_Result)">
+      <Parameter Name="Var" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetArticleStock" ReturnType="Collection(GestionComercialeModel2.GetArticleStock_Result)">
+      <Parameter Name="NumArt" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetClientIDByCmd" ReturnType="Collection(Int32)">
+      <Parameter Name="IdCmd" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetClientIDByReg" ReturnType="Collection(Int32)">
+      <Parameter Name="IdReg" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetFactureByPk" ReturnType="Collection(GestionComercialeModel2.GetFactureByPk_Result)">
+      <Parameter Name="IdFact" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetLastCmdID" ReturnType="Collection(Int32)" />
+    <FunctionImport Name="GetLastFacture" ReturnType="Collection(Int32)" />
+    <FunctionImport Name="GetLastReglement" ReturnType="Collection(Int32)" />
+    <FunctionImport Name="GetMontantByCommande" ReturnType="Collection(Double)">
+      <Parameter Name="NumCmd" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetMontantByReg" ReturnType="Collection(Double)">
+      <Parameter Name="NumCmd" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetRegelementByPk" ReturnType="Collection(GestionComercialeModel2.GetRegelementByPk_Result)">
+      <Parameter Name="IdReg" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="IsFacturee" ReturnType="Collection(Boolean)">
+      <Parameter Name="IdCmd" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="login_user" ReturnType="Collection(GestionComercialeModel2.login_user_Result)">
+      <Parameter Name="UserName" Mode="In" Type="String" />
+      <Parameter Name="Password" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Modifier_Article">
+      <Parameter Name="Num_At" Mode="In" Type="Int32" />
+      <Parameter Name="Designation" Mode="In" Type="String" />
+      <Parameter Name="PU" Mode="In" Type="Double" />
+      <Parameter Name="QteS" Mode="In" Type="Double" />
+      <Parameter Name="TVA" Mode="In" Type="Int32" />
+      <Parameter Name="Unite" Mode="In" Type="String" />
+      <Parameter Name="Num_Fa" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Modifier_Banque">
+      <Parameter Name="Num_Bq" Mode="In" Type="Int32" />
+      <Parameter Name="NomB" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Modifier_Client">
+      <Parameter Name="Num_Clt" Mode="In" Type="Int32" />
+      <Parameter Name="NomC" Mode="In" Type="String" />
+      <Parameter Name="Ville" Mode="In" Type="String" />
+      <Parameter Name="Adresse" Mode="In" Type="String" />
+      <Parameter Name="Tele" Mode="In" Type="String" />
+      <Parameter Name="Email" Mode="In" Type="String" />
+      <Parameter Name="Ice" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Modifier_CommandeAch">
+      <Parameter Name="Num_CmdA" Mode="In" Type="Int32" />
+      <Parameter Name="DateAch" Mode="In" Type="DateTime" />
+      <Parameter Name="IDFActureA" Mode="In" Type="String" />
+      <Parameter Name="Num_Fr" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Modifier_CommandeVente">
+      <Parameter Name="Num_CmdV" Mode="In" Type="Int32" />
+      <Parameter Name="DateCmd" Mode="In" Type="DateTime" />
+      <Parameter Name="Num_Clt" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Modifier_Facture">
+      <Parameter Name="Num_Fac" Mode="In" Type="Int32" />
+      <Parameter Name="DateFac" Mode="In" Type="DateTime" />
+      <Parameter Name="Remise" Mode="In" Type="Double" />
+      <Parameter Name="IsGiven" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="Modifier_Famille">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="NomFamille" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Modifier_Fournisseur">
+      <Parameter Name="Num_Fr" Mode="In" Type="Int32" />
+      <Parameter Name="NomF" Mode="In" Type="String" />
+      <Parameter Name="Ville" Mode="In" Type="String" />
+      <Parameter Name="Adresse" Mode="In" Type="String" />
+      <Parameter Name="Tele" Mode="In" Type="String" />
+      <Parameter Name="Email" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Modifier_ModeRG">
+      <Parameter Name="Num_ModeReg" Mode="In" Type="Int32" />
+      <Parameter Name="Modalite" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Modifier_Reglement">
+      <Parameter Name="Num_Reg" Mode="In" Type="Int32" />
+      <Parameter Name="Montant" Mode="In" Type="Double" />
+      <Parameter Name="NumChe" Mode="In" Type="String" />
+      <Parameter Name="Num_ModeReg" Mode="In" Type="Int32" />
+      <Parameter Name="Num_Bq" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SetCommandeFacturee">
+      <Parameter Name="IdCmd" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+    <FunctionImport Name="stock" ReturnType="Collection(GestionComercialeModel2.stock_Result)">
+      <Parameter Name="codeArt" Mode="In" Type="Int32" />
+      <Parameter Name="DateDebut" Mode="In" Type="DateTime" />
+      <Parameter Name="Datefin" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="Supprimer_Article">
+      <Parameter Name="NumAr" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Supprimer_Banque">
+      <Parameter Name="Num_Bq" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Supprimer_Client">
+      <Parameter Name="NumCl" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Supprimer_CmdA">
+      <Parameter Name="NumCmdA" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Supprimer_CmdV">
+      <Parameter Name="NumCmdV" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Supprimer_DetailAchat">
+      <Parameter Name="Num_Cmd" Mode="In" Type="Int32" />
+      <Parameter Name="NumArt" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Supprimer_DetailVente">
+      <Parameter Name="Num_Cmd" Mode="In" Type="Int32" />
+      <Parameter Name="NumArt" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Supprimer_Facture">
+      <Parameter Name="NumFac" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Supprimer_Famille">
+      <Parameter Name="NumFa" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Supprimer_Fournisseur">
+      <Parameter Name="NumFr" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Supprimer_ModReg">
+      <Parameter Name="Num_ModReg" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Supprimer_Reglement">
+      <Parameter Name="Num_Reg" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Update_Chantier">
+      <Parameter Name="num" Mode="In" Type="Int32" />
+      <Parameter Name="cin" Mode="In" Type="String" />
+      <Parameter Name="adress" Mode="In" Type="String" />
+      <Parameter Name="budget" Mode="In" Type="Double" />
+      <Parameter Name="datedebut" Mode="In" Type="DateTime" />
+      <Parameter Name="datefin" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="Update_Charge">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="nom" Mode="In" Type="String" />
+      <Parameter Name="date" Mode="In" Type="DateTime" />
+      <Parameter Name="montant" Mode="In" Type="Double" />
+      <Parameter Name="numch" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Update_Collection">
+      <Parameter Name="num" Mode="In" Type="String" />
+      <Parameter Name="date" Mode="In" Type="DateTime" />
+      <Parameter Name="nb" Mode="In" Type="Int32" />
+      <Parameter Name="nbcement" Mode="In" Type="Int32" />
+      <Parameter Name="week" Mode="In" Type="Int32" />
+      <Parameter Name="typeTobia" Mode="In" Type="String" />
+      <Parameter Name="nbColl" Mode="In" Type="Int32" />
+      <Parameter Name="prix" Mode="In" Type="Double" />
+    </FunctionImport>
+    <FunctionImport Name="Update_DetailsCmdAchat">
+      <Parameter Name="numcmd" Mode="In" Type="Int32" />
+      <Parameter Name="numart" Mode="In" Type="String" />
+      <Parameter Name="prix" Mode="In" Type="Double" />
+      <Parameter Name="qte" Mode="In" Type="Double" />
+    </FunctionImport>
+    <FunctionImport Name="Update_DetailsCmdAchatV2">
+      <Parameter Name="numcmd" Mode="In" Type="Int32" />
+      <Parameter Name="numart" Mode="In" Type="Int32" />
+      <Parameter Name="Newart" Mode="In" Type="Int32" />
+      <Parameter Name="prix" Mode="In" Type="Double" />
+      <Parameter Name="qte" Mode="In" Type="Double" />
+    </FunctionImport>
+    <FunctionImport Name="Update_DetailsCmdVente">
+      <Parameter Name="numcmd" Mode="In" Type="Int32" />
+      <Parameter Name="numart" Mode="In" Type="Int32" />
+      <Parameter Name="prix" Mode="In" Type="Double" />
+      <Parameter Name="qte" Mode="In" Type="Double" />
+      <Parameter Name="tva" Mode="In" Type="Int32" />
+      <Parameter Name="remise" Mode="In" Type="Double" />
+    </FunctionImport>
+    <FunctionImport Name="Update_DetailsCmdVenteV2">
+      <Parameter Name="numcmd" Mode="In" Type="Int32" />
+      <Parameter Name="numart" Mode="In" Type="Int32" />
+      <Parameter Name="Newart" Mode="In" Type="Int32" />
+      <Parameter Name="prix" Mode="In" Type="Double" />
+      <Parameter Name="qte" Mode="In" Type="Double" />
+      <Parameter Name="tva" Mode="In" Type="Int32" />
+      <Parameter Name="remise" Mode="In" Type="Double" />
+    </FunctionImport>
+    <FunctionImport Name="Update_Ouvrier">
+      <Parameter Name="cin" Mode="In" Type="String" />
+      <Parameter Name="nom" Mode="In" Type="String" />
+      <Parameter Name="prenom" Mode="In" Type="String" />
+      <Parameter Name="tele" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Update_Pointage">
+      <Parameter Name="nump" Mode="In" Type="Int32" />
+      <Parameter Name="cin" Mode="In" Type="String" />
+      <Parameter Name="avence" Mode="In" Type="Double" />
+      <Parameter Name="collection" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Update_Voiture">
+      <Parameter Name="matricule" Mode="In" Type="String" />
+      <Parameter Name="model" Mode="In" Type="String" />
+      <Parameter Name="type" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Update_week">
+      <Parameter Name="dateDebut" Mode="In" Type="DateTime" />
+      <Parameter Name="dateFin" Mode="In" Type="DateTime" />
+      <Parameter Name="prix" Mode="In" Type="Double" />
+      <Parameter Name="Num" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="UpdateIsFacturee">
+      <Parameter Name="var" Mode="In" Type="Boolean" />
+      <Parameter Name="NumCmd" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="UpdateMontantByReg">
+      <Parameter Name="NumCmd" Mode="In" Type="Int32" />
+      <Parameter Name="NumReg" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Vent_Fa" ReturnType="Collection(GestionComercialeModel2.Vent_Fa_Result)">
+      <Parameter Name="Var" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="Update_Location">
+      <Parameter Name="Numloc" Mode="In" Type="Int32" />
+      <Parameter Name="dateDebut" Mode="In" Type="DateTime" />
+      <Parameter Name="dateFin" Mode="In" Type="DateTime" />
+      <Parameter Name="matr" Mode="In" Type="String" />
+      <Parameter Name="client" Mode="In" Type="Int32" />
+      <Parameter Name="unite" Mode="In" Type="String" />
+      <Parameter Name="montant" Mode="In" Type="Double" />
+      <Parameter Name="montant_paye" Mode="In" Type="Double" />
+    </FunctionImport>
+    <FunctionImport Name="GetCmdVById" ReturnType="Collection(GestionComercialeModel2.GetCmdVById_Result)">
+      <Parameter Name="Id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetCmdVById2" ReturnType="Collection(GestionComercialeModel2.GetCmdVById2_Result)">
+      <Parameter Name="Id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="aff_ouvrier" ReturnType="Collection(GestionComercialeModel2.aff_ouvrier_Result)" />
+    <FunctionImport Name="aff_Chantier" ReturnType="Collection(GestionComercialeModel2.aff_Chantier_Result)" />
+    <FunctionImport Name="aff_Collection" ReturnType="Collection(GestionComercialeModel2.aff_Collection_Result)" />
+    <FunctionImport Name="aff_Location" ReturnType="Collection(GestionComercialeModel2.aff_Location_Result)" />
+    <FunctionImport Name="aff_Pointage" ReturnType="Collection(GestionComercialeModel2.aff_Pointage_Result)" />
+    <FunctionImport Name="aff_Vehicule" ReturnType="Collection(GestionComercialeModel2.aff_Vehicule_Result)" />
+    <FunctionImport Name="aff_Week" ReturnType="Collection(GestionComercialeModel2.aff_Week_Result)" />
+    <FunctionImport Name="aff_Charge" ReturnType="Collection(GestionComercialeModel2.aff_Charge_Result)" />
+    <FunctionImport Name="Chercher_Locatione" ReturnType="Collection(GestionComercialeModel2.Chercher_Locatione_Result)">
+      <Parameter Name="var" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Ajouter_Config">
+      <Parameter Name="Nomste" Mode="In" Type="String" />
+      <Parameter Name="Domaine" Mode="In" Type="String" />
+      <Parameter Name="logo" Mode="In" Type="Binary" />
+      <Parameter Name="adress" Mode="In" Type="String" />
+      <Parameter Name="tele" Mode="In" Type="String" />
+      <Parameter Name="Rc" Mode="In" Type="String" />
+      <Parameter Name="Patente" Mode="In" Type="String" />
+      <Parameter Name="Iff" Mode="In" Type="String" />
+      <Parameter Name="CNSS" Mode="In" Type="String" />
+      <Parameter Name="ICE" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Delete_Config">
+      <Parameter Name="NomSte" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Upadate_Config">
+      <Parameter Name="Nomste" Mode="In" Type="String" />
+      <Parameter Name="Domaine" Mode="In" Type="String" />
+      <Parameter Name="logo" Mode="In" Type="Binary" />
+      <Parameter Name="adress" Mode="In" Type="String" />
+      <Parameter Name="tele" Mode="In" Type="String" />
+      <Parameter Name="Rc" Mode="In" Type="String" />
+      <Parameter Name="Patente" Mode="In" Type="String" />
+      <Parameter Name="Iff" Mode="In" Type="String" />
+      <Parameter Name="CNSS" Mode="In" Type="String" />
+      <Parameter Name="ICE" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="print_Fac" ReturnType="Collection(GestionComercialeModel2.print_Fac_Result)">
+      <Parameter Name="numfac" Mode="In" Type="Int32" />
+      <Parameter Name="nomSte" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="Fichier" EntityType="GestionComercialeModel2.Fichier" />
+    <FunctionImport Name="Ajouter_Fichier">
+      <Parameter Name="desc" Mode="In" Type="String" />
+      <Parameter Name="fileName" Mode="In" Type="String" />
+      <Parameter Name="idCmdAch" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Delete_Fichier">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Update_Fichier">
+      <Parameter Name="idfichier" Mode="In" Type="Int32" />
+      <Parameter Name="desc" Mode="In" Type="String" />
+      <Parameter Name="fileName" Mode="In" Type="String" />
+      <Parameter Name="idCmdAch" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Afficher_Fichier" ReturnType="Collection(GestionComercialeModel2.Afficher_Fichier_Result)" />
+    <FunctionImport Name="chercher_Fichier" ReturnType="Collection(GestionComercialeModel2.chercher_Fichier_Result)">
+      <Parameter Name="var" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="afficher_Collection" ReturnType="Collection(GestionComercialeModel2.afficher_Collection_Result)" />
+    <EntitySet Name="poitage" EntityType="GestionComercialeModel2.poitage" />
+    <AssociationSet Name="FK__poitage__NumColl__77AABCF8" Association="GestionComercialeModel2.FK__poitage__NumColl__77AABCF8">
+      <End Role="Collection" EntitySet="Collection" />
+      <End Role="poitage" EntitySet="poitage" />
+    </AssociationSet>
+    <AssociationSet Name="FK__poitage__Cin__76B698BF" Association="GestionComercialeModel2.FK__poitage__Cin__76B698BF">
+      <End Role="Ouvrier" EntitySet="Ouvrier" />
+      <End Role="poitage" EntitySet="poitage" />
+    </AssociationSet>
+  </EntityContainer>
+  <ComplexType Name="Affiche_Article_Result">
+    <Property Type="String" Name="Num_At" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="Designation" Nullable="false" MaxLength="255" />
+    <Property Type="Double" Name="Prix_Unitaire" Nullable="false" />
+    <Property Type="Double" Name="Totale_Piece" Nullable="false" />
+    <Property Type="Int32" Name="TVA" Nullable="false" />
+    <Property Type="String" Name="num_fardeau" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="Unite" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="Famille" Nullable="false" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="Affiche_Client_Result">
+    <Property Type="Int32" Name="Num_Clt" Nullable="false" />
+    <Property Type="String" Name="Nom" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Ville" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Adresse" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Telephone" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="50" />
+    <Property Type="Decimal" Name="Solde" Nullable="true" Precision="12" Scale="2" />
+    <Property Type="String" Name="ICE" Nullable="true" MaxLength="30" />
+  </ComplexType>
+  <ComplexType Name="Affiche_CmdA_Result">
+    <Property Type="Int32" Name="N_Commande" Nullable="false" />
+    <Property Type="DateTime" Name="Date_Achat" Nullable="false" Precision="23" />
+    <Property Type="String" Name="N_Facture" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Nom_Fournisseur" Nullable="false" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="Affiche_CmdV_Result">
+    <Property Type="Int32" Name="N_Commande" Nullable="false" />
+    <Property Type="DateTime" Name="Date_Commande" Nullable="false" />
+    <Property Type="Boolean" Name="Facturée" Nullable="false" />
+    <Property Type="String" Name="Nom_Client" Nullable="false" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="Affiche_Facture_Result">
+    <Property Type="Int32" Name="N_Facture" Nullable="false" />
+    <Property Type="DateTime" Name="Date_Facture" Nullable="false" />
+    <Property Type="Boolean" Name="Is_Given" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="Affiche_Famille_Result">
+    <Property Type="Int32" Name="N_Famille" Nullable="false" />
+    <Property Type="String" Name="Famille" Nullable="false" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="Affiche_Fournisseur_Result">
+    <Property Type="Int32" Name="Num_Fr" Nullable="false" />
+    <Property Type="String" Name="Nom" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Ville" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Adresse" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Telephone" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="afficher_Config_Result">
+    <Property Type="String" Name="NonSo" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="Domaine" Nullable="true" MaxLength="200" />
+    <Property Type="Binary" Name="logo" Nullable="true" MaxLength="Max" />
+    <Property Type="String" Name="Adresse" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Tele" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="RC" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="Patente" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="IFF" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="CNSS" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="ICE" Nullable="true" MaxLength="40" />
+  </ComplexType>
+  <ComplexType Name="Afficher_DetailCmdAch_Result">
+    <Property Type="Int32" Name="Num_Cmd" Nullable="false" />
+    <Property Type="String" Name="Num_At" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="Designation" Nullable="false" MaxLength="255" />
+    <Property Type="Double" Name="Prix_Acheté" Nullable="false" />
+    <Property Type="Double" Name="Qantité_Acheté" Nullable="false" />
+    <Property Type="Int32" Name="TVA" Nullable="false" />
+    <Property Type="String" Name="num_fardeau" Nullable="false" MaxLength="10" />
+  </ComplexType>
+  <ComplexType Name="Afficher_DetailVente_Result">
+    <Property Type="Int32" Name="N_Commande" Nullable="false" />
+    <Property Type="String" Name="Designation" Nullable="false" MaxLength="255" />
+    <Property Type="Double" Name="Qantité" Nullable="false" />
+    <Property Type="Double" Name="Remise" Nullable="false" />
+    <Property Type="Double" Name="Prix_Vente" Nullable="false" />
+    <Property Type="Int32" Name="TVA" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="Afficher_ModeRG_Result">
+    <Property Type="Int32" Name="N_Reglemet" Nullable="false" />
+    <Property Type="String" Name="Modalite" Nullable="false" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="Afficher_Reglement_Result">
+    <Property Type="Int32" Name="N_Reglement" Nullable="false" />
+    <Property Type="Double" Name="Montant" Nullable="false" />
+    <Property Type="String" Name="N_Cheque" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Modalite" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Banque" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="Article_Fa_Result">
+    <Property Type="String" Name="Designation" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="Prix_Unitaire" Nullable="false" MaxLength="26" />
+    <Property Type="String" Name="TVA" Nullable="false" MaxLength="14" />
+    <Property Type="String" Name="num_fardeau" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="Famille" Nullable="false" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="Article_Non_Vendu_Result">
+    <Property Type="String" Name="Designation" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="Prix_Unitaire" Nullable="false" MaxLength="25" />
+    <Property Type="String" Name="Nom_Famille" Nullable="false" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="Article_Null_Qte_Result">
+    <Property Type="String" Name="Designation" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="Prix_Unitaire" Nullable="false" MaxLength="25" />
+    <Property Type="String" Name="Nom_Famille" Nullable="false" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="Chercher_Banque_Result">
+    <Property Type="Int32" Name="N_Banque" Nullable="false" />
+    <Property Type="String" Name="Banque" Nullable="false" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="Chercher_Chantier_Result">
+    <Property Type="Int32" Name="Num" Nullable="false" />
+    <Property Type="String" Name="Cin" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Adresse" Nullable="true" MaxLength="50" />
+    <Property Type="Double" Name="Budget" Nullable="true" />
+    <Property Type="DateTime" Name="dateDebut" Nullable="true" />
+    <Property Type="DateTime" Name="dateFin" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="Chercher_Charge_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="Nom" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="DateCharge" Nullable="true" MaxLength="20" />
+    <Property Type="Double" Name="Montant" Nullable="true" />
+    <Property Type="Int32" Name="Numch" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="Chercher_collection_Result">
+    <Property Type="Int32" Name="NumCollection" Nullable="false" />
+    <Property Type="DateTime" Name="Date" Nullable="true" />
+    <Property Type="Int32" Name="Nombre" Nullable="true" />
+    <Property Type="String" Name="TypeCollecion" Nullable="true" MaxLength="20" />
+    <Property Type="Int32" Name="Nbcement" Nullable="true" />
+    <Property Type="Int32" Name="NumWeek" Nullable="true" />
+    <Property Type="String" Name="typeTobiya" Nullable="true" MaxLength="20" />
+  </ComplexType>
+  <ComplexType Name="Chercher_Famille_Result">
+    <Property Type="Int32" Name="N_Famille" Nullable="false" />
+    <Property Type="String" Name="Nom_Famille" Nullable="false" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="Chercher_Location_Result">
+    <Property Type="Int32" Name="NumLoc" Nullable="false" />
+    <Property Type="DateTime" Name="DateDebut" Nullable="true" />
+    <Property Type="DateTime" Name="DateFin" Nullable="true" />
+    <Property Type="String" Name="Matricule" Nullable="true" MaxLength="20" />
+    <Property Type="Int32" Name="Num_Clt" Nullable="true" />
+    <Property Type="String" Name="Unite" Nullable="true" MaxLength="10" />
+    <Property Type="Double" Name="prix" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="Chercher_Ouvrier_Result">
+    <Property Type="String" Name="Cin" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="nom" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="prenom" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="tele" Nullable="true" MaxLength="20" />
+  </ComplexType>
+  <ComplexType Name="Chercher_Pointage_Result">
+    <Property Type="Int32" Name="Nump" Nullable="false" />
+    <Property Type="String" Name="Cin" Nullable="true" MaxLength="20" />
+    <Property Type="Double" Name="Avence" Nullable="true" />
+    <Property Type="Int32" Name="NumCollection" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="Chercher_Voiture_Result">
+    <Property Type="String" Name="matricule" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="model" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="type" Nullable="true" MaxLength="20" />
+  </ComplexType>
+  <ComplexType Name="Chercher_week_Result">
+    <Property Type="Int32" Name="NumWeek" Nullable="false" />
+    <Property Type="DateTime" Name="DateDebut" Nullable="true" />
+    <Property Type="DateTime" Name="DateFin" Nullable="true" />
+    <Property Type="Double" Name="Prix" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="Chereher_Article_Result">
+    <Property Type="String" Name="Num_At" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="Designation" Nullable="false" MaxLength="255" />
+    <Property Type="Double" Name="Prix_Unitaire" Nullable="false" />
+    <Property Type="Double" Name="Quantité_en_Stock" Nullable="false" />
+    <Property Type="Int32" Name="TVA" Nullable="false" />
+    <Property Type="String" Name="num_fardeau" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="Famille" Nullable="false" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="Chereher_Client_Result">
+    <Property Type="Int32" Name="Num_Clt" Nullable="false" />
+    <Property Type="String" Name="Nom" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Ville" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Adresse" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Telephone" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="50" />
+    <Property Type="Double" Name="Solde" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="Chereher_CommandeAch_Result">
+    <Property Type="Int32" Name="N_Commande" Nullable="false" />
+    <Property Type="DateTime" Name="Date" Nullable="false" Precision="23" />
+    <Property Type="String" Name="N_Facture" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Fournisseure" Nullable="false" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="Chereher_CommandeVente_Result">
+    <Property Type="Int32" Name="N_Commande" Nullable="false" />
+    <Property Type="DateTime" Name="Date_Vente" Nullable="false" />
+    <Property Type="Boolean" Name="Facture" Nullable="false" />
+    <Property Type="String" Name="Client" Nullable="false" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="Chereher_Facture_Result">
+    <Property Type="Int32" Name="N_Facture" Nullable="false" />
+    <Property Type="DateTime" Name="Date_Facture" Nullable="false" />
+    <Property Type="Boolean" Name="isGiven" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="Chereher_Fournisseur_Result">
+    <Property Type="Int32" Name="Num_Fr" Nullable="false" />
+    <Property Type="String" Name="Nom" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Ville" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Adresse" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Telephone" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="Chereher_ModeRG_Result">
+    <Property Type="Int32" Name="Num_Mode_Reglemet" Nullable="false" />
+    <Property Type="String" Name="Modalite" Nullable="false" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="Chereher_Reglement_Result">
+    <Property Type="Int32" Name="Num_Reglement" Nullable="false" />
+    <Property Type="Double" Name="Montant" Nullable="false" />
+    <Property Type="String" Name="Num_Cheque" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Modalite" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Banque" Nullable="false" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="Client_Fa_Result">
+    <Property Type="String" Name="Nom" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Adresse" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Telephone" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="Client_fidele_Result">
+    <Property Type="String" Name="Nom" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Adresse" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Telephone" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="ClientNonRegele_Result">
+    <Property Type="String" Name="NOM" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="VILLE" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Adresse" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Telephone" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="50" />
+    <Property Type="Decimal" Name="Solde" Nullable="true" Precision="12" Scale="2" />
+  </ComplexType>
+  <ComplexType Name="CommandeNonFacturee_Result">
+    <Property Type="Int32" Name="N_Commande" Nullable="false" />
+    <Property Type="DateTime" Name="Date_Commande" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="DetailCmd_Mois_Result">
+    <Property Type="DateTime" Name="DATE" Nullable="true" />
+    <Property Type="Int32" Name="FACT" Nullable="false" />
+    <Property Type="String" Name="NOM_CLIENT" Nullable="false" MaxLength="50" />
+    <Property Type="Double" Name="QTEE" Nullable="false" />
+    <Property Type="String" Name="num_fardeau" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="DESIGNATION" Nullable="false" MaxLength="255" />
+    <Property Type="Decimal" Name="PXU" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="PX_T" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="String" Name="MODALITE" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="BQ" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="N_CHQ" Nullable="true" MaxLength="50" />
+    <Property Type="Decimal" Name="TTC" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="HT" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="TVA" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Double" Name="Remise" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="Facture1_Result">
+    <Property Type="String" Name="QTE_Fardeau" Nullable="false" MaxLength="37" />
+    <Property Type="String" Name="DESIGNATION" Nullable="false" MaxLength="255" />
+    <Property Type="Double" Name="PRIX_U" Nullable="false" />
+    <Property Type="Double" Name="TOTAL" Nullable="false" />
+    <Property Type="Int32" Name="Num_Facture" Nullable="true" />
+    <Property Type="DateTime" Name="Date_Facture" Nullable="false" />
+    <Property Type="String" Name="Nom_Client" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Modalite" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="NomB" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="NumChe" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="Facture2_Result">
+    <Property Type="Double" Name="Qte" Nullable="false" />
+    <Property Type="String" Name="C_Fardeau" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="DESIGNATION" Nullable="false" MaxLength="255" />
+    <Property Type="Double" Name="PRIX_U" Nullable="false" />
+    <Property Type="Double" Name="TOTAL" Nullable="false" />
+    <Property Type="Int32" Name="Num_Facture" Nullable="true" />
+    <Property Type="DateTime" Name="Date_Facture" Nullable="false" />
+    <Property Type="String" Name="Nom_Client" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Modalite" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="NomB" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="NumChe" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="Facture3_Result">
+    <Property Type="Double" Name="Qte" Nullable="false" />
+    <Property Type="String" Name="Num_At" Nullable="false" MaxLength="200" />
+    <Property Type="Int32" Name="TVA" Nullable="false" />
+    <Property Type="String" Name="num_fardeau" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="Designation" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="unite" Nullable="true" MaxLength="10" />
+    <Property Type="Double" Name="PrixV" Nullable="false" />
+    <Property Type="Int32" Name="Num_Fac" Nullable="true" />
+    <Property Type="DateTime" Name="DateFac" Nullable="false" />
+    <Property Type="String" Name="NomC" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Modalite" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="NomB" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="NumChe" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="FactureAvecRemise_Result">
+    <Property Type="String" Name="QTE" Nullable="false" MaxLength="52" />
+    <Property Type="String" Name="DESIGNATION" Nullable="false" MaxLength="255" />
+    <Property Type="Double" Name="PRIX_U" Nullable="false" />
+    <Property Type="Double" Name="TOTAL" Nullable="false" />
+    <Property Type="Int32" Name="Num_Facture" Nullable="true" />
+    <Property Type="DateTime" Name="Date_Facture" Nullable="false" />
+    <Property Type="String" Name="Nom_Client" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Modalite" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="NomB" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="NumChe" Nullable="true" MaxLength="50" />
+    <Property Type="Double" Name="Remise" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="FactureBDate_Result">
+    <Property Type="Double" Name="Qte" Nullable="false" />
+    <Property Type="String" Name="C_Fardeau" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="DESIGNATION" Nullable="false" MaxLength="255" />
+    <Property Type="Double" Name="PRIX_U" Nullable="false" />
+    <Property Type="Double" Name="TOTAL" Nullable="false" />
+    <Property Type="Int32" Name="Num_Facture" Nullable="true" />
+    <Property Type="DateTime" Name="Date_Facture" Nullable="false" />
+    <Property Type="String" Name="Nom_Client" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Modalite" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="NomB" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="NumChe" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="FactureClient_Result">
+    <Property Type="String" Name="num_fardeau" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="DESIGNATION" Nullable="false" MaxLength="255" />
+    <Property Type="Double" Name="PrixV" Nullable="false" />
+    <Property Type="Double" Name="Qte" Nullable="false" />
+    <Property Type="Int32" Name="Num_Fac" Nullable="true" />
+    <Property Type="DateTime" Name="DateFac" Nullable="false" />
+    <Property Type="String" Name="NomC" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Modalite" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="NomB" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="NumChe" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="FacturesDetails_Result">
+    <Property Type="DateTime" Name="DATE" Nullable="true" />
+    <Property Type="Int32" Name="FACT" Nullable="false" />
+    <Property Type="String" Name="NOM_CLIENT" Nullable="false" MaxLength="50" />
+    <Property Type="Double" Name="QTEE" Nullable="false" />
+    <Property Type="String" Name="U" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="DESIGNATION" Nullable="false" MaxLength="255" />
+    <Property Type="Decimal" Name="PXU" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="PX_T" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="String" Name="MODALITE" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="BQ" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="N_CHQ" Nullable="true" MaxLength="50" />
+    <Property Type="Decimal" Name="TTC" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="HT" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="TVA" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Double" Name="Remise" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="Fournisseur_Fa_Result">
+    <Property Type="String" Name="Nom" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Adresse" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Telephone" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="Get_CmdV_Result">
+    <Property Type="Int32" Name="Num_CmdV" Nullable="false" />
+    <Property Type="DateTime" Name="Date_Commande" Nullable="false" />
+    <Property Type="Boolean" Name="Facturée" Nullable="false" />
+    <Property Type="String" Name="Nom_Client" Nullable="false" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="Get_CommandeAch_Result">
+    <Property Type="Int32" Name="Num_Cmd" Nullable="false" />
+    <Property Type="DateTime" Name="Date_Achat" Nullable="false" Precision="23" />
+    <Property Type="String" Name="N_Facture_Achat" Nullable="true" MaxLength="20" />
+    <Property Type="Int32" Name="N_Fournisseure" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="Get_Fournisseur_Result">
+    <Property Type="Int32" Name="Num_Fr" Nullable="false" />
+    <Property Type="String" Name="NomF" Nullable="false" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="GetArticle_Result">
+    <Property Type="Double" Name="PU" Nullable="false" />
+    <Property Type="String" Name="num_fardeau" Nullable="false" MaxLength="10" />
+    <Property Type="Int32" Name="tva" Nullable="false" />
+    <Property Type="String" Name="Designation" Nullable="false" MaxLength="255" />
+  </ComplexType>
+  <ComplexType Name="GetArticles_Result">
+    <Property Type="String" Name="Num_At" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="Designation" Nullable="false" MaxLength="255" />
+    <Property Type="Int32" Name="TVA" Nullable="false" />
+    <Property Type="String" Name="num_fardeau" Nullable="false" MaxLength="10" />
+  </ComplexType>
+  <ComplexType Name="GetArticlesByCategory_Result">
+    <Property Type="String" Name="Num_At" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="Designation" Nullable="false" MaxLength="255" />
+  </ComplexType>
+  <ComplexType Name="GetArticleStock_Result">
+    <Property Type="DateTime" Name="DATE" Nullable="false" />
+    <Property Type="Decimal" Name="STOCK" Nullable="true" Precision="12" Scale="2" />
+    <Property Type="Decimal" Name="QUANTITE_SORTI" Nullable="true" Precision="12" Scale="2" />
+    <Property Type="Decimal" Name="MONTANT_SORTI" Nullable="true" Precision="12" Scale="2" />
+    <Property Type="Decimal" Name="QUANTITE_ENTRE" Nullable="true" Precision="12" Scale="2" />
+    <Property Type="Decimal" Name="MONTANT_ENTRE" Nullable="true" Precision="12" Scale="2" />
+    <Property Type="String" Name="Designation" Nullable="false" MaxLength="255" />
+  </ComplexType>
+  <ComplexType Name="GetFactureByPk_Result">
+    <Property Type="DateTime" Name="DateFac" Nullable="false" />
+    <Property Type="Double" Name="Remise" Nullable="true" />
+    <Property Type="Boolean" Name="IsGiven" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="GetRegelementByPk_Result">
+    <Property Type="Int32" Name="Num_Reg" Nullable="false" />
+    <Property Type="Double" Name="Montant" Nullable="false" />
+    <Property Type="String" Name="NumChe" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Modalite" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="NomB" Nullable="false" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="login_user_Result">
+    <Property Type="Int32" Name="Id_user" Nullable="false" />
+    <Property Type="String" Name="User" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="MP" Nullable="false" MaxLength="255" />
+  </ComplexType>
+  <ComplexType Name="stock_Result">
+    <Property Type="DateTime" Name="DateAch" Nullable="false" Precision="23" />
+    <Property Type="Double" Name="QteS" Nullable="false" />
+    <Property Type="Double" Name="Column1" Nullable="true" />
+    <Property Type="Double" Name="PrixA" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="Vent_Fa_Result">
+    <Property Type="String" Name="Designation" Nullable="false" MaxLength="255" />
+    <Property Type="Double" Name="Qantité" Nullable="false" />
+    <Property Type="Double" Name="Prix_Vente" Nullable="false" />
+    <Property Type="String" Name="num_fardeau" Nullable="false" MaxLength="10" />
+  </ComplexType>
+  <ComplexType Name="GetCmdVById_Result">
+    <Property Type="Int32" Name="Num_CmdV" Nullable="false" />
+    <Property Type="DateTime" Name="DateCmd" Nullable="false" />
+    <Property Type="Boolean" Name="IsFacture" Nullable="false" />
+    <Property Type="Int32" Name="Num_Clt" Nullable="true" />
+    <Property Type="Int32" Name="Num_CmdV1" Nullable="false" />
+    <Property Type="String" Name="Num_At" Nullable="false" MaxLength="200" />
+    <Property Type="Double" Name="Qte" Nullable="false" />
+    <Property Type="Double" Name="Remise" Nullable="false" />
+    <Property Type="Double" Name="PrixV" Nullable="false" />
+    <Property Type="Int32" Name="TVA" Nullable="true" />
+    <Property Type="Int32" Name="Num_Clt1" Nullable="false" />
+    <Property Type="String" Name="NomC" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Ville" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Adresse" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Tele" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="50" />
+    <Property Type="Double" Name="Solde" Nullable="true" />
+    <Property Type="String" Name="ICE" Nullable="true" MaxLength="30" />
+  </ComplexType>
+  <ComplexType Name="GetCmdVById2_Result">
+    <Property Type="Int32" Name="Num_CmdV" Nullable="false" />
+    <Property Type="String" Name="Num_At" Nullable="false" MaxLength="200" />
+    <Property Type="Double" Name="Qte" Nullable="false" />
+    <Property Type="Double" Name="Remise" Nullable="false" />
+    <Property Type="Double" Name="PrixV" Nullable="false" />
+    <Property Type="Int32" Name="TVA" Nullable="true" />
+    <Property Type="Int32" Name="Num_Clt" Nullable="true" />
+    <Property Type="DateTime" Name="DateCmd" Nullable="false" />
+    <Property Type="String" Name="Designation" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="NomC" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="unite" Nullable="true" MaxLength="10" />
+  </ComplexType>
+  <ComplexType Name="aff_ouvrier_Result">
+    <Property Type="String" Name="Cin" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="nom" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="prenom" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="tele" Nullable="true" MaxLength="20" />
+  </ComplexType>
+  <ComplexType Name="aff_Chantier_Result">
+    <Property Type="Int32" Name="Num" Nullable="false" />
+    <Property Type="String" Name="Cin" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Adresse" Nullable="true" MaxLength="50" />
+    <Property Type="Double" Name="Budget" Nullable="true" />
+    <Property Type="DateTime" Name="dateDebut" Nullable="true" />
+    <Property Type="DateTime" Name="dateFin" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="aff_Collection_Result">
+    <Property Type="Int32" Name="NumCollection" Nullable="false" />
+    <Property Type="DateTime" Name="Date" Nullable="true" />
+    <Property Type="Int32" Name="Nombre" Nullable="true" />
+    <Property Type="String" Name="TypeCollecion" Nullable="true" MaxLength="20" />
+    <Property Type="Int32" Name="Nbcement" Nullable="true" />
+    <Property Type="Int32" Name="NumWeek" Nullable="true" />
+    <Property Type="String" Name="typeTobiya" Nullable="true" MaxLength="20" />
+    <Property Type="Int32" Name="Nb_Collection" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="aff_Location_Result">
+    <Property Type="Int32" Name="NumLoc" Nullable="false" />
+    <Property Type="DateTime" Name="DateDebut" Nullable="true" />
+    <Property Type="DateTime" Name="DateFin" Nullable="true" />
+    <Property Type="String" Name="Matricule" Nullable="true" MaxLength="20" />
+    <Property Type="Int32" Name="Num_Clt" Nullable="true" />
+    <Property Type="String" Name="Unite" Nullable="true" MaxLength="10" />
+    <Property Type="Double" Name="Montant" Nullable="true" />
+    <Property Type="Double" Name="Montant_paye" Nullable="true" />
+    <Property Type="Double" Name="reste" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="aff_Pointage_Result">
+    <Property Type="Int32" Name="Nump" Nullable="false" />
+    <Property Type="String" Name="Cin" Nullable="true" MaxLength="20" />
+    <Property Type="Double" Name="Avence" Nullable="true" />
+    <Property Type="Int32" Name="NumCollection" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="aff_Vehicule_Result">
+    <Property Type="String" Name="matricule" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="model" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="type" Nullable="true" MaxLength="20" />
+  </ComplexType>
+  <ComplexType Name="aff_Week_Result">
+    <Property Type="Int32" Name="NumWeek" Nullable="false" />
+    <Property Type="DateTime" Name="DateDebut" Nullable="true" />
+    <Property Type="DateTime" Name="DateFin" Nullable="true" />
+    <Property Type="Double" Name="Prix" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="aff_Charge_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="Nom" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="DateCharge" Nullable="true" MaxLength="20" />
+    <Property Type="Double" Name="Montant" Nullable="true" />
+    <Property Type="Int32" Name="Numch" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="Chercher_Locatione_Result">
+    <Property Type="Int32" Name="NumLoc" Nullable="false" />
+    <Property Type="DateTime" Name="DateDebut" Nullable="true" />
+    <Property Type="DateTime" Name="DateFin" Nullable="true" />
+    <Property Type="String" Name="Matricule" Nullable="true" MaxLength="20" />
+    <Property Type="Int32" Name="Num_Clt" Nullable="true" />
+    <Property Type="String" Name="Unite" Nullable="true" MaxLength="10" />
+    <Property Type="Double" Name="Montant" Nullable="true" />
+    <Property Type="Double" Name="Montant_paye" Nullable="true" />
+    <Property Type="Double" Name="reste" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="print_Fac_Result">
+    <Property Type="Double" Name="Qte" Nullable="false" />
+    <Property Type="String" Name="Num_At" Nullable="false" MaxLength="200" />
+    <Property Type="Int32" Name="TVA" Nullable="false" />
+    <Property Type="String" Name="num_fardeau" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="Client_ICE" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="Designation" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="unite" Nullable="true" MaxLength="10" />
+    <Property Type="Double" Name="PrixV" Nullable="false" />
+    <Property Type="Int32" Name="Num_Fac" Nullable="true" />
+    <Property Type="DateTime" Name="DateFac" Nullable="false" />
+    <Property Type="String" Name="NomC" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Modalite" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="NomB" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="NumChe" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="NonSo" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="Domaine" Nullable="true" MaxLength="200" />
+    <Property Type="Binary" Name="logo" Nullable="true" MaxLength="Max" />
+    <Property Type="String" Name="Adresse" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Tele" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="RC" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="Patente" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="IFF" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="CNSS" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="ICE" Nullable="true" MaxLength="40" />
+  </ComplexType>
+  <EntityType Name="Fichier">
+    <Key>
+      <PropertyRef Name="idFichier" />
+    </Key>
+    <Property Name="idFichier" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="FileName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="num_CommandeAch" Type="Int32" />
+  </EntityType>
+  <ComplexType Name="Afficher_Fichier_Result">
+    <Property Type="Int32" Name="idFichier" Nullable="false" />
+    <Property Type="String" Name="Description" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="FileName" Nullable="true" MaxLength="500" />
+    <Property Type="Int32" Name="num_CommandeAch" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="chercher_Fichier_Result">
+    <Property Type="Int32" Name="idFichier" Nullable="false" />
+    <Property Type="String" Name="Description" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="FileName" Nullable="true" MaxLength="500" />
+    <Property Type="Int32" Name="num_CommandeAch" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="afficher_Collection_Result">
+    <Property Type="Int32" Name="NumCollection" Nullable="false" />
+    <Property Type="DateTime" Name="Date" Nullable="true" />
+    <Property Type="Int32" Name="Nombre" Nullable="true" />
+    <Property Type="String" Name="TypeCollecion" Nullable="true" MaxLength="20" />
+    <Property Type="Int32" Name="Nbcement" Nullable="true" />
+    <Property Type="Int32" Name="NumWeek" Nullable="true" />
+    <Property Type="String" Name="typeTobiya" Nullable="true" MaxLength="20" />
+    <Property Type="Int32" Name="Nb_Collection" Nullable="true" />
+    <Property Type="Double" Name="Prix" Nullable="true" />
+  </ComplexType>
+  <EntityType Name="poitage">
+    <Key>
+      <PropertyRef Name="Nump" />
+    </Key>
+    <Property Name="Nump" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Cin" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Avence" Type="Double" />
+    <Property Name="NumCollection" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Collection" Relationship="GestionComercialeModel2.FK__poitage__NumColl__77AABCF8" FromRole="poitage" ToRole="Collection" />
+    <NavigationProperty Name="Ouvrier" Relationship="GestionComercialeModel2.FK__poitage__Cin__76B698BF" FromRole="poitage" ToRole="Ouvrier" />
+  </EntityType>
+  <Association Name="FK__poitage__NumColl__77AABCF8">
+    <End Type="GestionComercialeModel2.Collection" Role="Collection" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="GestionComercialeModel2.poitage" Role="poitage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Collection">
+        <PropertyRef Name="NumCollection" />
+      </Principal>
+      <Dependent Role="poitage">
+        <PropertyRef Name="NumCollection" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__poitage__Cin__76B698BF">
+    <End Type="GestionComercialeModel2.Ouvrier" Role="Ouvrier" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="GestionComercialeModel2.poitage" Role="poitage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ouvrier">
+        <PropertyRef Name="Cin" />
+      </Principal>
+      <Dependent Role="poitage">
+        <PropertyRef Name="Cin" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

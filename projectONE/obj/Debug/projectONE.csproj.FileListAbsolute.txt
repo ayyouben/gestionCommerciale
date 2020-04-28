@@ -1,0 +1,199 @@
+C:\Users\dell\Documents\Visual Output Project\projectONE\projectONE\bin\Debug\projectONE.exe.config
+C:\Users\dell\Documents\Visual Output Project\projectONE\projectONE\bin\Debug\projectONE.exe
+C:\Users\dell\Documents\Visual Output Project\projectONE\projectONE\bin\Debug\projectONE.pdb
+C:\Users\dell\Documents\Visual Output Project\projectONE\projectONE\obj\Debug\projectONE.Properties.Resources.resources
+C:\Users\dell\Documents\Visual Output Project\projectONE\projectONE\obj\Debug\projectONE.csproj.GenerateResource.Cache
+C:\Users\dell\Documents\Visual Output Project\projectONE\projectONE\obj\Debug\projectONE.exe
+C:\Users\dell\Documents\Visual Output Project\projectONE\projectONE\obj\Debug\projectONE.pdb
+C:\Users\dell\Documents\Visual Output Project\projectONE\projectONE\obj\Debug\projectONE.Form1.resources
+C:\Users\dell\Documents\Visual Output Project\projectONE\projectONE\bin\Debug\Bunifu_UI_v1.5.3.dll
+C:\Users\dell\Documents\Visual Output Project\projectONE\projectONE\obj\Debug\projectONE.csprojResolveAssemblyReference.cache
+C:\Users\dell\Documents\Visual Output Project\projectONE\projectONE\obj\Debug\projectONE.FactureCmdV.resources
+C:\Users\dell\Documents\Visual Output Project\projectONE\projectONE\obj\Debug\projectONE.OperationV.resources
+C:\Users\dell\Documents\Visual Output Project\projectONE\projectONE\bin\Debug\EntityFramework.dll
+C:\Users\dell\Documents\Visual Output Project\projectONE\projectONE\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\dell\Documents\Visual Output Project\projectONE\projectONE\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+C:\Users\dell\Documents\Visual Output Project\projectONE\projectONE\bin\Debug\Microsoft.SqlServer.Types.dll
+C:\Users\dell\Documents\Visual Output Project\projectONE\projectONE\bin\Debug\EntityFramework.xml
+C:\Users\dell\Documents\Visual Output Project\projectONE\projectONE\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\dell\Documents\Visual Output Project\projectONE\projectONE\bin\Debug\de\Microsoft.SqlServer.Types.resources.dll
+C:\Users\dell\Documents\Visual Output Project\projectONE\projectONE\bin\Debug\es\Microsoft.SqlServer.Types.resources.dll
+C:\Users\dell\Documents\Visual Output Project\projectONE\projectONE\bin\Debug\fr\Microsoft.SqlServer.Types.resources.dll
+C:\Users\dell\Documents\Visual Output Project\projectONE\projectONE\bin\Debug\it\Microsoft.SqlServer.Types.resources.dll
+C:\Users\dell\Documents\Visual Output Project\projectONE\projectONE\bin\Debug\ja\Microsoft.SqlServer.Types.resources.dll
+C:\Users\dell\Documents\Visual Output Project\projectONE\projectONE\bin\Debug\ko\Microsoft.SqlServer.Types.resources.dll
+C:\Users\dell\Documents\Visual Output Project\projectONE\projectONE\bin\Debug\pt\Microsoft.SqlServer.Types.resources.dll
+C:\Users\dell\Documents\Visual Output Project\projectONE\projectONE\bin\Debug\ru\Microsoft.SqlServer.Types.resources.dll
+C:\Users\dell\Documents\Visual Output Project\projectONE\projectONE\bin\Debug\zh-Hans\Microsoft.SqlServer.Types.resources.dll
+C:\Users\dell\Documents\Visual Output Project\projectONE\projectONE\bin\Debug\zh-Hant\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Benzakour\Desktop\lastProject\projectONE\projectONE\bin\Debug\projectONE.exe.config
+C:\Users\Benzakour\Desktop\lastProject\projectONE\projectONE\obj\Debug\projectONE.exe
+C:\Users\Benzakour\Desktop\lastProject\projectONE\projectONE\obj\Debug\projectONE.pdb
+C:\Users\Benzakour\Desktop\lastProject\projectONE\projectONE\bin\Debug\projectONE.exe
+C:\Users\Benzakour\Desktop\lastProject\projectONE\projectONE\bin\Debug\projectONE.pdb
+C:\Users\Benzakour\Desktop\lastProject\projectONE\projectONE\bin\Debug\EntityFramework.dll
+C:\Users\Benzakour\Desktop\lastProject\projectONE\projectONE\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Benzakour\Desktop\lastProject\projectONE\projectONE\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+C:\Users\Benzakour\Desktop\lastProject\projectONE\projectONE\bin\Debug\Microsoft.SqlServer.Types.dll
+C:\Users\Benzakour\Desktop\lastProject\projectONE\projectONE\bin\Debug\EntityFramework.xml
+C:\Users\Benzakour\Desktop\lastProject\projectONE\projectONE\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Benzakour\Desktop\lastProject\projectONE\projectONE\bin\Debug\fr\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Benzakour\Desktop\lastProject\projectONE\projectONE\bin\Debug\de\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Benzakour\Desktop\lastProject\projectONE\projectONE\bin\Debug\es\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Benzakour\Desktop\lastProject\projectONE\projectONE\bin\Debug\fr\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Benzakour\Desktop\lastProject\projectONE\projectONE\bin\Debug\it\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Benzakour\Desktop\lastProject\projectONE\projectONE\bin\Debug\ja\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Benzakour\Desktop\lastProject\projectONE\projectONE\bin\Debug\ko\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Benzakour\Desktop\lastProject\projectONE\projectONE\bin\Debug\pt\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Benzakour\Desktop\lastProject\projectONE\projectONE\bin\Debug\ru\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Benzakour\Desktop\lastProject\projectONE\projectONE\bin\Debug\zh-Hans\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Benzakour\Desktop\lastProject\projectONE\projectONE\bin\Debug\zh-Hant\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Benzakour\Desktop\lastProject\projectONE\projectONE\obj\Debug\projectONE.csprojResolveAssemblyReference.cache
+C:\Users\Benzakour\Desktop\lastProject\projectONE\projectONE\obj\Debug\projectONE.FactureCmdV.resources
+C:\Users\Benzakour\Desktop\lastProject\projectONE\projectONE\obj\Debug\projectONE.Form1.resources
+C:\Users\Benzakour\Desktop\lastProject\projectONE\projectONE\obj\Debug\projectONE.OperationV.resources
+C:\Users\Benzakour\Desktop\lastProject\projectONE\projectONE\obj\Debug\projectONE.Properties.Resources.resources
+C:\Users\Benzakour\Desktop\lastProject\projectONE\projectONE\obj\Debug\projectONE.csproj.GenerateResource.Cache
+E:\lastProject\projectONE\projectONE\bin\Debug\projectONE.exe.config
+E:\lastProject\projectONE\projectONE\obj\Debug\projectONE.exe
+E:\lastProject\projectONE\projectONE\obj\Debug\projectONE.pdb
+E:\lastProject\projectONE\projectONE\bin\Debug\projectONE.exe
+E:\lastProject\projectONE\projectONE\bin\Debug\projectONE.pdb
+E:\lastProject\projectONE\projectONE\bin\Debug\EntityFramework.dll
+E:\lastProject\projectONE\projectONE\bin\Debug\EntityFramework.SqlServer.dll
+E:\lastProject\projectONE\projectONE\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+E:\lastProject\projectONE\projectONE\bin\Debug\Microsoft.SqlServer.Types.dll
+E:\lastProject\projectONE\projectONE\bin\Debug\EntityFramework.xml
+E:\lastProject\projectONE\projectONE\bin\Debug\EntityFramework.SqlServer.xml
+E:\lastProject\projectONE\projectONE\bin\Debug\de\Microsoft.SqlServer.Types.resources.dll
+E:\lastProject\projectONE\projectONE\bin\Debug\es\Microsoft.SqlServer.Types.resources.dll
+E:\lastProject\projectONE\projectONE\bin\Debug\fr\Microsoft.SqlServer.Types.resources.dll
+E:\lastProject\projectONE\projectONE\bin\Debug\it\Microsoft.SqlServer.Types.resources.dll
+E:\lastProject\projectONE\projectONE\bin\Debug\ja\Microsoft.SqlServer.Types.resources.dll
+E:\lastProject\projectONE\projectONE\bin\Debug\ko\Microsoft.SqlServer.Types.resources.dll
+E:\lastProject\projectONE\projectONE\bin\Debug\pt\Microsoft.SqlServer.Types.resources.dll
+E:\lastProject\projectONE\projectONE\bin\Debug\ru\Microsoft.SqlServer.Types.resources.dll
+E:\lastProject\projectONE\projectONE\bin\Debug\zh-Hans\Microsoft.SqlServer.Types.resources.dll
+E:\lastProject\projectONE\projectONE\bin\Debug\zh-Hant\Microsoft.SqlServer.Types.resources.dll
+E:\lastProject\projectONE\projectONE\obj\Debug\projectONE.csprojResolveAssemblyReference.cache
+E:\lastProject\projectONE\projectONE\obj\Debug\projectONE.FactureCmdV.resources
+E:\lastProject\projectONE\projectONE\obj\Debug\projectONE.Form1.resources
+E:\lastProject\projectONE\projectONE\obj\Debug\projectONE.OperationV.resources
+E:\lastProject\projectONE\projectONE\obj\Debug\projectONE.Properties.Resources.resources
+E:\lastProject\projectONE\projectONE\obj\Debug\projectONE.csproj.GenerateResource.Cache
+C:\Users\Pc\Desktop\lastProject\projectONE\projectONE\bin\Debug\projectONE.exe.config
+C:\Users\Pc\Desktop\lastProject\projectONE\projectONE\obj\Debug\projectONE.exe
+C:\Users\Pc\Desktop\lastProject\projectONE\projectONE\obj\Debug\projectONE.pdb
+C:\Users\Pc\Desktop\lastProject\projectONE\projectONE\obj\Debug\projectONE.csprojResolveAssemblyReference.cache
+C:\Users\Pc\Desktop\lastProject\projectONE\projectONE\obj\Debug\projectONE.FactureCmdV.resources
+C:\Users\Pc\Desktop\lastProject\projectONE\projectONE\obj\Debug\projectONE.Form1.resources
+C:\Users\Pc\Desktop\lastProject\projectONE\projectONE\obj\Debug\projectONE.OperationV.resources
+C:\Users\Pc\Desktop\lastProject\projectONE\projectONE\obj\Debug\projectONE.Properties.Resources.resources
+C:\Users\Pc\Desktop\lastProject\projectONE\projectONE\obj\Debug\projectONE.csproj.GenerateResource.Cache
+C:\Users\Pc\Desktop\lastProject\projectONE\projectONE\bin\Debug\projectONE.exe
+C:\Users\Pc\Desktop\lastProject\projectONE\projectONE\bin\Debug\projectONE.pdb
+C:\Users\Pc\Desktop\lastProject\projectONE\projectONE\bin\Debug\EntityFramework.dll
+C:\Users\Pc\Desktop\lastProject\projectONE\projectONE\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Pc\Desktop\lastProject\projectONE\projectONE\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+C:\Users\Pc\Desktop\lastProject\projectONE\projectONE\bin\Debug\Microsoft.SqlServer.Types.dll
+C:\Users\Pc\Desktop\lastProject\projectONE\projectONE\bin\Debug\EntityFramework.xml
+C:\Users\Pc\Desktop\lastProject\projectONE\projectONE\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Pc\Desktop\lastProject\projectONE\projectONE\bin\Debug\de\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Pc\Desktop\lastProject\projectONE\projectONE\bin\Debug\es\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Pc\Desktop\lastProject\projectONE\projectONE\bin\Debug\fr\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Pc\Desktop\lastProject\projectONE\projectONE\bin\Debug\it\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Pc\Desktop\lastProject\projectONE\projectONE\bin\Debug\ja\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Pc\Desktop\lastProject\projectONE\projectONE\bin\Debug\ko\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Pc\Desktop\lastProject\projectONE\projectONE\bin\Debug\pt\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Pc\Desktop\lastProject\projectONE\projectONE\bin\Debug\ru\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Pc\Desktop\lastProject\projectONE\projectONE\bin\Debug\zh-Hans\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Pc\Desktop\lastProject\projectONE\projectONE\bin\Debug\zh-Hant\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Pc\Desktop\projectONE\projectONE\bin\Debug\projectONE.exe.config
+C:\Users\Pc\Desktop\projectONE\projectONE\obj\Debug\projectONE.exe
+C:\Users\Pc\Desktop\projectONE\projectONE\obj\Debug\projectONE.pdb
+C:\Users\Pc\Desktop\projectONE\projectONE\bin\Debug\projectONE.exe
+C:\Users\Pc\Desktop\projectONE\projectONE\bin\Debug\projectONE.pdb
+C:\Users\Pc\Desktop\projectONE\projectONE\bin\Debug\EntityFramework.dll
+C:\Users\Pc\Desktop\projectONE\projectONE\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Pc\Desktop\projectONE\projectONE\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+C:\Users\Pc\Desktop\projectONE\projectONE\bin\Debug\Microsoft.SqlServer.Types.dll
+C:\Users\Pc\Desktop\projectONE\projectONE\bin\Debug\EntityFramework.xml
+C:\Users\Pc\Desktop\projectONE\projectONE\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Pc\Desktop\projectONE\projectONE\bin\Debug\de\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Pc\Desktop\projectONE\projectONE\bin\Debug\es\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Pc\Desktop\projectONE\projectONE\bin\Debug\fr\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Pc\Desktop\projectONE\projectONE\bin\Debug\it\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Pc\Desktop\projectONE\projectONE\bin\Debug\ja\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Pc\Desktop\projectONE\projectONE\bin\Debug\ko\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Pc\Desktop\projectONE\projectONE\bin\Debug\pt\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Pc\Desktop\projectONE\projectONE\bin\Debug\ru\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Pc\Desktop\projectONE\projectONE\bin\Debug\zh-Hans\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Pc\Desktop\projectONE\projectONE\bin\Debug\zh-Hant\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Pc\Desktop\projectONE\projectONE\obj\Debug\projectONE.FactureCmdV.resources
+C:\Users\Pc\Desktop\projectONE\projectONE\obj\Debug\projectONE.Form1.resources
+C:\Users\Pc\Desktop\projectONE\projectONE\obj\Debug\projectONE.OperationV.resources
+C:\Users\Pc\Desktop\projectONE\projectONE\obj\Debug\projectONE.Properties.Resources.resources
+C:\Users\Pc\Desktop\projectONE\projectONE\obj\Debug\projectONE.csproj.GenerateResource.Cache
+C:\Users\Pc\Desktop\projectONE\projectONE\obj\Debug\RdlCompile.cache
+C:\Users\Pc\Desktop\projectONE\projectONE\obj\Debug\RdlCompile.compiled
+C:\Users\Pc\Desktop\projectONE\projectONE\obj\Debug\projectONE.PrintCmdV.resources
+D:\projectONE\projectONE\bin\Debug\projectONE.exe.config
+D:\projectONE\projectONE\obj\Debug\projectONE.exe
+D:\projectONE\projectONE\obj\Debug\projectONE.pdb
+C:\Users\ayyoub\Desktop\projectONE\projectONE\bin\Debug\projectONE.exe.config
+C:\Users\ayyoub\Desktop\projectONE\projectONE\obj\Debug\projectONE.exe
+C:\Users\ayyoub\Desktop\projectONE\projectONE\obj\Debug\projectONE.pdb
+C:\Users\ayyoub\Desktop\projectONE\projectONE\bin\Debug\projectONE.exe
+C:\Users\ayyoub\Desktop\projectONE\projectONE\bin\Debug\projectONE.pdb
+C:\Users\ayyoub\Desktop\projectONE\projectONE\bin\Debug\EntityFramework.dll
+C:\Users\ayyoub\Desktop\projectONE\projectONE\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\ayyoub\Desktop\projectONE\projectONE\bin\Debug\Microsoft.SqlServer.Types.dll
+C:\Users\ayyoub\Desktop\projectONE\projectONE\bin\Debug\EntityFramework.xml
+C:\Users\ayyoub\Desktop\projectONE\projectONE\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\ayyoub\Desktop\projectONE\projectONE\bin\Debug\de\Microsoft.SqlServer.Types.resources.dll
+C:\Users\ayyoub\Desktop\projectONE\projectONE\bin\Debug\es\Microsoft.SqlServer.Types.resources.dll
+C:\Users\ayyoub\Desktop\projectONE\projectONE\bin\Debug\fr\Microsoft.SqlServer.Types.resources.dll
+C:\Users\ayyoub\Desktop\projectONE\projectONE\bin\Debug\it\Microsoft.SqlServer.Types.resources.dll
+C:\Users\ayyoub\Desktop\projectONE\projectONE\bin\Debug\ja\Microsoft.SqlServer.Types.resources.dll
+C:\Users\ayyoub\Desktop\projectONE\projectONE\bin\Debug\ko\Microsoft.SqlServer.Types.resources.dll
+C:\Users\ayyoub\Desktop\projectONE\projectONE\bin\Debug\pt\Microsoft.SqlServer.Types.resources.dll
+C:\Users\ayyoub\Desktop\projectONE\projectONE\bin\Debug\ru\Microsoft.SqlServer.Types.resources.dll
+C:\Users\ayyoub\Desktop\projectONE\projectONE\bin\Debug\zh-Hans\Microsoft.SqlServer.Types.resources.dll
+C:\Users\ayyoub\Desktop\projectONE\projectONE\bin\Debug\zh-Hant\Microsoft.SqlServer.Types.resources.dll
+C:\Users\ayyoub\Desktop\projectONE\projectONE\obj\Debug\projectONE.FactureCmdV.resources
+C:\Users\ayyoub\Desktop\projectONE\projectONE\obj\Debug\projectONE.Form1.resources
+C:\Users\ayyoub\Desktop\projectONE\projectONE\obj\Debug\projectONE.OperationV.resources
+C:\Users\ayyoub\Desktop\projectONE\projectONE\obj\Debug\projectONE.PrintCmdV.resources
+C:\Users\ayyoub\Desktop\projectONE\projectONE\obj\Debug\projectONE.Properties.Resources.resources
+C:\Users\ayyoub\Desktop\projectONE\projectONE\obj\Debug\projectONE.csproj.GenerateResource.Cache
+C:\Users\Pc\Desktop\update project Gestion commercial\projectONE\projectONE\bin\Debug\projectONE.exe.config
+C:\Users\Pc\Desktop\update project Gestion commercial\projectONE\projectONE\obj\Debug\projectONE.exe
+C:\Users\Pc\Desktop\update project Gestion commercial\projectONE\projectONE\obj\Debug\projectONE.pdb
+C:\Users\Pc\Desktop\update project Gestion commercial\projectONE\projectONE\bin\Debug\projectONE.exe
+C:\Users\Pc\Desktop\update project Gestion commercial\projectONE\projectONE\bin\Debug\projectONE.pdb
+C:\Users\Pc\Desktop\update project Gestion commercial\projectONE\projectONE\bin\Debug\EntityFramework.dll
+C:\Users\Pc\Desktop\update project Gestion commercial\projectONE\projectONE\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Pc\Desktop\update project Gestion commercial\projectONE\projectONE\bin\Debug\Microsoft.SqlServer.Types.dll
+C:\Users\Pc\Desktop\update project Gestion commercial\projectONE\projectONE\bin\Debug\EntityFramework.xml
+C:\Users\Pc\Desktop\update project Gestion commercial\projectONE\projectONE\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Pc\Desktop\update project Gestion commercial\projectONE\projectONE\bin\Debug\de\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Pc\Desktop\update project Gestion commercial\projectONE\projectONE\bin\Debug\es\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Pc\Desktop\update project Gestion commercial\projectONE\projectONE\bin\Debug\fr\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Pc\Desktop\update project Gestion commercial\projectONE\projectONE\bin\Debug\it\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Pc\Desktop\update project Gestion commercial\projectONE\projectONE\bin\Debug\ja\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Pc\Desktop\update project Gestion commercial\projectONE\projectONE\bin\Debug\ko\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Pc\Desktop\update project Gestion commercial\projectONE\projectONE\bin\Debug\pt\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Pc\Desktop\update project Gestion commercial\projectONE\projectONE\bin\Debug\ru\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Pc\Desktop\update project Gestion commercial\projectONE\projectONE\bin\Debug\zh-Hans\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Pc\Desktop\update project Gestion commercial\projectONE\projectONE\bin\Debug\zh-Hant\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Pc\Desktop\update project Gestion commercial\projectONE\projectONE\obj\Debug\projectONE.FactureCmdV.resources
+C:\Users\Pc\Desktop\update project Gestion commercial\projectONE\projectONE\obj\Debug\projectONE.Form1.resources
+C:\Users\Pc\Desktop\update project Gestion commercial\projectONE\projectONE\obj\Debug\projectONE.OperationV.resources
+C:\Users\Pc\Desktop\update project Gestion commercial\projectONE\projectONE\obj\Debug\projectONE.Properties.Resources.resources
+C:\Users\Pc\Desktop\update project Gestion commercial\projectONE\projectONE\obj\Debug\projectONE.csproj.GenerateResource.Cache
+C:\Users\Pc\Desktop\update project Gestion commercial\projectONE\projectONE\bin\Debug\ConvertisseurNombreEnLettre.dll
+C:\Users\Pc\Desktop\update project Gestion commercial\projectONE\projectONE\bin\Debug\ConvertisseurNombreEnLettre.pdb
+C:\Users\Pc\Desktop\update project Gestion commercial\projectONE\projectONE\obj\Debug\projectONE.Form2.resources
+C:\Users\Pc\Desktop\update project Gestion commercial\projectONE\projectONE\obj\Debug\Interop.LCC11.dll
+C:\Users\Pc\Desktop\update project Gestion commercial\projectONE\projectONE\obj\Debug\projectONE.csproj.ResolveComReference.cache
+C:\Users\Pc\Desktop\update project Gestion commercial\projectONE\projectONE\obj\Debug\projectONE.csprojResolveAssemblyReference.cache
